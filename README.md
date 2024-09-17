@@ -39,3 +39,4 @@ pyCellPhenoX/
 ├── mkdocs.yml             # MkDocs configuration
 ├── README.md 
 └── requirements.txt       # Dependencies required for the project
+```
