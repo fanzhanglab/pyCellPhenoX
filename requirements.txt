@@ -45,6 +45,7 @@ pynndescent==0.5.13
 pyparsing==3.1.4
 pyreadr==0.5.2
 python-dateutil==2.9.0.post0
+pytest==7.4.0  
 pytz==2024.2
 requests==2.32.3
 scanpy==1.10.3
