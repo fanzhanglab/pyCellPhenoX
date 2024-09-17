@@ -273,7 +273,7 @@ class CellPhenoX:
         axes[2].set_ylabel('Frequency')
         axes[2].set_title('Distribution of Predicted Probabilities')
         axes[2].legend(loc='upper right', labels=["Negative Class", "Positive Class"])
-        plt.suptitle(f"RF Model Performance Evaluation\n(Simulation NAM harmonized PCs, fc_increase={self.fc}, # samples={self.num_samp})")
+        plt.suptitle("Classification Model Performance Evaluation")
         plt.tight_layout()
         plt.savefig(f"{outpath}modelperformance.pdf", format="pdf")
         
@@ -311,12 +311,13 @@ class CellPhenoX:
             df_per_obs = pd.DataFrame.from_dict(self.shap_values_per_cv[id]) # Get all SHAP values for sample number i
             # Get relevant statistics for every sample 
             average_shap_values.append(df_per_obs.mean(axis=1).values)
-            self.shap_df = average_shap_values
-            # plot the SHAP summary plot?
-            plt.figure()
-            shap.summary_plot(np.array(average_shap_values), self.X, show = False)
-            plt.title('Average SHAP values after nested cross-validation')
-            plt.savefig(f"{outpath}SHAPsummary.png")
+        self.shap_df = pd.DataFrame(average_shap_values,columns = [f"{col}_shap" for col in self.X.columns])
+        self.shap_df = self.shap_df.set_index(self.X.index)
+        # plot the SHAP summary plot?
+        plt.figure()
+        shap.summary_plot(np.array(average_shap_values), self.X, show = False)
+        plt.title('Average SHAP values after nested cross-validation')
+        plt.savefig(f"{outpath}SHAPsummary.png")
     def get_interpretable_score(self):
         # Calculate the SHAP-adjusted probability score
         #y_prob_all = self.best_model.predict_proba(self.X)[:, 1] # no longer needed if we are not scaling the prediceted probabilities

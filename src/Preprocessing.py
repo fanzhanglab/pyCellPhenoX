@@ -44,7 +44,6 @@ def nonnegativeMatrixFactorization(X, numberOfComponents=-1, min_k=2, max_k=12):
         tuple: W and H matrices
     """
 
-    print("inside the NMF function")
     # check if the user has provided the number of components they would like
     if numberOfComponents == -1:
         # call function to select optimal k
