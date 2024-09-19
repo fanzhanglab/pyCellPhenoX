@@ -9,7 +9,7 @@ import pytest
 import pandas as pd
 from sklearn.decomposition import NMF
 from unittest.mock import patch
-from pyCellPhenoX.utils.nonnegative_matrix_factorization import (
+from pyCellPhenoX.src.nonnegative_matrix_factorization import (
     nonnegativeMatrixFactorization,
 )
 

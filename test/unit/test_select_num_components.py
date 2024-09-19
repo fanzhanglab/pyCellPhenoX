@@ -1,5 +1,19 @@
+####################################################
+###
+###                     Imports
+###
+####################################################
+
+
 import numpy as np
-from pyCellPhenoX.utils.select_num_components import select_number_of_components
+from pyCellPhenoX.src.utils.select_num_components import select_number_of_components
+
+
+####################################################
+###
+###                     Tests
+###
+####################################################
 
 
 def test_select_number_of_components():

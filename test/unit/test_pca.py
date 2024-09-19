@@ -8,7 +8,9 @@ import pytest
 import numpy as np
 import pandas as pd
 from unittest.mock import patch
-from pyCellPhenoX.utils.principle_component_analysis import principalComponentAnalysis
+from pyCellPhenoX.src.principle_component_analysis import (
+    principalComponentAnalysis,
+)
 
 
 ####################################################

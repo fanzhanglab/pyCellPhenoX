@@ -1,93 +1,35 @@
 import argparse
+import yaml
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.pylab as pl
-import seaborn as sns
-
-# import pyreadr
-import psutil
-import anndata as ad
-from multianndata import MultiAnnData as mad
-
-import shap
-from xgboost import *
-import cna
-
-import sys
-import gc
-
-import scanpy as sc
-import scipy
-from scipy import stats
-from scipy.stats import randint
-from scipy.stats import mannwhitneyu, normaltest
-
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import (
-    accuracy_score,
-    confusion_matrix,
-    precision_score,
-    recall_score,
-    f1_score,
-    ConfusionMatrixDisplay,
-    silhouette_score,
-    explained_variance_score,
-    roc_auc_score,
-    roc_curve,
-    auc,
-    make_scorer,
-    average_precision_score,
-    precision_recall_curve,
+from pyCellPhenoX.src.nonnegative_matrix_factorization import (
+    nonnegativeMatrixFactorization,
 )
-from sklearn.model_selection import (
-    RandomizedSearchCV,
-    train_test_split,
-    GridSearchCV,
-    StratifiedKFold,
+from pyCellPhenoX.src.principle_component_analysis import (
+    principalComponentAnalysis,
 )
-from sklearn.preprocessing import (
-    LabelEncoder,
-    StandardScaler,
-    MinMaxScaler,
-    OneHotEncoder,
-)
-from sklearn.decomposition import NMF, PCA
-from sklearn.cluster import KMeans
-
-# from statannotations.Annotator import Annotator
-# from harmony import harmonize
-# import harmonypy as hm
-import patsy
-from plotnine import *
-
-import multiprocessing as mp
-from datetime import date
-import time
-
-from Preprocessing import *
+from pyCellPhenoX.src.preprocessing import preprocessing
 from CellPhenoX import *
-from pyCellPhenoX.utils.MarkerDiscovery import *
+from pyCellPhenoX.src.MarkerDiscovery import *
 
 
-def main():
-    expression_file = args.expression_file
-    meta_file = args.meta_file
-    covariates = args.covariates
-    target = args.target
-    method = args.method
-    sub_samp = args.sub_samp
-    subset_percentage = args.aubset_percentage
-    num_cv_repeats = args.num_cv_repeats
-    num_inner_splits = args.num_inner_splits
-    num_outer_splits = args.num_outer_splits
-    reduc_method = args.reduction_method
-    proportion_var_explained = args.proportion_var_explained
-    num_ranks = args.num_ranks
-    min_k = args.min_k
-    max_k = args.max_k
-    output_path = args.output_path
+def main(config):
+    expression_file = config["expression_file"]
+    meta_file = config["meta_file"]
+    covariates = config["covariates"]
+    target = config["target"]
+    method = config["method"]
+    sub_samp = config["sub_samp"]
+    subset_percentage = config["subset_percentage"]
+    num_cv_repeats = config["num_cv_repeats"]
+    num_inner_splits = config["num_inner_splits"]
+    num_outer_splits = config["num_outer_splits"]
+    reduc_method = config["reduction_method"]
+    proportion_var_explained = config["proportion_var_explained"]
+    num_ranks = config["num_ranks"]
+    min_k = config["min_k"]
+    max_k = config["max_k"]
+    output_path = config["output_path"]
+
     expression_mat = pd.read_csv(expression_file, index_col=0)
     meta = pd.read_csv(meta_file, index_col=0)
 
@@ -101,18 +43,16 @@ def main():
             expression_mat, proportion_var_explained
         )
 
-    # latent_features = reduceDim(reduc_method, **reducMethodParams)
     X, y = preprocessing(
         latent_features,
         meta,
-        sub_samp=False,
+        sub_samp=sub_samp,
         subset_percentage=subset_percentage,
         target=target,
-        covariates=[],
-    )  # bal_col=['subject_id', 'cell_type','disease']
+        covariates=covariates,
+    )
 
     ## run CPX - train the classification and get SHAP values
-    # create object
     cellpx_obj = CellPhenoX(
         X,
         y,
@@ -127,10 +67,13 @@ def main():
 
 
 if __name__ == "__main__":
-    # ARGUMENT PARSER =========
     parser = argparse.ArgumentParser(description="CellPhenoX input parameters.")
-    # NOTE: add help page
-    # input files
+    parser.add_argument(
+        "--config-file",
+        dest="config_file",
+        type=str,
+        help="Path to the YAML configuration file.",
+    )
     parser.add_argument(
         "--expression-file",
         dest="expression_file",
@@ -138,12 +81,17 @@ if __name__ == "__main__":
         help="Path to expression data file.",
     )
     parser.add_argument(
-        "--meta-file", dest="meta_file", type=str, help="Path to meta data file."
+        "--meta-file",
+        dest="meta_file",
+        type=str,
+        help="Path to meta data file.",
     )
     parser.add_argument(
-        "--output-path", dest="output_path", type=str, help="Path for output."
+        "--output-path",
+        dest="output_path",
+        type=str,
+        help="Path for output.",
     )
-    # dimensionality reduction parameters
     parser.add_argument(
         "--reduction-method",
         dest="reduction_method",
@@ -179,7 +127,6 @@ if __name__ == "__main__":
         default=7,
         help="Maximum k value for selecting optimal number of ranks if NMF is selected (default: 7).",
     )
-    # classification model parameters
     parser.add_argument(
         "--covariates",
         dest="covariates",
@@ -236,8 +183,14 @@ if __name__ == "__main__":
         help="Number of inner loop splits (hyperparameter tuning)",
     )
 
-    # parser.add_argument("--harmonize", dest="harmonize", action="store_true", help="Run harmony?")
-    # parser.add_argument("--batch-keys", dest="batch_keys", nargs='+', type=str, help="If running harmony, please provide a list of batch keys to use. These should be names of columns in the metadata table.")
-
     args = parser.parse_args()
-    main(args)
+
+    if args.config_file:
+        # Load configuration from YAML file
+        with open(args.config_file, "r") as file:
+            config = yaml.safe_load(file)
+    else:
+        # Use command-line arguments
+        config = vars(args)
+
+    main(config)

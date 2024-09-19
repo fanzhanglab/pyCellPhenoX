@@ -9,7 +9,7 @@ import pytest
 import numpy as np
 import pandas as pd
 from sklearn.datasets import make_classification
-from pyCellPhenoX.utils.select_optimal_k import (
+from pyCellPhenoX.src.utils.select_optimal_k import (
     select_optimal_k,
 )
 

@@ -1,3 +1,14 @@
-site_name: My Docs
+site_name: pyCellPhenoX
 
 theme: readthedocs
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Examples: examples.md
+  - API: api.md
+  - Contributing: contributing.md
+  - Changelog: changelog.md
+  - License: license.md
+  - GitHub: https://github.com/fanzhanglab/pyCellPhenoX
