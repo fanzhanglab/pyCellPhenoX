@@ -7,7 +7,7 @@
 
 import pytest
 import pandas as pd
-from pyCellPhenoX.src.utils import balanced_sample
+from pyCellPhenoX.src.utils.balanced_sample import balanced_sample
 
 
 ####################################################

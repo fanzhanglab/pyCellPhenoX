@@ -84,13 +84,22 @@ pyCellPhenoX/
 │   │   └── select_optimal_k.py
 │
 ├── test/                  # Test scripts
-│   ├── __init__.py
-│   ├── test_balanced_sample.py
-│   ├── test_nonnegative_matrix_factorization.py
-│   ├── test_pca.py
-│   ├── test_preprocessing.py
-│   ├── test_select_k.py
-│   └── test_select_num_components.py
+│   ├── functional/   
+│   │   └── __init__.py
+│   │
+│   ├── integration/   
+│   │   └── __init__.py
+│   │
+│   ├── unit/              # Utility scripts and functions
+│   │   ├── __init__.py
+│   │   ├── test_balanced_sample.py
+│   │   ├── test_nonnegative_matrix_factorization.py
+│   │   ├── test_pca.py
+│   │   ├── test_preprocessing.py
+│   │   ├── test_select_k.py
+│   │   └── test_select_num_components.py
+│   │
+│   └── __init__.py
 │
 ├── __init__.py
 ├── .gitignore             # Ignored files and directories
