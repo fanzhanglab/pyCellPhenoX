@@ -7,7 +7,7 @@
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-from utils.select_num_components import select_number_of_components
+from pyCellPhenoX.src.utils.select_num_components import select_number_of_components
 
 
 ####################################################

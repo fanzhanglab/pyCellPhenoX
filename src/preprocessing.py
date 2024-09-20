@@ -6,7 +6,7 @@
 
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-from utils.balanced_sample import balanced_sample
+from pyCellPhenoX.src.utils.balanced_sample import balanced_sample
 
 
 ####################################################
