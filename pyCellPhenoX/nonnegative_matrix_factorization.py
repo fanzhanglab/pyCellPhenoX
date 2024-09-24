@@ -6,7 +6,7 @@
 
 
 from sklearn.decomposition import NMF
-from pyCellPhenoX.src.utils.select_optimal_k import select_optimal_k
+from pyCellPhenoX.utils.select_optimal_k import select_optimal_k
 
 
 ####################################################

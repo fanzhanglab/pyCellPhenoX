@@ -1,15 +1,15 @@
 import argparse
 import yaml
 import pandas as pd
-from pyCellPhenoX.src.nonnegative_matrix_factorization import (
+from pyCellPhenoX.nonnegative_matrix_factorization import (
     nonnegativeMatrixFactorization,
 )
-from pyCellPhenoX.src.principle_component_analysis import (
+from pyCellPhenoX.principle_component_analysis import (
     principalComponentAnalysis,
 )
-from pyCellPhenoX.src.preprocessing import preprocessing
+from pyCellPhenoX.preprocessing import preprocessing
 from CellPhenoX import *
-from pyCellPhenoX.src.MarkerDiscovery import *
+from pyCellPhenoX.MarkerDiscovery import *
 
 
 def main(config):
