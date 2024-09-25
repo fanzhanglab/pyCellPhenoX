@@ -1,8 +1,7 @@
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <h1>pyCellPhenoX</h1>
-  <img src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png" alt="pyCellPhenoX logo" width="100">
-</div>
+<img width="50%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
+</br>
 
+# pyCellPhenoX 
 
 <!-- badges: start -->
 <!-- [![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)][pypi_]
