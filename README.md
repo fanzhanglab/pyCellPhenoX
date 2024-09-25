@@ -1,4 +1,4 @@
-# pyCellPhenoX <img width="28%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
+# pyCellPhenoX <img width="40%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
 <!-- [![PyPI](https://img.shields.io/pypi/v/pyXcell.svg)][pypi_]
 [![Status](https://img.shields.io/pypi/status/pyXcell.svg)][status]
 [![Python Version](https://img.shields.io/pypi/pyversions/pyXcell)][python version]
@@ -21,6 +21,11 @@
 [black]: https://github.com/psf/black -->
 
 
+-TODO
+
+</br>
+</br>
+
 
 ## Installation
 
@@ -30,28 +35,35 @@ You can install _pyXcell_ via [pip] from [PyPI]:
 $ pip install pyXcell
 ```
 
-## Requirements
+### Dependencies/ Requirements
 
 - TODO
+
+</br>
 
 ## Tutorials
 
 Please see the [Command-line Reference] for details.
 
 
+</br>
 ## License
 
 Distributed under the terms of the [MIT license][license],
 _pyXcell_ is free and open source software.
 
+</br>
+
 ## Issues
 
 If you encounter any problems,
 please [file an issue] along with a detailed description.
+</br>
 
 ## Citation
 
 
+</br>
 ## Contact
 Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for
 further questions or protential collaborative opportunities!
