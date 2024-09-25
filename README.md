@@ -1,4 +1,4 @@
-# pyCellPhenoX<img width="40%" align = "left" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
+# pyCellPhenoX <img width="50%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
 
 <!-- badges: start -->
 <!-- [![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)][pypi_]
@@ -24,7 +24,9 @@
 
 <!-- badges: end -->
 <p align="justify">
-We introduce pyCellPhenoX, _____
+We introduce pyCellPhenoX, ________________________
+___________________________________________________
+___________________________________________________
 </p>
 
 <img width="100%" align = "center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/media/CellPhenoX.png">
@@ -37,7 +39,7 @@ We introduce pyCellPhenoX, _____
 
 ## Installation
 
-You can install _pyCellPhenoX_ via [pip] from [PyPI]:
+You can install _pyCellPhenoX_ using [pip] from [PyPI]:
 
 ```bash
 $ pip install pyCellPhenoX
@@ -106,6 +108,7 @@ please [file an issue] along with a detailed description.
 Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for
 further questions or protential collaborative opportunities!
 <!-- github-only -->
+
 
 [license]: https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE
 [contributor guide]: https://github.com/fanzhanglab/pyCellPhenoX/blob/main/CONTRIBUTING.md
