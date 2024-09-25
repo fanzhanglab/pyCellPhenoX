@@ -1,6 +1,6 @@
 <h1 align="left">
   pyCellPhenoX
-  <img src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png" align="right" width="100">
+  <img src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png" align="right" width="100" height = "100">
 </h1>
 
 <!-- badges: start -->
