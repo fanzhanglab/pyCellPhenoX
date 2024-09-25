@@ -1,4 +1,6 @@
-# pyCellPhenoX <img width="50%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
+<img width="50%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
+
+# pyCellPhenoX 
 
 <!-- badges: start -->
 <!-- [![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)][pypi_]
