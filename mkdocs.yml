@@ -1,6 +1,7 @@
 site_name: pyCellPhenoX
 
 theme: readthedocs
+color_mode: dark
 
 nav:
   - Home: index.md

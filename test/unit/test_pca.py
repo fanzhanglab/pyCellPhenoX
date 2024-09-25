@@ -8,7 +8,7 @@ import pytest
 import numpy as np
 import pandas as pd
 from unittest.mock import patch
-from pyCellPhenoX.src.principle_component_analysis import principalComponentAnalysis
+from pyCellPhenoX.principalComponentAnalysis import principalComponentAnalysis
 
 
 ####################################################
@@ -26,7 +26,7 @@ def get_sample_data():
 
 
 # Test for correct output shape
-@patch("pyCellPhenoX.src.utils.select_num_components.select_number_of_components")
+@patch("pyCellPhenoX.utils.select_num_components.select_number_of_components")
 def test_pca_correct_shape(mock_select_number_of_components):
     mock_select_number_of_components.return_value = 2
     X = get_sample_data()
@@ -37,7 +37,7 @@ def test_pca_correct_shape(mock_select_number_of_components):
 
 
 # Test for variance threshold edge case
-@patch("pyCellPhenoX.src.utils.select_num_components.select_number_of_components")
+@patch("pyCellPhenoX.utils.select_num_components.select_number_of_components")
 def test_pca_edge_case(mock_select_number_of_components):
     mock_select_number_of_components.return_value = 1
     X = get_sample_data()
@@ -48,7 +48,7 @@ def test_pca_edge_case(mock_select_number_of_components):
 
 
 # Test for empty DataFrame
-@patch("pyCellPhenoX.src.utils.select_num_components.select_number_of_components")
+@patch("pyCellPhenoX.utils.select_num_components.select_number_of_components")
 def test_pca_empty_dataframe(mock_select_number_of_components):
     mock_select_number_of_components.return_value = 0
     X = pd.DataFrame()
@@ -60,7 +60,7 @@ def test_pca_empty_dataframe(mock_select_number_of_components):
 
 
 # Test with a DataFrame with one feature
-@patch("pyCellPhenoX.src.utils.select_num_components.select_number_of_components")
+@patch("pyCellPhenoX.utils.select_num_components.select_number_of_components")
 def test_pca_single_feature(mock_select_number_of_components):
     mock_select_number_of_components.return_value = 1
     X = pd.DataFrame({"A": [1, 2, 3, 4, 5]})
@@ -74,7 +74,7 @@ def test_pca_single_feature(mock_select_number_of_components):
 
 
 # Test for zero variance threshold
-@patch("pyCellPhenoX.src.utils.select_num_components.select_number_of_components")
+@patch("pyCellPhenoX.utils.select_num_components.select_number_of_components")
 def test_pca_zero_variance(mock_select_number_of_components):
     mock_select_number_of_components.return_value = 0
     X = get_sample_data()
@@ -85,7 +85,7 @@ def test_pca_zero_variance(mock_select_number_of_components):
 
 
 # Test for invalid variance threshold
-@patch("pyCellPhenoX.src.utils.select_num_components.select_number_of_components")
+@patch("pyCellPhenoX.utils.select_num_components.select_number_of_components")
 def test_pca_invalid_variance(mock_select_number_of_components):
     X = get_sample_data()
     invalid_var = -0.1  # Invalid variance value

@@ -6,7 +6,7 @@
 
 
 import numpy as np
-from pyCellPhenoX.src.utils.select_num_components import select_number_of_components
+from pyCellPhenoX.utils.select_num_components import select_number_of_components
 
 
 ####################################################

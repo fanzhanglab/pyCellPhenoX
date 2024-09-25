@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "pyCellPhenoX"
+version = "0.1"
+description = "An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics"
+authors = [ 
+    "Fan Zhang", 
+    "Jade Young",
+    "Jun Inamo",
+    "Revanth Krishna",
+    "Zac Caterer"
+ ]
+maintainers = ["Revanth Krishna <revanth.krishna@cuanschutz.edu>"]
+license = "MIT license"
+readme = "README.md"
+homepage = "https://pyCellPhenoX.readthedocs.io/"
+repository = "https://github.com/fanzhanglab/pyCellPhenoX"
+include = [{ path = "poetry.lock", format = "sdist" }]
+packages = [
+    { include = "pyCellPhenoX" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.3"
+numpy = "^2.1.1"
+xgboost = "^2.1.1"
+shap = "^0.46.0"
+scikit-learn = "^1.5.2"
+matplotlib = "^3.9.2"
+statsmodels = "^0.14.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+requests = "^2.32.3"
+anndata = "^0.10.9"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

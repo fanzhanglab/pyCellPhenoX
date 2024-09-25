@@ -9,7 +9,7 @@ import pytest
 import pandas as pd
 from sklearn.decomposition import NMF
 from unittest.mock import patch
-from pyCellPhenoX.src.nonnegative_matrix_factorization import (
+from pyCellPhenoX.nonnegativeMatrixFactorization import (
     nonnegativeMatrixFactorization,
 )
 
@@ -34,7 +34,7 @@ def test_nmf_with_fixed_components(example_matrix):
     assert W.shape == (3, 2)  # Ensure it returns the right shape for W matrix
 
 
-@patch("pyCellPhenoX.src.nonnegative_matrix_factorization.select_optimal_k")
+@patch("pyCellPhenoX.nonnegativeMatrixFactorization.select_optimal_k")
 def test_nmf_with_automatic_k(mock_select_optimal_k, example_matrix):
     """Test NMF when selecting optimal k."""
     mock_select_optimal_k.return_value = 2

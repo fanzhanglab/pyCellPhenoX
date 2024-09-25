@@ -5,8 +5,8 @@
 ####################################################
 
 
-from pyCellPhenoX.src.principle_component_analysis import principalComponentAnalysis
-from pyCellPhenoX.src.nonnegative_matrix_factorization import (
+from pyCellPhenoX.principalComponentAnalysis import principalComponentAnalysis
+from pyCellPhenoX.nonnegativeMatrixFactorization import (
     nonnegativeMatrixFactorization,
 )
 
