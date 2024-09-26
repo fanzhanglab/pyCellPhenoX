@@ -2,8 +2,10 @@ __pycache__
 .pytest_cache
 pycpx/
 pycpx3.11/
+pycpx3.10/
 htmlcov/
 .coverage
-env.yml
+env.yaml
 requirements.txt
 dist/
+.DS_Store

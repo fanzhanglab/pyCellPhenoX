@@ -59,11 +59,12 @@ $ pip install pyCellPhenoX
 ### Dependencies/ Requirements
 
 ```python
-python = "^3.10"
+python = "^3.12"
 pandas = "^2.2.3"
 numpy = "^2.1.1"
-xgboost = "^2.1.1"
-shap = "^0.45.0"
+xgboost = "^2.0"
+numba = ">=0.54"
+shap = "^0.46.0"
 scikit-learn = "^1.5.2"
 matplotlib = "^3.9.2"
 statsmodels = "^0.14.3"
