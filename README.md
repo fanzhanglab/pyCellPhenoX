@@ -4,8 +4,6 @@
 </br>
 </br>
 </br>
-</br>
-</br>
 
 # pyCellPhenoX 
 
