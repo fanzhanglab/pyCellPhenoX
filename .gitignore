@@ -1,6 +1,7 @@
 __pycache__
 .pytest_cache
 pycpx/
+pycpx3.11/
 htmlcov/
 .coverage
 env.yml
