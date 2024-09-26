@@ -1,4 +1,10 @@
-<img width="50%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
+<img width="40%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 </br>
 
 # pyCellPhenoX 
@@ -27,10 +33,12 @@
 
 <!-- badges: end -->
 <p align="justify">
-We introduce pyCellPhenoX, ________________________
-___________________________________________________
-___________________________________________________
+We introduce pyCellPhenoX, ____________________________ </br>
+_____________________________________________________ </br>
+_____________________________________________________ </br>
 </p>
+
+</br>
 
 <img width="100%" align = "center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/media/CellPhenoX.png">
 
