@@ -121,7 +121,8 @@ Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for
 further questions or protential collaborative opportunities!
 <!-- github-only -->
 
-
+[pip] : https://pypi.org/project/pip/
+[PyPI] : https://pypi.org/project/pyCellPhenoX/
 [license]: https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE
 [contributor guide]: https://github.com/fanzhanglab/pyCellPhenoX/blob/main/CONTRIBUTING.md
 [command-line reference]: https://pyCellPhenoX.readthedocs.io/en/latest/usage.html
