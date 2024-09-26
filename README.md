@@ -8,8 +8,9 @@
 # pyCellPhenoX 
 
 <!-- badges: start -->
-<!-- [![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)][pypi_]
-[![Status](https://img.shields.io/pypi/status/pyCellPhenoX.svg)][status]
+[![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)][pypi_]
+
+<!-- [![Status](https://img.shields.io/pypi/status/pyCellPhenoX.svg)][status]
 [![Python Version](https://img.shields.io/pypi/pyversions/pyCellPhenoX)][python version]
 [![License](https://img.shields.io/pypi/l/pyCellPhenoX)][license]
 
@@ -20,7 +21,6 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
 
-[pypi_]: https://pypi.org/project/pyCellPhenoX/
 [status]: https://pypi.org/project/pyCellPhenoX/
 [python version]: https://pypi.org/project/pyCellPhenoX
 [read the docs]: https://pyCellPhenoX.readthedocs.io/
@@ -29,7 +29,11 @@
 [pre-commit]: https://github.com/pre-commit/pre-commit
 [black]: https://github.com/psf/black -->
 
+[pypi_]: https://pypi.org/project/pyCellPhenoX/
 <!-- badges: end -->
+
+</br>
+
 <p align="justify">
 We introduce pyCellPhenoX, ____________________________ </br>
 _____________________________________________________ </br>
