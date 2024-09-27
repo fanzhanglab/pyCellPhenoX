@@ -1,13 +1,18 @@
-<img width="20%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">
+<img width="20%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">  <!-- Use the github permalink for this image @reyvnth -->
+</br> <!-- what is going on with all these breaks? -->
 </br>
 </br>
 </br>
 </br>
-</br>
+
 
 # pyCellPhenoX 
 
-<!-- badges: start -->
+<!-- badges: start -->  
+
+<!-- :::NOTE::: -->
+<!-- will these badges be active when we make the repo public -->
+
 [![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)][pypi_]
 
 <!-- [![Status](https://img.shields.io/pypi/status/pyCellPhenoX.svg)][status]
@@ -72,14 +77,18 @@ matplotlib = "^3.9.2"
 statsmodels = "^0.14.3"
 ```
 
+<!-- maybe this should be in the env.yml (if we want to keep it), or the requirements.txt files -->
+
+
 </br>
 
 ## Tutorials
 
 Please see the [Command-line Reference] for details.
 
+<!-- I like how you referenced this and linking it to something else -->
 
-</br>
+</br> <!-- added a line to make sure it included the break -->
 
 ## API
 
@@ -90,6 +99,7 @@ Please see the [Command-line Reference] for details.
 
 - TODO
 </br>
+
 
 ## License
 
@@ -110,12 +120,37 @@ _pyCellPhenoX_ is free and open source software.
 ## Issues
 
 If you encounter any problems,
-please [file an issue] along with a detailed description.
+please [file an issue] along with a detailed description. <!-- this link isnt working, guessing it will be in the future but wanted to bring notice -->
 </br>
 
 ## Citation
 
-- TODO
+<!-- are we thinking something like this?
+``` bash
+@software{Young2024,
+  author = {Young, Jade and Inamo, Jun and Zhang, Fan},
+  title = {CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics},
+  date = {2024},
+  url = {https://github.com/fanzhanglab/pyCellPhenoX},
+  version = {}
+}
+```
+or 
+``` bash 
+@ARTICLE{Young2024,
+  title    = "{CellPhenoX}: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics",
+  author   = "Young, Jade and Inamo, Jun and Zhang, Fan",
+  journal  = "",
+  volume   =  ,
+  number   =  ,
+  pages    = "",
+  month    =  ,
+  year     =  ,
+  language = "en"
+}
+```
+-->
+
 </br>
 
 ## Contact

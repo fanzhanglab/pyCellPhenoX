@@ -127,7 +127,7 @@ class CellPhenoX:
 
         # save the models
         overal_model_list = []
-        best_model = None
+        best_model = None  # best model is not used, so we can remove it? best model is already saved in the class
 
         print("entering CV loop")
         for i, CV_repeat in enumerate(range(self.CV_repeats)):
@@ -304,7 +304,9 @@ class CellPhenoX:
         today = date.today()
         d = today.strftime("%m%d%y")
 
-        axes[0].plot([0, 1], [0, 1], color="navy", lw=2, linestyle="--")
+        axes[0].plot(
+            [0, 1], [0, 1], color="navy", lw=2, linestyle="--"
+        )  # should we add an argument if the user would like to print/show the plot? if yes then they can see it, and another arugment if they wish to save it?
         axes[0].set_xlim([0.0, 1.0])
         axes[0].set_ylim([0.0, 1.05])
         axes[0].set_xlabel("False Positive Rate")
@@ -361,7 +363,7 @@ class CellPhenoX:
         self.best_model, self.best_score = max(overal_model_list, key=lambda x: x[1])
         print(f"best model precision-recall score = {self.best_score:.4f}")
 
-        # self.plot_time(outpath)
+        # self.plot_time(outpath)                                    # should we add an argument in the `CellPhenoX_script.py` if the user wants to plot time, then if they select yes then it can be saved?
 
         # now aggregate the shap values per CV
         self.get_shap_values(outpath)

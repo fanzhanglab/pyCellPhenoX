@@ -6,9 +6,7 @@
 
 
 from pyCellPhenoX.principalComponentAnalysis import principalComponentAnalysis
-from pyCellPhenoX.nonnegativeMatrixFactorization import (
-    nonnegativeMatrixFactorization,
-)
+from pyCellPhenoX.nonnegativeMatrixFactorization import nonnegativeMatrixFactorization
 
 
 ####################################################

@@ -72,7 +72,9 @@ def marker_discovery(shap_df, expression_mat):
     model = sm.OLS(y, X_scaled).fit()
 
     # Get the model summary
-    model_summary = model.summary()
+    model_summary = (
+        model.summary()
+    )  # model summary is not used in the code, maybe we can remove it?
 
     # Extract coefficients and p-values
     coefficients = model.params
