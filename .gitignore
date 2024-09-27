@@ -11,5 +11,6 @@ dist/
 .DS_Store
 
 *.csv
-zhang/
+zhang/ 
 .python-version
+build/

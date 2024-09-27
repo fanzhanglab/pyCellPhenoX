@@ -1,4 +1,4 @@
-<img width="20%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png">  <!-- Use the github permalink for this image @reyvnth -->
+<img width="20%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.svg">  <!-- Use the github permalink for this image @reyvnth -->
 </br> <!-- what is going on with all these breaks? -->
 </br>
 </br>
