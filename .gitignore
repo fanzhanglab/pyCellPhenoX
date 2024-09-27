@@ -9,3 +9,7 @@ env.yaml
 requirements.txt
 dist/
 .DS_Store
+
+*.csv
+zhang/
+.python-version

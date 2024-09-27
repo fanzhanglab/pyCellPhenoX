@@ -37,6 +37,8 @@ def nonnegativeMatrixFactorization(X, numberOfComponents=-1, min_k=2, max_k=12):
     # perform NMF
     nmfModel = NMF(n_components=numberOfComponents, init="random", random_state=11)
     W = nmfModel.fit_transform(X)  # ranks by samples
-    H = nmfModel.components_
+    H = (
+        nmfModel.components_
+    )  # H is unused in this function, should we return it or remove it?, the docstirng says we should return it
 
     return W

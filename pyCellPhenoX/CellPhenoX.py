@@ -40,6 +40,8 @@ class CellPhenoX:
         """
         # self.steps = ["hyperparameter tuning", "model training", "model prediction", "performance eval", "SHAP value calculation"]
         # self.CV_repeat_cumulative_times = [0,0,0,0,0]
+
+        # TODO: this attribute is unused (where it would be used is commented out), what do we want to do with it?
         self.CV_repeat_times = []
         self.X = X
         self.y = y
@@ -105,6 +107,7 @@ class CellPhenoX:
             y_val_inner,
         ]
 
+    # TODO: this method is unused, should we remove it?
     def model_training_shap_val(self, outpath):
         """Train the model using nested cross validation strategy and generate shap values for each fold/CV repeat
 
@@ -215,7 +218,9 @@ class CellPhenoX:
                 accuracy_list.append(accuracy)
 
                 # Calculate ROC curve and AUC
-                fpr, tpr, thresholds = roc_curve(y_test_outer, y_pred)
+                fpr, tpr, thresholds = roc_curve(
+                    y_test_outer, y_pred
+                )  # thresholds is unused, should we replace with an underscore?
                 auc_value = auc(fpr, tpr)
                 auc_list.append(auc_value)
                 # Validate on the validation set
@@ -254,8 +259,14 @@ class CellPhenoX:
                     # TODO: here, I am selecting the second (1) shap array for a binary classification problem.
                     # TODO: we need a way to generalize this so that we select the array that corresponds to the
                     # TODO: positive class (disease).
+
+                    # debugging
+                    print(f"shap_values: {shap_values}")
+                    print(f"shape of shap_values: {shap_values.shape}")
+                    print(f"k: {k}")
+
                     self.shap_values_per_cv[test_index][CV_repeat] = shap_values[1][k]
-                sv_end = time.time()
+                sv_end = time.time()  # sv_end is unused, should we remove it?
                 # sv.append(sv_end - sv_start)
                 # self.CV_repeat_cumulative_times[4] += (sv_end - sv_start)
 
@@ -276,8 +287,10 @@ class CellPhenoX:
 
             # Compute ROC and PR curve for the combined data
             fpr, tpr, _ = roc_curve(y_test_combined, y_prob_combined)
-            precision, recall, thresholds = precision_recall_curve(
-                y_test_combined, y_prob_combined
+            precision, recall, thresholds = (
+                precision_recall_curve(  # thresholds are not used, should we replace with an underscore?
+                    y_test_combined, y_prob_combined
+                )
             )
             # Compute AUC (Area Under the Curve)
             roc_auc = auc(fpr, tpr)
@@ -302,7 +315,7 @@ class CellPhenoX:
 
         # Add labels and show the ROC curve plot
         today = date.today()
-        d = today.strftime("%m%d%y")
+        d = today.strftime("%m%d%y")  # d is unused, should we remove it?
 
         axes[0].plot(
             [0, 1], [0, 1], color="navy", lw=2, linestyle="--"
@@ -370,13 +383,13 @@ class CellPhenoX:
         # and calculate the interpretable score
         self.get_interpretable_score()
 
-    def get_shap_values_per_cv(self):
+    def get_shap_values_per_cv(self):  # this method is unused, should we remove it?
         return self.shap_values_per_cv
 
-    def get_best_score(self):
+    def get_best_score(self):  # this method is unused, should we remove it?
         return self.best_score
 
-    def get_best_model(self):
+    def get_best_model(self):  # this method is unused, should we remove it?
         return self.best_model
 
     def get_shap_values(self, outpath):
