@@ -1,0 +1,6 @@
+pyCellPhenoX Operations
+========================
+
+This section provides an overview of the core operations available in the `pyCellPhenoX` package. Each operation plays a crucial role in analyzing single-cell multi-omics data and predicting clinical phenotypes.
+
+

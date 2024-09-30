@@ -35,6 +35,9 @@ extensions = [
     "nbsphinx",  # Support for Jupyter Notebooks
 ]
 
+html_js_files = [
+    "readthedocs.js",
+]
 
 templates_path = ["_templates"]
 exclude_patterns = []
