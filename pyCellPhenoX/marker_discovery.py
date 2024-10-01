@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 # marker discovery - find markers correlated with the discriminatory power of the Interpretable Score
 ##TODO: loosely translated from R to python, not fully tested and missing the final output (maybe some plots and the datataframe containing the coefficients and pvalues?)
 def marker_discovery(shap_df, expression_mat):
-    """_summary_
+    """Identify markers correlated with the discriminatory power of the Interpretable Score.
 
     Args:
         shap_df (dataframe): cells by (various columns: meta data, shap values for each latent dimension, interpretable score)

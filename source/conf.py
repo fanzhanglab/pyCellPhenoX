@@ -16,7 +16,9 @@ from datetime import date
 
 import dunamai
 
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath("../pyCellPhenoX"))
+
+import pyCellPhenoX  
 
 project = "CellPhenoX"
 copyright = "2024, Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
@@ -49,7 +51,7 @@ exclude_patterns = []
 # html_theme = "default"  # Change to 'default' for the basic theme
 # html_theme = "alabaster"  # or use this if you prefer alabaster
 # html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
+html_static_path = []
 
 # -- Options for HTML output -------------------------------------------------
 # The theme to use for HTML and HTML Help pages.

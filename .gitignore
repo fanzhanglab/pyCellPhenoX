@@ -12,3 +12,4 @@ dist/
 *.csv
 zhang/ 
 .python-version
+build/

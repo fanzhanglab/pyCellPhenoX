@@ -28,16 +28,16 @@ def preprocessing(
     """Prepare the data to be in the correct format for CellPhenoX
 
     Args:
-        latent_features (_type_): _description_
-        meta (_type_): _description_
+        latent_features (dataframe): data frame containing the latent features
+        meta (dataframe): data frame containing the meta data
         sub_samp (bool, optional): _description_. Defaults to False.
-        subset_percentage (float, optional): _description_. Defaults to 0.99.
-        bal_col (list, optional): _description_. Defaults to ["subject_id", "cell_type", "disease"].
-        target (str, optional): _description_. Defaults to "disease".
-        covariates (list, optional): _description_. Defaults to [].
+        subset_percentage (float, optional): A percentage of the data to sample. Defaults to 0.99.
+        bal_col (list, optional): a list of columns to balance the data on. Defaults to ["subject_id", "cell_type", "disease"].
+        target (str, optional): a string representing the target column. Defaults to "disease".
+        covariates (list, optional): a list of columns to include as covariates. Defaults to [].
 
     Returns:
-        _type_: _description_
+        tuple: X and y dataframes in the correct format for CellPhenoX
     """
     if sub_samp:
         # optionally, sample the data using the balanced sample function

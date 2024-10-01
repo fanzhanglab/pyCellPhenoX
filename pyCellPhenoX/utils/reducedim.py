@@ -36,8 +36,6 @@ def reduceDim(
     elif reducMethod == "pca":
         return principalComponentAnalysis(expression_mat, **reducMethodParams)
     else:
-        print(
+        raise ValueError(
             "Invalid dimensionality reduction method provided! Please input 'nmf' or 'pca'."
         )
-        # sys.exit()
-    return
