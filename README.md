@@ -1,5 +1,13 @@
 <img width="20%" align="right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.svg">
 
+# pyCellPhenoX 
+<img width="40%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.png"> 
+<!-- [![PyPI](https://img.shields.io/pypi/v/pyXcell.svg)][pypi_]
+[![Status](https://img.shields.io/pypi/status/pyXcell.svg)][status]
+[![Python Version](https://img.shields.io/pypi/pyversions/pyXcell)][python version]
+[![License](https://img.shields.io/pypi/l/pyXcell)][license]
+
+
 # pyCellPhenoX
 We introduce pyCellPhenoX.
 
@@ -7,6 +15,7 @@ We introduce pyCellPhenoX.
 
 ## Installation
 You can install _pyCellPhenoX_ using pip:
+
 
 ``` bash
 $ pip install pyCellPhenoX
@@ -24,6 +33,9 @@ scikit-learn = "^1.5.2"
 matplotlib = "^3.9.2"
 statsmodels = "^0.14.3"
 ```
+
+### Dependencies/ Requirements
+- TODO
 
 ## Tutorials
 Please see the [Command-line Reference] for details.
@@ -45,8 +57,7 @@ _pyCellPhenoX_ is free and open source software.
 - TODO
 
 ## Issues
-If you encounter any problems,
-please [file an issue] along with a detailed description. 
+If you encounter any problems, please [file an issue] along with a detailed description. 
 
 ## Citation
 ``` bash
@@ -73,6 +84,7 @@ or
   }
 ```
 
+
 ## Contact
 Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for
 further questions or protential collaborative opportunities!
@@ -81,6 +93,7 @@ further questions or protential collaborative opportunities!
 
 [license]: https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE
 [contributor guide]: https://github.com/fanzhanglab/pyCellPhenoX/blob/main/CONTRIBUTING.md
+[file an issue]: https://github.com/fanzhanglab/pyCellPhenoX/issues/new
 [command-line reference]: https://pyCellPhenoX.readthedocs.io/en/latest/usage.html
 [pipi]: https://pypi.org/project/pip/
 [pypi]: https://pypi.org/project/pyCellPhenoX/
