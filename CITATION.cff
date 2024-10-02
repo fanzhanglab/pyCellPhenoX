@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you have used pyCellPhenoX in your project, please cite us as:"
+authors:
+  - family-names: Zhang
+    given-names: Fan
+    orcid: https://orcid.org/0000-0002-6102-2970
+  - family-names: Young
+    given-names: Jade
+    orcid: # insert ORCID here
+  - family-names: Inamo
+    given-names: Jun
+    orcid: https://orcid.org/0000-0002-9927-7936
+  - family-names: Krishna
+    given-names: Revanth
+    orcid: https://orcid.org/0000-0002-4902-8368
+  - family-names: Zachary
+    given-names: Caterer
+    orcid: https://orcid.org/0000-0001-9019-0730
+
+title: "CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics"
+# This version is updated using `cz bump` command
+version: "0.2.0"
+license: MIT License
+repository-code: "https://github.com/fanzhanglab/pyCellPhenoX"
+doi: # insert DOI here

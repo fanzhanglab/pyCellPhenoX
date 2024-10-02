@@ -1,8 +1,0 @@
-Usage
-=====
-This section describes how to use the package.
-
-.. code-block:: python
-
-   import pyCellPhenoX
-   # Example usage

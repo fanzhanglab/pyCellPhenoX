@@ -6,13 +6,10 @@
 
    installation
    walkthrough
-   tutorials
    modules
-   api_reference
    citation
    code_of_conduct
    contributing
-   changelog
    issues   
    license
 

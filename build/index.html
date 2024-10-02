@@ -224,17 +224,18 @@
 <li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html#Step-4:-Marker-Discovery">Step 4: Marker Discovery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">pyCellPhenoX</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of pyCellPhenoX</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.html">Core Functions</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyCellPhenoX.html">Core functions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Core functions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.operations.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html">pyCellPhenoX utilities</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html#core-functions">Core Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citing pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html#contributing-to-pycellphenox">Contributing to pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -277,22 +278,16 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <p><span class="raw-html-m2r"><img width="20%" align = "right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/pycpx.svg"></span>  <span class="raw-html-m2r"><!-- Use the github permalink for this image @reyvnth --></span>
-&lt;/br&gt; <span class="raw-html-m2r"><!-- what is going on with all these breaks? --></span>
-&lt;/br&gt;
-&lt;/br&gt;
-&lt;/br&gt;
-&lt;/br&gt;</p>
-<section id="pycellphenox">
+          <section id="pycellphenox">
 <h1>pyCellPhenoX<a class="headerlink" href="#pycellphenox" title="Link to this heading">¶</a></h1>
-<!-- badges: start --><!-- :::NOTE::: -->
-<!-- will these badges be active when we make the repo public --><p>`
-.. image:: <a class="reference external" href="https://img.shields.io/pypi/v/pyCellPhenoX.svg">https://img.shields.io/pypi/v/pyCellPhenoX.svg</a></p>
+<p><span class="raw-html-m2r"><img height="200" align="right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/163014ba1b31243a1aac4c27e0611a34c1495efe/logo/pycpx.png?raw=true"></span></p>
+<p>`
+.. image:: <a class="reference external" href="https://img.shields.io/pypi/v/pyXcell.svg">https://img.shields.io/pypi/v/pyXcell.svg</a></p>
 <blockquote>
 <div><blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">target<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://img.shields.io/pypi/v/pyCellPhenoX.svg">https://img.shields.io/pypi/v/pyCellPhenoX.svg</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://img.shields.io/pypi/v/pyXcell.svg">https://img.shields.io/pypi/v/pyXcell.svg</a></p>
 </dd>
 <dt class="field-even">alt<span class="colon">:</span></dt>
 <dd class="field-even"><p>PyPI</p>
@@ -301,41 +296,71 @@
 </div></blockquote>
 <p>&lt;<a class="reference external" href="https://pypi.org/project/pyCellPhenoX/">https://pypi.org/project/pyCellPhenoX/</a>&gt;`_</p>
 </div></blockquote>
-<!-- [![Status](https://img.shields.io/pypi/status/pyCellPhenoX.svg)][status]
-[![Python Version](https://img.shields.io/pypi/pyversions/pyCellPhenoX)][python version]
-[![License](https://img.shields.io/pypi/l/pyCellPhenoX)][license]
-
-[![Read the documentation at https://pyCellPhenoX.readthedocs.io/](https://img.shields.io/readthedocs/pyCellPhenoX/latest.svg?label=Read%20the%20Docs)][read the docs]
-[![Tests](https://github.com/fanzhanglab/pyCellPhenoX/workflows/Tests/badge.svg)][tests]
-[![Codecov](https://codecov.io/gh/fanzhanglab/pyCellPhenoX/branch/main/graph/badge.svg)][codecov]
-
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
-[![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
-
-[status]: https://pypi.org/project/pyCellPhenoX/
-[python version]: https://pypi.org/project/pyCellPhenoX
-[read the docs]: https://pyCellPhenoX.readthedocs.io/
-[tests]: https://github.com/fanzhanglab/pyCellPhenoX/actions?workflow=Tests
-[codecov]: https://app.codecov.io/gh/fanzhanglab/pyCellPhenoX
-[pre-commit]: https://github.com/pre-commit/pre-commit
-[black]: https://github.com/psf/black --><!-- badges: end --><p>&lt;/br&gt;</p>
-<p align="justify">
-We introduce pyCellPhenoX, ____________________________ </br>
-_____________________________________________________ </br>
-_____________________________________________________ </br>
-</p><p>&lt;/br&gt;</p>
-<p><span class="raw-html-m2r"><img width="100%" align = "center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/media/CellPhenoX.png"></span></p>
-<p>&lt;/br&gt;
-&lt;/br&gt;
-&lt;/br&gt;</p>
+<p>[
+.. image:: <a class="reference external" href="https://img.shields.io/pypi/status/pyXcell.svg">https://img.shields.io/pypi/status/pyXcell.svg</a></p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">target<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://img.shields.io/pypi/status/pyXcell.svg">https://img.shields.io/pypi/status/pyXcell.svg</a></p>
+</dd>
+<dt class="field-even">alt<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>][status]
+[
+.. image:: <a class="reference external" href="https://img.shields.io/pypi/pyversions/pyXcell">https://img.shields.io/pypi/pyversions/pyXcell</a></p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">target<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://img.shields.io/pypi/pyversions/pyXcell">https://img.shields.io/pypi/pyversions/pyXcell</a></p>
+</dd>
+<dt class="field-even">alt<span class="colon">:</span></dt>
+<dd class="field-even"><p>Python Version</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>][python version]
+`
+.. image:: <a class="reference external" href="https://img.shields.io/pypi/l/pyXcell">https://img.shields.io/pypi/l/pyXcell</a></p>
+<blockquote>
+<div><blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">target<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://img.shields.io/pypi/l/pyXcell">https://img.shields.io/pypi/l/pyXcell</a></p>
+</dd>
+<dt class="field-even">alt<span class="colon">:</span></dt>
+<dd class="field-even"><p>License</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>&lt;<a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE">https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE</a>&gt;`_</p>
+</div></blockquote>
+<p>We introduce pyCellPhenoX.</p>
+<p><span class="raw-html-m2r"><img width="100%" align="center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/163014ba1b31243a1aac4c27e0611a34c1495efe/media/CellPhenoX.png?raw=true"></span></p>
+<blockquote>
+<div><p>Figure 1. Insert figure description here</p>
+</div></blockquote>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
-<p>You can install <em>pyCellPhenoX</em> using <a class="reference external" href="https://pypi.org/project/pip/">pip</a> from <a class="reference external" href="https://pypi.org/project/pyCellPhenoX/">PyPI</a>:</p>
+<p>You can install <em>pyCellPhenoX</em> from PyPI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyCellPhenoX
+</pre></div>
+</div>
+<p><strong>conda</strong> (<a class="reference external" href="https://anaconda.org/conda-forge/pyCellPhenoX">link</a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install pyCellPhenoX from conda-forge</span>
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pyCellPhenoX
+</pre></div>
+</div>
+<p><strong>github</strong> (<a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX">link</a>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install pyCellPhenoX directly from github</span>
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:fanzhanglab/pyCellPhenoX.git
 </pre></div>
 </div>
 <section id="dependencies-requirements">
 <h3>Dependencies/ Requirements<a class="headerlink" href="#dependencies-requirements" title="Link to this heading">¶</a></h3>
+<p>When using pyCellPhenoX please ensure you are using the following dependency versions or requirements</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">=</span> <span class="s2">&quot;^3.12&quot;</span>
 <span class="n">pandas</span> <span class="o">=</span> <span class="s2">&quot;^2.2.3&quot;</span>
 <span class="n">numpy</span> <span class="o">=</span> <span class="s2">&quot;^2.1.1&quot;</span>
@@ -347,85 +372,184 @@ _____________________________________________________ </br>
 <span class="n">statsmodels</span> <span class="o">=</span> <span class="s2">&quot;^0.14.3&quot;</span>
 </pre></div>
 </div>
-<!-- maybe this should be in the env.yml (if we want to keep it), or the requirements.txt files --><p>&lt;/br&gt;</p>
+<p>To check if you have the right depenencies please run the following:</p>
+<section id="check-python-version">
+<h4>Check Python Version<a class="headerlink" href="#check-python-version" title="Link to this heading">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+<section id="check-individual-package-versions">
+<h4>Check individual package versions<a class="headerlink" href="#check-individual-package-versions" title="Link to this heading">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span><span class="o">{</span>package<span class="o">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Version
+</pre></div>
+</div>
+<blockquote>
+<div><p>Replace {package} with the name of the package you want to check (e.g., pandas, numpy, etc.). This will display the installed version of the package.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="virtual-environment">
+<h3>Virtual Environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">¶</a></h3>
+<p>If any of the versions are not compatible with your working environment, please set up a virtual environment using one of the following methods: <strong>conda/mamba</strong>, <strong>pip</strong>, or <strong>poetry</strong>.</p>
+<section id="conda-and-mamba">
+<h4>Conda and Mamba<a class="headerlink" href="#conda-and-mamba" title="Link to this heading">¶</a></h4>
+<p>To create a virtual environment using <strong>conda</strong> or <strong>mamba</strong>, follow these steps:</p>
+<ol class="arabic">
+<li><p><strong>Create the environment:</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>conda create –name {name_the_environment}</p>
+</div></blockquote>
+</li>
+<li><p><strong>Activate the environment:</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>conda activate {name_the_environment}</p>
+</div></blockquote>
+</li>
+<li><p><strong>Install the requirements.txt:</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>conda install -f requirements.txt</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="pip">
+<h4>PIP<a class="headerlink" href="#pip" title="Link to this heading">¶</a></h4>
+<p>To create a virtual environment using <strong>PIP</strong> follow these steps:</p>
+<ol class="arabic">
+<li><p><strong>Create the environment:</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>python -m venv {name_the_environment}</p>
+</div></blockquote>
+</li>
+<li><p><strong>Activate the environment:</strong></p></li>
+</ol>
+<ul>
+<li><p>on Windows
+.. code-block:: bash</p>
+<blockquote>
+<div><p>{name_the_environment}Scriptsactivate</p>
+</div></blockquote>
+</li>
+<li><p>on macOS
+.. code-block:: bash</p>
+<blockquote>
+<div><p>source {name_the_environment}binactivate</p>
+</div></blockquote>
+</li>
+</ul>
+<ol class="arabic">
+<li><p><strong>Install the requirements.txt:</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>pip install -r requirements.txt</p>
+</div></blockquote>
+<p>#### Poetry</p>
+</li>
+<li><p><strong>Create a new project:</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>poetry new {my_project_name}
+cd {my_project_name}</p>
+</div></blockquote>
+</li>
+<li><p><strong>Install dependencies:</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>poertry install</p>
+</div></blockquote>
+</li>
+<li><p><strong>Activate the environment:</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>poetry shell</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
 </section>
 </section>
 <section id="tutorials">
 <h2>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading">¶</a></h2>
-<p>Please see the <a class="reference external" href="https://pyCellPhenoX.readthedocs.io/en/latest/usage.html">Command-line Reference</a> for details.</p>
-<!-- I like how you referenced this and linking it to something else --><p>&lt;/br&gt; <span class="raw-html-m2r"><!-- added a line to make sure it included the break --></span></p>
+<p>Please see the <a class="reference external" href="https://pyCellPhenoX.readthedocs.io/en/latest/usage.html">Command-line Reference</a> for details. Additonally, please see <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/walkthroughs/single_cell_usage">Walkthroughs</a> on the documentation page.</p>
 </section>
 <section id="api">
 <h2>API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>TODO
-&lt;/br&gt;</p></li>
-</ul>
+<p>pyCellPhenoX has four major functions which are apart of the object:</p>
+<ol class="arabic simple">
+<li><p>split_data() - Split the data into training, testing, and validation sets</p></li>
+<li><p>model_train_shap_values() - Train the model using nested cross validation strategy and generate shap values for each fold/CV repeat</p></li>
+<li><p>get_shap_values() - Aggregate SHAP values for each sample</p></li>
+<li><p>get_intepretable_score() - Calculate the interpretable score based on SHAP values.</p></li>
+</ol>
+<p>Additional major functions associated with pyCellPhenoX are:</p>
+<ol class="arabic simple">
+<li><p>marker_discovery() - Identify markers correlated with the discriminatory power of the Interpretable Score.</p></li>
+<li><p>nonNegativeMatrixFactorization() - Perform non Negative Matrix Factorization (NMF)</p></li>
+<li><p>preprocessing() - Prepare the data to be in the correct format for CellPhenoX</p></li>
+<li><p>principleComponentAnalysis() - Perform Principle Component Analysis (PCA)</p></li>
+</ol>
+<p>Each function has uniqure arguments, see our <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/">documentation</a> for more information</p>
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>TODO
-&lt;/br&gt;</p></li>
+<li><p>TODO</p></li>
 </ul>
 </section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h2>
 <p>Distributed under the terms of the <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE">MIT license</a>,
 <em>pyCellPhenoX</em> is free and open source software.</p>
-<p>&lt;/br&gt;</p>
 </section>
 <section id="code-of-conduct">
 <h2>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>TODO
-&lt;/br&gt;</p></li>
-</ul>
+<p>For more information please see <a class="reference external" href="CODE_OF_CONDUCT.md">Code of Conduct</a> or <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/code_of_conduct">Code of Conduct Documentation</a></p>
 </section>
 <section id="contributing">
 <h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>TODO
-## Issues</p></li>
-</ul>
-<p>If you encounter any problems,
-please [file an issue] along with a detailed description. <span class="raw-html-m2r"><!-- this link isnt working, guessing it will be in the future but wanted to bring notice --></span>
-&lt;/br&gt;</p>
+<p>For more information please see <a class="reference external" href="CONTRIBUTING.md">Contributing</a> or <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/contributing">Contributing Documentation</a></p>
+</section>
+<section id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="Link to this heading">¶</a></h2>
+<p>If you encounter any problems, please <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/issues/new">file an issue</a> along with a detailed description.</p>
 </section>
 <section id="citation">
 <h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">¶</a></h2>
-<!-- are we thinking something like this?
-``` bash
-@software{Young2024,
-  author = {Young, Jade and Inamo, Jun and Zhang, Fan},
-  title = {CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics},
-  date = {2024},
-  url = {https://github.com/fanzhanglab/pyCellPhenoX},
-  version = {}
-}
-```
-or
-``` bash
-@ARTICLE{Young2024,
-  title    = "{CellPhenoX}: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics",
-  author   = "Young, Jade and Inamo, Jun and Zhang, Fan",
-  journal  = "",
-  volume   =  ,
-  number   =  ,
-  pages    = "",
-  month    =  ,
-  year     =  ,
-  language = "en"
-}
-```
---><p>&lt;/br&gt;</p>
+<p>If you have used <code class="docutils literal notranslate"><span class="pre">pyCellPhenoX</span></code> in your project, please use the citation below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">Young2024</span><span class="p">,</span>
+  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Young</span><span class="p">,</span> <span class="n">Jade</span> <span class="ow">and</span> <span class="n">Inamo</span><span class="p">,</span> <span class="n">Jun</span> <span class="ow">and</span> <span class="n">Zhang</span><span class="p">,</span> <span class="n">Fan</span><span class="p">},</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">CellPhenoX</span><span class="p">:</span> <span class="n">An</span> <span class="n">eXplainable</span> <span class="n">Cell</span><span class="o">-</span><span class="n">specific</span> <span class="n">machine</span> <span class="n">learning</span> <span class="n">method</span> <span class="n">to</span> <span class="n">predict</span> <span class="n">clinical</span> <span class="n">Phenotypes</span> <span class="n">using</span> <span class="n">single</span><span class="o">-</span><span class="n">cell</span> <span class="n">multi</span><span class="o">-</span><span class="n">omics</span><span class="p">},</span>
+  <span class="n">date</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2024</span><span class="p">},</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">fanzhanglab</span><span class="o">/</span><span class="n">pyCellPhenoX</span><span class="p">},</span>
+  <span class="n">version</span> <span class="o">=</span> <span class="p">{},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@ARTICLE</span><span class="p">{</span><span class="n">Young2024</span><span class="p">,</span>
+  <span class="n">title</span>    <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{CellPhenoX}</span><span class="s2">: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics&quot;</span><span class="p">,</span>
+  <span class="n">author</span>   <span class="o">=</span> <span class="s2">&quot;Young, Jade and Inamo, Jun and Zhang, Fan&quot;</span><span class="p">,</span>
+  <span class="n">journal</span>  <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="n">volume</span>   <span class="o">=</span>  <span class="p">,</span>
+  <span class="n">number</span>   <span class="o">=</span>  <span class="p">,</span>
+  <span class="n">pages</span>    <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="n">month</span>    <span class="o">=</span>  <span class="p">,</span>
+  <span class="n">year</span>     <span class="o">=</span>  <span class="p">,</span>
+  <span class="n">language</span> <span class="o">=</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 <section id="contact">
 <h2>Contact<a class="headerlink" href="#contact" title="Link to this heading">¶</a></h2>
 <p>Please contact <a class="reference external" href="mailto:fanzhanglab&#37;&#52;&#48;gmail&#46;com">fanzhanglab<span>&#64;</span>gmail<span>&#46;</span>com</a> for
-further questions or protential collaborative opportunities!
-<span class="raw-html-m2r"><!-- github-only --></span></p>
-<div class="toctree-wrapper compound">
+further questions or protential collaborative opportunities!</p>
+<!-- github-only --><div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
@@ -436,21 +560,19 @@ further questions or protential collaborative opportunities!
 <li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html#Step-4:-Marker-Discovery">Step 4: Marker Discovery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">pyCellPhenoX</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.html">Core Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.html">Core functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html#core-functions">Core Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citing pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-guidelines">Contributing Guidelines</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#yyyy-mm-dd">0.1.0 - YYYY-MM-DD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html#contributing-to-pycellphenox">Contributing to pyCellPhenoX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#table-of-contents">Table of contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#id1">Code of conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#id3">Quick links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#id4">How can I contribute?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#id15">Code Quality</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
@@ -515,7 +637,16 @@ further questions or protential collaborative opportunities!
             <ul>
 <li><a class="reference internal" href="#">pyCellPhenoX</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a><ul>
-<li><a class="reference internal" href="#dependencies-requirements">Dependencies/ Requirements</a></li>
+<li><a class="reference internal" href="#dependencies-requirements">Dependencies/ Requirements</a><ul>
+<li><a class="reference internal" href="#check-python-version">Check Python Version</a></li>
+<li><a class="reference internal" href="#check-individual-package-versions">Check individual package versions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#virtual-environment">Virtual Environment</a><ul>
+<li><a class="reference internal" href="#conda-and-mamba">Conda and Mamba</a></li>
+<li><a class="reference internal" href="#pip">PIP</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#tutorials">Tutorials</a></li>
@@ -524,6 +655,7 @@ further questions or protential collaborative opportunities!
 <li><a class="reference internal" href="#license">License</a></li>
 <li><a class="reference internal" href="#code-of-conduct">Code of Conduct</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
+<li><a class="reference internal" href="#issues">Issues</a></li>
 <li><a class="reference internal" href="#citation">Citation</a></li>
 <li><a class="reference internal" href="#contact">Contact</a></li>
 </ul>
@@ -547,5 +679,6 @@ further questions or protential collaborative opportunities!
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/readthedocs.js"></script>
     </body>
 </html>

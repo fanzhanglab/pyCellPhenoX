@@ -222,17 +222,18 @@
 <li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html#Step-4:-Marker-Discovery">Step 4: Marker Discovery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">pyCellPhenoX</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of pyCellPhenoX</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.html">Core Functions</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyCellPhenoX.html">Core functions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Core functions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.operations.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html">pyCellPhenoX utilities</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html#core-functions">Core Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citing pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html#contributing-to-pycellphenox">Contributing to pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -272,19 +273,89 @@
           
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#M"><strong>M</strong></a> | <a href="#P"><strong>P</strong></a></div>
+  <div class="genindex-jumpbox"><a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a></div>
 </section>
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.utils.html#pyCellPhenoX.utils.balanced_sample.balanced_sample">balanced_sample() (in module pyCellPhenoX.utils.balanced_sample)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.html#pyCellPhenoX.CellPhenoX">CellPhenoX (class in pyCellPhenoX)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="G" class="genindex-section">
+  <h2>G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.html#pyCellPhenoX.CellPhenoX.get_best_model">get_best_model() (pyCellPhenoX.CellPhenoX method)</a>
+</li>
+        <li><a href="pyCellPhenoX.html#pyCellPhenoX.CellPhenoX.get_best_score">get_best_score() (pyCellPhenoX.CellPhenoX method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.html#pyCellPhenoX.CellPhenoX.get_interpretable_score">get_interpretable_score() (pyCellPhenoX.CellPhenoX method)</a>
+</li>
+        <li><a href="pyCellPhenoX.html#pyCellPhenoX.CellPhenoX.get_shap_values">get_shap_values() (pyCellPhenoX.CellPhenoX method)</a>
+</li>
+        <li><a href="pyCellPhenoX.html#pyCellPhenoX.CellPhenoX.get_shap_values_per_cv">get_shap_values_per_cv() (pyCellPhenoX.CellPhenoX method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
 <section id="M" class="genindex-section">
   <h2>M</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.operations.html#pyCellPhenoX.marker_discovery.marker_discovery">marker_discovery() (in module pyCellPhenoX.marker_discovery)</a>
+</li>
+        <li><a href="pyCellPhenoX.html#pyCellPhenoX.CellPhenoX.model_training_shap_val">model_training_shap_val() (pyCellPhenoX.CellPhenoX method)</a>
+</li>
         <li>
     module
 
         <ul>
-          <li><a href="api_reference.html#module-pyCellPhenoX">pyCellPhenoX</a>
+          <li><a href="pyCellPhenoX.html#module-pyCellPhenoX">pyCellPhenoX</a>, <a href="pyCellPhenoX.operations.html#module-pyCellPhenoX">[1]</a>
+</li>
+          <li><a href="pyCellPhenoX.operations.html#module-pyCellPhenoX.marker_discovery">pyCellPhenoX.marker_discovery</a>
+</li>
+          <li><a href="pyCellPhenoX.operations.html#module-pyCellPhenoX.nonnegativeMatrixFactorization">pyCellPhenoX.nonnegativeMatrixFactorization</a>
+</li>
+          <li><a href="pyCellPhenoX.operations.html#module-pyCellPhenoX.preprocessing">pyCellPhenoX.preprocessing</a>
+</li>
+          <li><a href="pyCellPhenoX.operations.html#module-pyCellPhenoX.principalComponentAnalysis">pyCellPhenoX.principalComponentAnalysis</a>
+</li>
+          <li><a href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.balanced_sample">pyCellPhenoX.utils.balanced_sample</a>
+</li>
+          <li><a href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.reducedim">pyCellPhenoX.utils.reducedim</a>
+</li>
+          <li><a href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.select_num_components">pyCellPhenoX.utils.select_num_components</a>
+</li>
+          <li><a href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.select_optimal_k">pyCellPhenoX.utils.select_optimal_k</a>
 </li>
         </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="N" class="genindex-section">
+  <h2>N</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.operations.html#pyCellPhenoX.nonnegativeMatrixFactorization.nonnegativeMatrixFactorization">nonnegativeMatrixFactorization() (in module pyCellPhenoX.nonnegativeMatrixFactorization)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -293,13 +364,101 @@
   <h2>P</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.operations.html#pyCellPhenoX.preprocessing.preprocessing">preprocessing() (in module pyCellPhenoX.preprocessing)</a>
+</li>
+        <li><a href="pyCellPhenoX.operations.html#pyCellPhenoX.principalComponentAnalysis.principalComponentAnalysis">principalComponentAnalysis() (in module pyCellPhenoX.principalComponentAnalysis)</a>
+</li>
         <li>
     pyCellPhenoX
 
         <ul>
-          <li><a href="api_reference.html#module-pyCellPhenoX">module</a>
+          <li><a href="pyCellPhenoX.html#module-pyCellPhenoX">module</a>, <a href="pyCellPhenoX.operations.html#module-pyCellPhenoX">[1]</a>
 </li>
         </ul></li>
+        <li>
+    pyCellPhenoX.marker_discovery
+
+        <ul>
+          <li><a href="pyCellPhenoX.operations.html#module-pyCellPhenoX.marker_discovery">module</a>
+</li>
+        </ul></li>
+        <li>
+    pyCellPhenoX.nonnegativeMatrixFactorization
+
+        <ul>
+          <li><a href="pyCellPhenoX.operations.html#module-pyCellPhenoX.nonnegativeMatrixFactorization">module</a>
+</li>
+        </ul></li>
+        <li>
+    pyCellPhenoX.preprocessing
+
+        <ul>
+          <li><a href="pyCellPhenoX.operations.html#module-pyCellPhenoX.preprocessing">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li>
+    pyCellPhenoX.principalComponentAnalysis
+
+        <ul>
+          <li><a href="pyCellPhenoX.operations.html#module-pyCellPhenoX.principalComponentAnalysis">module</a>
+</li>
+        </ul></li>
+        <li>
+    pyCellPhenoX.utils.balanced_sample
+
+        <ul>
+          <li><a href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.balanced_sample">module</a>
+</li>
+        </ul></li>
+        <li>
+    pyCellPhenoX.utils.reducedim
+
+        <ul>
+          <li><a href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.reducedim">module</a>
+</li>
+        </ul></li>
+        <li>
+    pyCellPhenoX.utils.select_num_components
+
+        <ul>
+          <li><a href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.select_num_components">module</a>
+</li>
+        </ul></li>
+        <li>
+    pyCellPhenoX.utils.select_optimal_k
+
+        <ul>
+          <li><a href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.select_optimal_k">module</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="R" class="genindex-section">
+  <h2>R</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.utils.html#pyCellPhenoX.utils.reducedim.reduceDim">reduceDim() (in module pyCellPhenoX.utils.reducedim)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.utils.html#pyCellPhenoX.utils.select_num_components.select_number_of_components">select_number_of_components() (in module pyCellPhenoX.utils.select_num_components)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="pyCellPhenoX.utils.html#pyCellPhenoX.utils.select_optimal_k.select_optimal_k">select_optimal_k() (in module pyCellPhenoX.utils.select_optimal_k)</a>
+</li>
+        <li><a href="pyCellPhenoX.html#pyCellPhenoX.CellPhenoX.split_data">split_data() (pyCellPhenoX.CellPhenoX method)</a>
+</li>
     </ul></td>
   </tr></table>
 </section>
@@ -343,5 +502,6 @@
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/readthedocs.js"></script>
     </body>
 </html>

@@ -1,6 +1,45 @@
-pyCellPhenoX Operations
-========================
+pyCellPhenoX utilities
+======================
 
-This section provides an overview of the core operations available in the `pyCellPhenoX` package. Each operation plays a crucial role in analyzing single-cell multi-omics data and predicting clinical phenotypes.
+Functions enabling smooth interaction with CellProfiler and DeepProfiler output formats.
 
+pyCellPhenoX.utils.balanced_sample module
+------------------------------------------
 
+.. automodule:: pyCellPhenoX.utils.balanced_sample
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pyCellPhenoX.utils.reducedim module
+-------------------------------------
+
+.. automodule:: pyCellPhenoX.utils.reducedim
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pyCellPhenoX.utils.select_num_components module
+------------------------------------------------
+
+.. automodule:: pyCellPhenoX.utils.select_num_components
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pyCellPhenoX.utils.select_optimal_k module
+-------------------------------------------
+
+.. automodule:: pyCellPhenoX.utils.select_optimal_k
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pyCellPhenoX
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :no-index:

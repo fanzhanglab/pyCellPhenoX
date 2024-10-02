@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="pyCellPhenoX utilities" href="pyCellPhenoX.utils.html" /><link rel="prev" title="Core functions" href="pyCellPhenoX.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>pyCellPhenoX Operations - CellPhenoX 0.2.0 documentation</title>
+        <title>Functions - CellPhenoX 0.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -191,7 +191,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -215,15 +215,28 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="walkthrough.html">Walkthroughs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Walkthroughs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="walkthrough.html">Walkthroughs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Walkthroughs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html">Step 1: Import Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html#Step-2:-Preprocessing-data">Step 2: Preprocessing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html#Step-3:-Run-CellPhenoX">Step 3: Run CellPhenoX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html#Step-4:-Marker-Discovery">Step 4: Marker Discovery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">pyCellPhenonX</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of pyCellPhenonX</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">pyCellPhenoX</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of pyCellPhenoX</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="pyCellPhenoX.html">Core functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Core functions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html">pyCellPhenoX utilities</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citing pyCellPhenoX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
 </div>
@@ -258,14 +271,110 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="pycellphenox-operations">
-<h1>pyCellPhenoX Operations<a class="headerlink" href="#pycellphenox-operations" title="Link to this heading">¶</a></h1>
+          <section id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h1>
+<section id="module-pyCellPhenoX.marker_discovery">
+<span id="pycellphenox-marker-discovery-module"></span><h2>pyCellPhenoX.marker_discovery module<a class="headerlink" href="#module-pyCellPhenoX.marker_discovery" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyCellPhenoX.marker_discovery.marker_discovery">
+<span class="sig-prename descclassname"><span class="pre">pyCellPhenoX.marker_discovery.</span></span><span class="sig-name descname"><span class="pre">marker_discovery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shap_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression_mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.marker_discovery.marker_discovery" title="Link to this definition">¶</a></dt>
+<dd><p>_summary_</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shap_df</strong> (<em>dataframe</em>) – cells by (various columns: meta data, shap values for each latent dimension, interpretable score)</p></li>
+<li><p><strong>expression_mat</strong> (<em>dataframe</em>) – cells by genes/proteins/etc.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyCellPhenoX.nonnegativeMatrixFactorization">
+<span id="pycellphenox-nonnegativematrixfactorization-module"></span><h2>pyCellPhenoX.nonnegativeMatrixFactorization module<a class="headerlink" href="#module-pyCellPhenoX.nonnegativeMatrixFactorization" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyCellPhenoX.nonnegativeMatrixFactorization.nonnegativeMatrixFactorization">
+<span class="sig-prename descclassname"><span class="pre">pyCellPhenoX.nonnegativeMatrixFactorization.</span></span><span class="sig-name descname"><span class="pre">nonnegativeMatrixFactorization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numberOfComponents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.nonnegativeMatrixFactorization.nonnegativeMatrixFactorization" title="Link to this definition">¶</a></dt>
+<dd><p>Perform NMF</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>dataframe</em>) – the marker by cell matrix to be decomposed</p></li>
+<li><p><strong>numberOfComponents</strong> (<em>int</em>) – number of components or ranks to learn (if -1, then we will select k)</p></li>
+<li><p><strong>min_k</strong> (<em>int</em>) – alternatively, provide the minimum number of ranks to test</p></li>
+<li><p><strong>max_k</strong> (<em>int</em>) – and the maximum number of ranks to test</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>W and H matrices</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyCellPhenoX.preprocessing">
+<span id="pycellphenox-preprocessing-module"></span><h2>pyCellPhenoX.preprocessing module<a class="headerlink" href="#module-pyCellPhenoX.preprocessing" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyCellPhenoX.preprocessing.preprocessing">
+<span class="sig-prename descclassname"><span class="pre">pyCellPhenoX.preprocessing.</span></span><span class="sig-name descname"><span class="pre">preprocessing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_samp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset_percentage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.99</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bal_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['subject_id',</span> <span class="pre">'cell_type',</span> <span class="pre">'disease']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'disease'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">covariates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.preprocessing.preprocessing" title="Link to this definition">¶</a></dt>
+<dd><p>Prepare the data to be in the correct format for CellPhenoX</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>latent_features</strong> (<em>_type_</em>) – _description_</p></li>
+<li><p><strong>meta</strong> (<em>_type_</em>) – _description_</p></li>
+<li><p><strong>sub_samp</strong> (<em>bool</em><em>, </em><em>optional</em>) – _description_. Defaults to False.</p></li>
+<li><p><strong>subset_percentage</strong> (<em>float</em><em>, </em><em>optional</em>) – _description_. Defaults to 0.99.</p></li>
+<li><p><strong>bal_col</strong> (<em>list</em><em>, </em><em>optional</em>) – _description_. Defaults to [“subject_id”, “cell_type”, “disease”].</p></li>
+<li><p><strong>target</strong> (<em>str</em><em>, </em><em>optional</em>) – _description_. Defaults to “disease”.</p></li>
+<li><p><strong>covariates</strong> (<em>list</em><em>, </em><em>optional</em>) – _description_. Defaults to [].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyCellPhenoX.principalComponentAnalysis">
+<span id="pycellphenox-principalcomponentanalysis-module"></span><h2>pyCellPhenoX.principalComponentAnalysis module<a class="headerlink" href="#module-pyCellPhenoX.principalComponentAnalysis" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyCellPhenoX.principalComponentAnalysis.principalComponentAnalysis">
+<span class="sig-prename descclassname"><span class="pre">pyCellPhenoX.principalComponentAnalysis.</span></span><span class="sig-name descname"><span class="pre">principalComponentAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.principalComponentAnalysis.principalComponentAnalysis" title="Link to this definition">¶</a></dt>
+<dd><p>Perform PCA</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>dataframe</em>) – the marker by cell matrix to be decomposed</p></li>
+<li><p><strong>var</strong> (<em>float</em>) – desired proportion of variance explained</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>principal components</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pyCellPhenoX">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCellPhenoX" title="Link to this heading">¶</a></h2>
+</section>
 </section>
 
         </article>
@@ -273,8 +382,26 @@
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="pyCellPhenoX.utils.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">pyCellPhenoX utilities</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="pyCellPhenoX.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Core functions</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -293,8 +420,43 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Functions</a><ul>
+<li><a class="reference internal" href="#module-pyCellPhenoX.marker_discovery">pyCellPhenoX.marker_discovery module</a><ul>
+<li><a class="reference internal" href="#pyCellPhenoX.marker_discovery.marker_discovery"><code class="docutils literal notranslate"><span class="pre">marker_discovery()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyCellPhenoX.nonnegativeMatrixFactorization">pyCellPhenoX.nonnegativeMatrixFactorization module</a><ul>
+<li><a class="reference internal" href="#pyCellPhenoX.nonnegativeMatrixFactorization.nonnegativeMatrixFactorization"><code class="docutils literal notranslate"><span class="pre">nonnegativeMatrixFactorization()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyCellPhenoX.preprocessing">pyCellPhenoX.preprocessing module</a><ul>
+<li><a class="reference internal" href="#pyCellPhenoX.preprocessing.preprocessing"><code class="docutils literal notranslate"><span class="pre">preprocessing()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyCellPhenoX.principalComponentAnalysis">pyCellPhenoX.principalComponentAnalysis module</a><ul>
+<li><a class="reference internal" href="#pyCellPhenoX.principalComponentAnalysis.principalComponentAnalysis"><code class="docutils literal notranslate"><span class="pre">principalComponentAnalysis()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pyCellPhenoX">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -305,5 +467,7 @@
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/readthedocs.js"></script>
     </body>
 </html>

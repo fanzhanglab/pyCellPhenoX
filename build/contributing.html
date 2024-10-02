@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Issues" href="issues.html" /><link rel="prev" title="Code of Conduct" href="code_of_conduct.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
         <title>Contributing to the Documentation - CellPhenoX 0.2.0 documentation</title>
@@ -191,7 +191,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -224,17 +224,18 @@
 <li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html#Step-4:-Marker-Discovery">Step 4: Marker Discovery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">pyCellPhenoX</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of pyCellPhenoX</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.html">Core Functions</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pyCellPhenoX.html">Core functions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Core functions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.operations.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html">pyCellPhenoX utilities</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html#core-functions">Core Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citing pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Contributing to the Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#contributing-to-pycellphenox">Contributing to pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -271,7 +272,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -279,21 +280,212 @@
         <article role="main" id="furo-main-content">
           <section id="contributing-to-the-documentation">
 <h1>Contributing to the Documentation<a class="headerlink" href="#contributing-to-the-documentation" title="Link to this heading">¶</a></h1>
-<p>We welcome contributions to the documentation. If you would like to help, please
-take a look at the <a class="reference internal" href="#contributing-guidelines">contributing guidelines</a>.</p>
-<section id="contributing-guidelines">
-<span id="id1"></span><h2>Contributing Guidelines<a class="headerlink" href="#contributing-guidelines" title="Link to this heading">¶</a></h2>
-<p>If you would like to contribute to the documentation, please follow these
-guidelines:</p>
+</section>
+<section id="contributing-to-pycellphenox">
+<h1>Contributing to pyCellPhenoX<a class="headerlink" href="#contributing-to-pycellphenox" title="Link to this heading">¶</a></h1>
+<!-- from pycytominer https://github.com/cytomining/pycytominer/blob/main/CONTRIBUTING.md --><p>First of all, thank you for contributing to pyCellPhenoX! :tada: :100:</p>
+<p>This document contains guidelines on how to most effectively contribute to the pyCellPhenoX codebase.</p>
+<p>If you are stuck, please feel free to ask any questions or ask for help.</p>
+<section id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">¶</a></h2>
+<p>Code of conduct</p>
+<p>Quick links</p>
+<p>How can I contribute?</p>
+<ul class="simple">
+<li><p>Bug reporting</p></li>
+<li><p>Suggesting enhancements</p></li>
+<li><p>Your first code contribution</p></li>
+<li><p>Pull requests</p></li>
+<li><p>Documentation</p></li>
+<li><p>Poetry</p></li>
+<li><p>Dev environments</p></li>
+<li><p>Releases</p></li>
+</ul>
+<p>Code Quality</p>
+<ul class="simple">
+<li><p>Formatting</p></li>
+<li><p>Linting</p></li>
+<li><p>Git commit messages</p></li>
+<li><p>Python style guide</p></li>
+<li><p>Documentation style guide</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Code of conduct<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>This project and everyone participating in it is governed by our <a class="reference external" href="CODE_OF_CONDUCT.md">code of conduct</a>.
+By participating, you are expected to uphold this code.
+Please report unacceptable behavior to <a class="reference external" href="mailto:fanzhanglab&#37;&#52;&#48;gmail&#46;com">fanzhanglab<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+</section>
+<section id="id3">
+<h2>Quick links<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Documentation: <a class="reference external" href="https://pyCellPhenoX.readthedocs.io/en/latest/">https://pyCellPhenoX.readthedocs.io/en/latest/</a></p></li>
+<li><p>Issue tracker: <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/issues">https://github.com/fanzhanglab/pyCellPhenoX/issues</a></p></li>
+<li><p>Package requirements (using Poetry): <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/pyproject.toml">https://github.com/fanzhanglab/pyCellPhenoX/blob/main/pyproject.toml</a></p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>How can I contribute?<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<section id="id5">
+<h3>Bug reporting<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>We love hearing about use-cases when our software does not work.
+This provides us an opportunity to improve.
+However, in order for us to fix a bug, you need to tell us exactly what went wrong.</p>
+<p>When you report a bug, please be prepared to tell us as much pertinent information as possible.
+This information includes:</p>
+<ul class="simple">
+<li><p>The pyCellPhenoX version you’re using</p></li>
+<li><p>The format of input data</p></li>
+<li><p>Copy and paste two pieces of information: 1) your command and 2) the specific error message</p></li>
+<li><p>What you’ve tried to overcome the bug</p></li>
+</ul>
+<p>Please provide this information as an issue in the repository: <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/issues">https://github.com/fanzhanglab/pyCellPhenoX/issues</a></p>
+<p>Please also search the issues (and documentation) for an existing solution.
+It’s possible we solved your bug already!
+If you find an issue already describing your bug, please add a comment to the issue instead of opening a new one.</p>
+</section>
+<section id="id6">
+<h3>Suggesting enhancements<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p>We’re deeply committed to a simple, intuitive user experience, and to support single cell omics analysis. This commitment requires a good relationship, and open communication, with our users.</p>
+<p>We encourage you to propose enhancements to improve the pyCellPhenoX package.</p>
+<p>First, figure out if your proposal is already implemented, by reading the documentation!
+Next, check the issues (<a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/issues">https://github.com/fanzhanglab/pyCellPhenoX/issues</a>) to see if someone else has already proposed the enhancement you have in mind.
+If you do find the suggestion, please comment on the existing issue noting that you are also interested in this functionality.
+If you do not find the suggestion, please open a new issue and clearly document the specific enhancement and why it would be helpful for your particular use case.</p>
+<p>Please provide your enhancement suggestions as an issue in the repository:</p>
+</section>
+<section id="id7">
+<h3>Your first code contribution<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p>Contributing code for the first time can be a daunting task.
+However, in our community, we strive to be as welcoming as possible to newcomers, while ensuring rigorous software development practices.</p>
+<p>If you want to contribute code that we haven’t already outlined, please start a discussion in a new issue before actually writing any code.
+A discussion will clarify the new code and reduce merge time.
+Plus, it’s possible that your contribution belongs in a different code base, and we do not want to waste your time (or ours)!</p>
+</section>
+<section id="id8">
+<h3>Pull requests<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<p>After you’ve decided to contribute code and have written it up, now it is time to file a pull request.
+We specifically follow a <a class="reference external" href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">forked pull request model</a>.
+Please create a fork of the pyCellPhenoX repository, clone the fork, and then create a new, feature-specific branch.
+Once you make the necessary changes on this branch, you should file a pull request to incorporate your changes into the main pyCellPhenoX repository.</p>
+<p>The content and description of your pull request are directly related to the speed at which we are able to review, approve, and merge your contribution into pyCellPhenoX.
+To ensure an efficient review process please perform the following steps:</p>
 <ol class="arabic simple">
-<li><p>Fork the repository on GitHub.</p></li>
-<li><p>Clone the repository to your local machine.</p></li>
-<li><p>Create a new branch.</p></li>
-<li><p>Make your changes.</p></li>
-<li><p>Push your changes to your fork.</p></li>
-<li><p>Submit a pull request.</p></li>
+<li><p>Follow all instructions in the <a class="reference external" href=".github/PULL_REQUEST_TEMPLATE.md">pull request template</a></p></li>
+<li><p>Triple check that your pull request is only adding <em>one</em> specific feature. Small, bite-sized pull requests move so much faster than large pull requests.</p></li>
+<li><p>After submitting your pull request, ensure that your contribution passes all status checks (e.g. passes all tests)</p></li>
 </ol>
-<p>If you are not sure how to do this, please take a look at the <a class="reference external" href="https://docs.github.com/en/contributing">GitHub documentation</a>.</p>
+<p>All pull requests must be reviewed and approved by at least one project maintainer in order to be merged.
+We will do our best to review the code addition in a timely fashion.
+Ensuring that you follow all steps above will increase our speed and ability to review.
+We will check for accuracy, style, code coverage, and scope.</p>
+</section>
+<section id="id9">
+<h3>Documentation<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>We use <a class="reference external" href="https://www.sphinx-doc.org/en/master/index.html">sphinx</a> for autodocumentation of docstrings, using the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html">napoleon extenstion</a> to parse <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">NumPy style docstrings</a>, implemented with a <a class="reference external" href="https://pradyunsg.me/furo/">furo</a> theme.
+We host our documentation on <a class="reference external" href="https://readthedocs.org/">readthedocs.org</a> at <a class="reference external" href="https://pycytominer.readthedocs.io/en/latest/">https://pycytominer.readthedocs.io/en/latest/</a>.</p>
+<p>To build and test changes to the docs locally, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>docs<span class="w"> </span>build
+</pre></div>
+</div>
+<p>See <cite>``docs/conf.py`</cite> &lt;docs/conf.py&gt;`_ for full documentation configuration.</p>
+</section>
+<section id="id10">
+<h3>Poetry<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>We use <a class="reference external" href="https://python-poetry.org/">Poetry</a> to manage dependencies and packaging.
+Changes in dependencies are managed by Poetry’s <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file.
+Poetry installs all dependencies in a virtual environment, which is activated automatically when you run <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">shell</span></code>.
+Poetry also provides a <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span></code> command to run commands in the virtual environment without activating it.
+For example, to run the test suite, you can use <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">pytest</span></code>.</p>
+</section>
+<section id="id12">
+<h3>Dev environments<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<section id="local-devcontainer">
+<h4>Local devcontainer<a class="headerlink" href="#local-devcontainer" title="Link to this heading">¶</a></h4>
+<p>Instructions for setting up a local development environment using VSCode DevContainers:</p>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://code.visualstudio.com/download">VSCode</a></p></li>
+<li><p>Install the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension</p></li>
+<li><p>Open the repository in VSCode</p></li>
+<li><p>Click on the green “Reopen in Container” button in the lower left corner of the window</p></li>
+<li><p>Wait for the container to build and install the required dependencies</p></li>
+</ol>
+</section>
+<section id="cloud-environment">
+<h4>Cloud environment<a class="headerlink" href="#cloud-environment" title="Link to this heading">¶</a></h4>
+<p>We’ve set up cloud development configurations with <a class="reference external" href="https://github.com/codespaces">Github Codespaces</a>.
+These development environments include the project dependencies pre-installed via <a class="reference external" href="https://python-poetry.org/">Poetry</a>.
+Prior to commit, pre-installed git hooks auto-format any changed code.
+When you are ready to make a pull request, use the pre-configured test suite in VSCode or run <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">pytest</span></code> to ensure that your changes pass all tests.
+You can create a codespace by clicking on the following link:</p>
+<a class="reference external image-reference" href="https://github.com/codespaces/new/?repo=195106954&amp;ref=main&amp;devcontainer_path=.devcontainer%2Fdevcontainer.json"><img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" /></a>
+<p><a class="reference external" href="https://github.blog/2023-02-22-a-beginners-guide-to-learning-to-code-with-github-codespaces/">Beginner’s Guide to Codespaces</a></p>
+</section>
+<section id="manual-setup">
+<h4>Manual setup<a class="headerlink" href="#manual-setup" title="Link to this heading">¶</a></h4>
+<p>We recommend using either the local devcontainer or cloud dev environment approaches above.
+However, we also provide general guidance for setting up a dev environment in Linux, MacOS, or Windows (WSL) below.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Poetry (Linux, MacOS, Windows - WSL)</span>
+curl<span class="w"> </span>-sSL<span class="w"> </span>https://install.python-poetry.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-
+<span class="c1"># Checkout the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fanzhanglab/pyCellPhenoX.git
+<span class="nb">cd</span><span class="w"> </span>pyCellPhenoX
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id14">
+<h3>Releases<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<p>Project maintainers are responsible for releasing new versions of pyCellPhenoX.
+Creating a new release includes the following steps:</p>
+<ol class="arabic simple">
+<li><p>Create a new branch from <code class="docutils literal notranslate"><span class="pre">main</span></code> for the release (e.g. <code class="docutils literal notranslate"><span class="pre">release-v1.0.0</span></code>)</p></li>
+<li><p>Review the <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/compare">commit history</a> from the last release and check whether it includes commits that don’t follow the <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/#summary">conventional commit standard</a>.
+If all changes follow conventional commits, skip to step 5.</p></li>
+<li><p>Run the command <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">cz</span> <span class="pre">bump</span> <span class="pre">--files-only</span></code> to update the version number in <code class="docutils literal notranslate"><span class="pre">CITATION.cff</span></code> and <code class="docutils literal notranslate"><span class="pre">pyproject.toml:tool.commitizen</span></code> and generate the draft changelog.</p></li>
+<li><p>Review the changes to <code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code>. If necessary, add descriptions of missing changes and modify descriptions to match conventional commits standard.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> any manual changes and run <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">cz</span> <span class="pre">bump</span></code> to create the release commit.
+Push the changes to the release branch.</p></li>
+<li><p>Create a pull request for the release branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Request a review from another maintainer.</p></li>
+<li><p>Once the pull request is approved, merge it into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Create a new release on GitHub using the <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/releases/new">release draft</a> feature.</p></li>
+<li><p>Publish the release.</p></li>
+<li><p>The release will be automatically published to <a class="reference external" href="https://pypi.org/project/pyCellPhenoX/">PyPI</a> via Github Actions.</p></li>
+<li><p>Manually create the release at <a class="reference external" href="https://anaconda.org/conda-forge/pyCellPhenoX">conda-forge</a>.</p></li>
+</ol>
+</section>
+</section>
+<section id="id15">
+<h2>Code Quality<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
+<p>Please follow the below quality guides to the best of your abilities.
+If you have configured your dev environment as described above, the formatting and linting rules will also be enforced automatically using the installed <a class="reference external" href="https://pre-commit.com/">pre-commit</a> hooks.</p>
+<section id="id16">
+<h3>Formatting<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<p>We use <a class="reference external" href="https://docs.astral.sh/ruff/">ruff</a> for formatting Python code, and <a class="reference external" href="https://prettier.io/">prettier</a> for formatting markdown, json and yaml files.
+Ruff includes a python code formatter similar to Black.
+We include <code class="docutils literal notranslate"><span class="pre">ruff</span></code> in the poetry dev dependencies so it can be run manually using <code class="docutils literal notranslate"><span class="pre">ruff</span> <span class="pre">format</span></code>
+Prettier (which is not python-based) is not included in the poetry dev dependencies, but can be installed and run manually.
+Alternately, both <code class="docutils literal notranslate"><span class="pre">ruff</span> <span class="pre">format</span></code> and <code class="docutils literal notranslate"><span class="pre">prettier</span></code> will be run automatically at commit time with the pre-commit hooks installed.</p>
+</section>
+<section id="id17">
+<h3>Linting<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<p>For python code linting, we also use <a class="reference external" href="https://docs.astral.sh/ruff/">ruff</a>, which can perform same linting checks as Flake8.
+You can use the command <code class="docutils literal notranslate"><span class="pre">ruff</span> <span class="pre">check</span></code> to check for linting errors.
+The list of linting rules and exceptions are defined in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">[tool.ruff.lint]</span></code> section.
+We also include some commented-out rules in that section that we are working towards enabling in the future.
+All linting checks will also be run automatically at commit time with the pre-commit hooks as described above.</p>
+</section>
+<section id="id19">
+<h3>Git commit messages<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h3>
+<p>pyCellPhenoX uses <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> standard for commit messages to aid in automatic changelog generation.
+We prepare commit messages that follow this standard using <a class="reference external" href="https://commitizen-tools.github.io/commitizen/">commitizen</a>, which comes with the poetry dev dependencies.</p>
+</section>
+<section id="id20">
+<h3>Documentation style guide<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h3>
+<p>We use the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpy documentation style guide</a>.
+When writing markdown documentation, please also ensure that each sentence is on a new line.</p>
+</section>
 </section>
 </section>
 
@@ -302,12 +494,12 @@ guidelines:</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="changelog.html">
+          <a class="next-page" href="issues.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Changelog</div>
+                <div class="title">Issues</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -340,27 +532,8 @@ guidelines:</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Contributing to the Documentation</a><ul>
-<li><a class="reference internal" href="#contributing-guidelines">Contributing Guidelines</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
@@ -372,5 +545,6 @@ guidelines:</p>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/readthedocs.js"></script>
     </body>
 </html>

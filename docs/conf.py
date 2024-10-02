@@ -18,7 +18,7 @@ import dunamai
 
 sys.path.insert(0, os.path.abspath("../pyCellPhenoX"))
 
-import pyCellPhenoX  
+import pyCellPhenoX
 
 project = "CellPhenoX"
 copyright = "2024, Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
@@ -43,6 +43,7 @@ html_js_files = [
 
 templates_path = ["_templates"]
 exclude_patterns = []
+suppress_warnings = ["duplicate-object"]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

@@ -3,38 +3,6 @@ pyCellPhenoX utilities
 
 Functions enabling smooth interaction with CellProfiler and DeepProfiler output formats.
 
-pyCellPhenoX.marker_discovery module
--------------------------------------
-
-.. automodule:: pyCellPhenoX.marker_discovery
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pyCellPhenoX.nonnegativeMatrixFactorization module
----------------------------------------------------
-
-.. automodule:: pyCellPhenoX.nonnegativeMatrixFactorization
-  :members:
-  :undoc-members:
-  :show-inheritance:
-
-pyCellPhenoX.preprocessing module
-----------------------------------
-
-.. automodule:: pyCellPhenoX.preprocessing
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pyCellPhenoX.principalComponentAnalysis module
------------------------------------------------
-
-.. automodule:: pyCellPhenoX.principalComponentAnalysis
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pyCellPhenoX.utils.balanced_sample module
 ------------------------------------------
 

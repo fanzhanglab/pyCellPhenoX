@@ -1,5 +1,5 @@
-Core functions
-==============
+Functions
+=========
    
 pyCellPhenoX.marker_discovery module
 ------------------------------------

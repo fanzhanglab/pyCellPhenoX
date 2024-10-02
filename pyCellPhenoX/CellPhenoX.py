@@ -235,7 +235,7 @@ class CellPhenoX:
 
                 # Extract SHAP information per fold per sample
                 for k, test_index in enumerate(test_outer_ix):
-                    test_index = self.X.index[test_index]
+                    x_test_index = self.X.index[test_index]
                     # TODO: here, I am selecting the second (1) shap array for a binary classification problem.
                     # TODO: we need a way to generalize this so that we select the array that corresponds to the
                     # TODO: positive class (disease).
@@ -244,8 +244,14 @@ class CellPhenoX:
                     print(f"shap_values: {shap_values}")
                     print(f"shape of shap_values: {shap_values.shape}")
                     print(f"k: {k}")
+                    print(f"test_index: {test_index}")
 
-                    self.shap_values_per_cv[test_index][CV_repeat] = shap_values[1][k]
+                    if k < len(shap_values[1]):
+                        self.shap_values_per_cv[test_index][CV_repeat] = shap_values[1][
+                            k
+                        ]
+                    else:
+                        print(f"Index {k} out of bounds for shap_values[1]")
 
                 # save best model
                 model_list.append(result.best_estimator_)

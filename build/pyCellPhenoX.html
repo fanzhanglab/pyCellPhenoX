@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Reference" href="api_reference.html" /><link rel="prev" title="pyCellPhenoX" href="modules.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Functions" href="pyCellPhenoX.operations.html" /><link rel="prev" title="pyCellPhenoX" href="modules.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Core Functions - CellPhenoX 0.2.0 documentation</title>
+        <title>Core functions - CellPhenoX 0.2.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -191,7 +191,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -224,17 +224,17 @@
 <li class="toctree-l2"><a class="reference internal" href="walkthroughs/single_cell_usage.html#Step-4:-Marker-Discovery">Step 4: Marker Discovery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">pyCellPhenoX</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of pyCellPhenoX</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Core Functions</a></li>
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Core functions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Core functions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.operations.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html">pyCellPhenoX utilities</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html#core-functions">Core Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citing pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to the Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues.html">Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
@@ -271,14 +271,112 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="core-functions">
-<h1>Core Functions<a class="headerlink" href="#core-functions" title="Link to this heading">¶</a></h1>
+<h1>Core functions<a class="headerlink" href="#core-functions" title="Link to this heading">¶</a></h1>
+<section id="pycellphenox-object">
+<h2>pyCellPhenoX object<a class="headerlink" href="#pycellphenox-object" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyCellPhenoX.CellPhenoX">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCellPhenoX.</span></span><span class="sig-name descname"><span class="pre">CellPhenoX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CV_repeats</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_num_splits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inner_num_splits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.CellPhenoX" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyCellPhenoX.CellPhenoX.get_best_model">
+<span class="sig-name descname"><span class="pre">get_best_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.CellPhenoX.get_best_model" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyCellPhenoX.CellPhenoX.get_best_score">
+<span class="sig-name descname"><span class="pre">get_best_score</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.CellPhenoX.get_best_score" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyCellPhenoX.CellPhenoX.get_interpretable_score">
+<span class="sig-name descname"><span class="pre">get_interpretable_score</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.CellPhenoX.get_interpretable_score" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyCellPhenoX.CellPhenoX.get_shap_values">
+<span class="sig-name descname"><span class="pre">get_shap_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.CellPhenoX.get_shap_values" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyCellPhenoX.CellPhenoX.get_shap_values_per_cv">
+<span class="sig-name descname"><span class="pre">get_shap_values_per_cv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.CellPhenoX.get_shap_values_per_cv" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyCellPhenoX.CellPhenoX.model_training_shap_val">
+<span class="sig-name descname"><span class="pre">model_training_shap_val</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.CellPhenoX.model_training_shap_val" title="Link to this definition">¶</a></dt>
+<dd><p>Train the model using nested cross validation strategy and generate shap values for each fold/CV repeat</p>
+<p>Parameters:
+outpath (str): the path for the output folder</p>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyCellPhenoX.CellPhenoX.split_data">
+<span class="sig-name descname"><span class="pre">split_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_outer_ix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_outer_ix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyCellPhenoX.CellPhenoX.split_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="helper-functions">
+<h2>Helper functions<a class="headerlink" href="#helper-functions" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyCellPhenoX.operations.html">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.operations.html#module-pyCellPhenoX.marker_discovery">pyCellPhenoX.marker_discovery module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.operations.html#pyCellPhenoX.marker_discovery.marker_discovery"><code class="docutils literal notranslate"><span class="pre">marker_discovery()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.operations.html#module-pyCellPhenoX.nonnegativeMatrixFactorization">pyCellPhenoX.nonnegativeMatrixFactorization module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.operations.html#pyCellPhenoX.nonnegativeMatrixFactorization.nonnegativeMatrixFactorization"><code class="docutils literal notranslate"><span class="pre">nonnegativeMatrixFactorization()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.operations.html#module-pyCellPhenoX.preprocessing">pyCellPhenoX.preprocessing module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.operations.html#pyCellPhenoX.preprocessing.preprocessing"><code class="docutils literal notranslate"><span class="pre">preprocessing()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.operations.html#module-pyCellPhenoX.principalComponentAnalysis">pyCellPhenoX.principalComponentAnalysis module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.operations.html#pyCellPhenoX.principalComponentAnalysis.principalComponentAnalysis"><code class="docutils literal notranslate"><span class="pre">principalComponentAnalysis()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.operations.html#module-pyCellPhenoX">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyCellPhenoX.utils.html">pyCellPhenoX utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.balanced_sample">pyCellPhenoX.utils.balanced_sample module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html#pyCellPhenoX.utils.balanced_sample.balanced_sample"><code class="docutils literal notranslate"><span class="pre">balanced_sample()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.reducedim">pyCellPhenoX.utils.reducedim module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html#pyCellPhenoX.utils.reducedim.reduceDim"><code class="docutils literal notranslate"><span class="pre">reduceDim()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.select_num_components">pyCellPhenoX.utils.select_num_components module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html#pyCellPhenoX.utils.select_num_components.select_number_of_components"><code class="docutils literal notranslate"><span class="pre">select_number_of_components()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.utils.html#module-pyCellPhenoX.utils.select_optimal_k">pyCellPhenoX.utils.select_optimal_k module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCellPhenoX.utils.html#pyCellPhenoX.utils.select_optimal_k.select_optimal_k"><code class="docutils literal notranslate"><span class="pre">select_optimal_k()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCellPhenoX.utils.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-pyCellPhenoX">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCellPhenoX" title="Link to this heading">¶</a></h2>
+</section>
 </section>
 
         </article>
@@ -286,12 +384,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="api_reference.html">
+          <a class="next-page" href="pyCellPhenoX.operations.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">API Reference</div>
+                <div class="title">Functions</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -324,8 +422,41 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Core functions</a><ul>
+<li><a class="reference internal" href="#pycellphenox-object">pyCellPhenoX object</a><ul>
+<li><a class="reference internal" href="#pyCellPhenoX.CellPhenoX"><code class="docutils literal notranslate"><span class="pre">CellPhenoX</span></code></a><ul>
+<li><a class="reference internal" href="#pyCellPhenoX.CellPhenoX.get_best_model"><code class="docutils literal notranslate"><span class="pre">CellPhenoX.get_best_model()</span></code></a></li>
+<li><a class="reference internal" href="#pyCellPhenoX.CellPhenoX.get_best_score"><code class="docutils literal notranslate"><span class="pre">CellPhenoX.get_best_score()</span></code></a></li>
+<li><a class="reference internal" href="#pyCellPhenoX.CellPhenoX.get_interpretable_score"><code class="docutils literal notranslate"><span class="pre">CellPhenoX.get_interpretable_score()</span></code></a></li>
+<li><a class="reference internal" href="#pyCellPhenoX.CellPhenoX.get_shap_values"><code class="docutils literal notranslate"><span class="pre">CellPhenoX.get_shap_values()</span></code></a></li>
+<li><a class="reference internal" href="#pyCellPhenoX.CellPhenoX.get_shap_values_per_cv"><code class="docutils literal notranslate"><span class="pre">CellPhenoX.get_shap_values_per_cv()</span></code></a></li>
+<li><a class="reference internal" href="#pyCellPhenoX.CellPhenoX.model_training_shap_val"><code class="docutils literal notranslate"><span class="pre">CellPhenoX.model_training_shap_val()</span></code></a></li>
+<li><a class="reference internal" href="#pyCellPhenoX.CellPhenoX.split_data"><code class="docutils literal notranslate"><span class="pre">CellPhenoX.split_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#helper-functions">Helper functions</a></li>
+<li><a class="reference internal" href="#module-pyCellPhenoX">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -337,5 +468,6 @@
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/readthedocs.js"></script>
     </body>
 </html>
