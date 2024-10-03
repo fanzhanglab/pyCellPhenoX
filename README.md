@@ -16,7 +16,7 @@ We introduce pyCellPhenoX.
 You can install _pyCellPhenoX_ from PyPI:
 
 ``` bash
-$ pip install pyCellPhenoX
+pip install pyCellPhenoX
 ```
 
 **conda** ([link](https://anaconda.org/conda-forge/pyCellPhenoX)):
@@ -98,6 +98,7 @@ To create a virtual environment using **PIP** follow these steps:
    pip install -r requirements.txt
     ```
 #### Poetry
+
 1. **Create a new project:**
 ``` bash
 poetry new {my_project_name}
