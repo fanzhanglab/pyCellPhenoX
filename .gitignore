@@ -8,7 +8,7 @@ htmlcov/
 env.yaml
 dist/
 .DS_Store
-
+zhang_lab_pycell/
 *.csv
 zhang/ 
 .python-version
