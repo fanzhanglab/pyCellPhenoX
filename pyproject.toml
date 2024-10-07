@@ -7,7 +7,7 @@ authors = [
     "Jade Young",
     "Jun Inamo",
     "Revanth Krishna",
-    "Zacary Caterer"
+    "Zac Caterer"
  ]
 maintainers = ["Revanth Krishna <revanth.krishna@cuanschutz.edu>"]
 license = "MIT license"
@@ -33,21 +33,6 @@ statsmodels = "^0.14.3"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
 requests = "^2.32.3"
-
-[tool.poetry.group.docs.dependencies]
-mkdocs = "*"
-sphinx = "~7.1"
-sphinx-autobuild = "^2021.3.14"
-sphinx-autoapi = "^3.0.0"
-ipython = "^8.12"
-groundwork-sphinx-theme = "^1.1.1"
-sphinx-copybutton = "^0.5.2"
-nbsphinx = "^0.9.3"
-m2r2 = "^0.3.3.post2"
-furo = "^2023.9.10"
-mock = "^5.1.0"
-autodoc = "^0.5.0"
-dunamai = "^1.19.0"
 
 [build-system]
 requires = ["poetry-core"]
