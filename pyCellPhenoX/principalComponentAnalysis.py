@@ -38,14 +38,14 @@ def principalComponentAnalysis(X, var):
     scaled_data = scaler.fit_transform(X)
 
     # pca = PCA(n_components=100, random_state=11)
-    pca = PCA(n_components=min(X.shape[0], X.shape[1]), random_state=11)
-    # this is a trick to prevent PCA from throwing an error when the number of samples is less than the number of features
+    pca = PCA(
+        n_components=min(X.shape[0], X.shape[1]), random_state=11
+    )  # changed by @caterer-z-t to avoid error
 
     pca.fit(scaled_data)
     eigenvalues = pca.explained_variance_ratio_
     components = pca.components_
     print(f"shape of PCA components: {components.shape}")
-    # loadings = pca.components_ * np.sqrt(eigenvalues)
 
     # find the number of components that explain the most variance
     numberOfComponents = select_number_of_components(eigenvalues, var)
