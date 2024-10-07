@@ -33,10 +33,10 @@ def nonnegativeMatrixFactorization(X, numberOfComponents=-1, min_k=2, max_k=12):
     if numberOfComponents == -1:
         # call function to select optimal k
         numberOfComponents = select_optimal_k(X, min_k, max_k)
-
+    # print("building NMF model")
     # perform NMF
     nmfModel = NMF(n_components=numberOfComponents, init="random", random_state=11)
     W = nmfModel.fit_transform(X)  # ranks by samples
     H = nmfModel.components_
 
-    return W, H
+    return W

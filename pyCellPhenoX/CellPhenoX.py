@@ -20,13 +20,16 @@ from sklearn.model_selection import (
 )
 from sklearn.preprocessing import LabelEncoder
 
+from datetime import date
+import time
+
 
 np.random.seed(1)
 
 
 class CellPhenoX:
     def __init__(self, X, y, CV_repeats, outer_num_splits, inner_num_splits):
-        """Initialize the CellPhenoX object
+        """_summary_
 
         Args:
             X (dataframe): cell by latent dimensions dataframe
@@ -35,15 +38,18 @@ class CellPhenoX:
             outer_num_splits (int): number of outer folds (stratified k fold)
             inner_num_splits (int): number of inner folds (for hyperparameter tuning)
         """
+        # self.steps = ["hyperparameter tuning", "model training", "model prediction", "performance eval", "SHAP value calculation"]
+        # self.CV_repeat_cumulative_times = [0,0,0,0,0]
+        self.CV_repeat_times = []
         self.X = X
         self.y = y
+        # self.fc = fc
+        # self.num_samp = num_samp
         self.CV_repeats = CV_repeats
         self.outer_num_splits = outer_num_splits
         self.inner_num_splits = inner_num_splits
-
         # Make a list of random integers between 0 and 10000 of length = CV_repeats to act as different data splits
         self.random_states = np.random.randint(10000, size=CV_repeats)
-
         self.param_grid = [
             {
                 "max_features": ["sqrt", "log2"],
@@ -53,13 +59,11 @@ class CellPhenoX:
                 "n_estimators": [100, 200, 800],
             }
         ]
-
         self.label_encoder = LabelEncoder()
         self.best_model = None
         self.best_score = float("-inf")
         self.shap_values_per_cv = dict()
         self.shap_df = None
-
         for sample in X.index:
             ## Create keys for each sample
             self.shap_values_per_cv[sample] = {}
@@ -68,15 +72,6 @@ class CellPhenoX:
                 self.shap_values_per_cv[sample][CV_repeat] = {}
 
     def split_data(self, train_outer_ix, test_outer_ix):
-        """Split the data into training, testing, and validation sets
-
-        Args:
-            train_outer_ix (list): list of indices for the training set
-            test_outer_ix (list): list of indices for the testing set
-
-        Returns:
-            list: a list of the training and testing sets
-        """
         X_train_outer, X_test_outer = (
             self.X.iloc[train_outer_ix, :],
             self.X.iloc[test_outer_ix, :],
@@ -113,11 +108,12 @@ class CellPhenoX:
     def model_training_shap_val(self, outpath):
         """Train the model using nested cross validation strategy and generate shap values for each fold/CV repeat
 
-        Args:
-            outpath (str): the path for the output folder
+        Parameters:
+        outpath (str): the path for the output folder
 
         Returns:
-            None, but saves the model performance plots and shap summary plots and updates self.shap_df through get_shap_values() method
+
+
         """
 
         fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(18, 5))
@@ -131,6 +127,7 @@ class CellPhenoX:
 
         # save the models
         overal_model_list = []
+        best_model = None
 
         print("entering CV loop")
         for i, CV_repeat in enumerate(range(self.CV_repeats)):
@@ -155,6 +152,8 @@ class CellPhenoX:
             val_prc_list = []
             model_list = []
 
+            # hp, mt, mp, pe, sv = [],[],[],[],[]
+
             ## Loop through each outer fold and extract SHAP values
             for j, (train_outer_ix, test_outer_ix) in enumerate(
                 zip(ix_training, ix_test)
@@ -171,13 +170,13 @@ class CellPhenoX:
                     y_test_outer,
                     y_val_inner,
                 ) = self.split_data(train_outer_ix, test_outer_ix)
-
                 ## Establish inner CV for parameter optimization #-#-#
                 cv_inner = StratifiedKFold(
                     n_splits=self.inner_num_splits, shuffle=True, random_state=1
                 )  # -#-#
 
                 # Search to optimize hyperparameters
+                # hp_start = time.time()
                 model = RandomForestClassifier(random_state=10, class_weight="balanced")
                 search = RandomizedSearchCV(
                     model,
@@ -188,23 +187,35 @@ class CellPhenoX:
                     n_jobs=1,
                 )  # -#-#
                 result = search.fit(X_train_inner, y_train_inner)  # -#=#
+                # hp_end = time.time()
+                # hp.append(hp_end - hp_start)
+                # self.CV_repeat_cumulative_times[0]+= (hp_end - hp_start)
 
                 # Fit model on training data
+                # mt_start = time.time()
                 result.best_estimator_.fit(X_train_outer, y_train_outer)  # -#-#
+                # mt_end = time.time()
+                # mt.append(mt_end - mt_start)
+                # self.CV_repeat_cumulative_times[1] += (mt_end - mt_start)
 
                 # Make predictions on the test set
+                # mp_start = time.time()
                 y_pred = result.best_estimator_.predict(X_test_outer)
                 y_prob = result.best_estimator_.predict_proba(X_test_outer)[:, 1]
                 y_prob_list.append(y_prob)
                 y_test_list.append(y_test_outer)
+                # mp_end = time.time()
+                # mp.append(mp_end - mp_start)
+                # self.CV_repeat_cumulative_times[2] +=(mp_end - mp_start)
 
                 # Calculate accuracy
+                # pe_start = time.time()
                 accuracy = accuracy_score(y_test_outer, y_pred)
                 print("--- Accuracy: ", accuracy)
                 accuracy_list.append(accuracy)
 
                 # Calculate ROC curve and AUC
-                fpr, tpr, _ = roc_curve(y_test_outer, y_pred)
+                fpr, tpr, thresholds = roc_curve(y_test_outer, y_pred)
                 auc_value = auc(fpr, tpr)
                 auc_list.append(auc_value)
                 # Validate on the validation set
@@ -227,31 +238,26 @@ class CellPhenoX:
                     " - Val AUPRC: ",
                     val_prc,
                 )
+                # pe_end = time.time()
+                # pe.append(pe_end - pe_start)
+                # self.CV_repeat_cumulative_times[3] += (pe_end - pe_start)
 
                 # TODO: could probably save the explainer for this modeltrain object
                 # Use SHAP to explain predictions using best estimator
+                # sv_start = time.time()
                 explainer = shap.TreeExplainer(result.best_estimator_)
                 shap_values = explainer.shap_values(X_test_outer)
 
                 # Extract SHAP information per fold per sample
                 for k, test_index in enumerate(test_outer_ix):
-                    x_test_index = self.X.index[test_index]
+                    test_index = self.X.index[test_index]
                     # TODO: here, I am selecting the second (1) shap array for a binary classification problem.
                     # TODO: we need a way to generalize this so that we select the array that corresponds to the
                     # TODO: positive class (disease).
-
-                    # debugging
-                    print(f"shap_values: {shap_values}")
-                    print(f"shape of shap_values: {shap_values.shape}")
-                    print(f"k: {k}")
-                    print(f"test_index: {test_index}")
-
-                    if k < len(shap_values[1]):
-                        self.shap_values_per_cv[test_index][CV_repeat] = shap_values[1][
-                            k
-                        ]
-                    else:
-                        print(f"Index {k} out of bounds for shap_values[1]")
+                    self.shap_values_per_cv[test_index][CV_repeat] = shap_values[1][k]
+                sv_end = time.time()
+                # sv.append(sv_end - sv_start)
+                # self.CV_repeat_cumulative_times[4] += (sv_end - sv_start)
 
                 # save best model
                 model_list.append(result.best_estimator_)
@@ -270,7 +276,7 @@ class CellPhenoX:
 
             # Compute ROC and PR curve for the combined data
             fpr, tpr, _ = roc_curve(y_test_combined, y_prob_combined)
-            precision, recall, _ = precision_recall_curve(
+            precision, recall, thresholds = precision_recall_curve(
                 y_test_combined, y_prob_combined
             )
             # Compute AUC (Area Under the Curve)
@@ -292,10 +298,13 @@ class CellPhenoX:
                 recall, precision, lw=2, label=f"CV Repeat{i+1} (PRC = {prc_auc:.2f})"
             )
 
+            # self.CV_repeat_times.append([mean(hp), mean(mt), mean(mp), mean(pe), mean(sv)])
+
         # Add labels and show the ROC curve plot
-        axes[0].plot(
-            [0, 1], [0, 1], color="navy", lw=2, linestyle="--"
-        )  # should we add an argument if the user would like to print/show the plot? if yes then they can see it, and another arugment if they wish to save it?
+        today = date.today()
+        d = today.strftime("%m%d%y")
+
+        axes[0].plot([0, 1], [0, 1], color="navy", lw=2, linestyle="--")
         axes[0].set_xlim([0.0, 1.0])
         axes[0].set_ylim([0.0, 1.05])
         axes[0].set_xlabel("False Positive Rate")
@@ -352,17 +361,23 @@ class CellPhenoX:
         self.best_model, self.best_score = max(overal_model_list, key=lambda x: x[1])
         print(f"best model precision-recall score = {self.best_score:.4f}")
 
+        # self.plot_time(outpath)
+
         # now aggregate the shap values per CV
         self.get_shap_values(outpath)
         # and calculate the interpretable score
         self.get_interpretable_score()
 
-    def get_shap_values(self, outpath):
-        """Aggregate SHAP values for each sample
+    def get_shap_values_per_cv(self):
+        return self.shap_values_per_cv
 
-        Args:
-            outpath (str): the path for the output folder
-        """
+    def get_best_score(self):
+        return self.best_score
+
+    def get_best_model(self):
+        return self.best_model
+
+    def get_shap_values(self, outpath):
         # Establish lists to keep average Shap values, their Stds, and their min and max
         average_shap_values = []
         for i in range(0, len(self.X)):  # len(NAM)
@@ -384,12 +399,40 @@ class CellPhenoX:
         plt.savefig(f"{outpath}SHAPsummary.png")
 
     def get_interpretable_score(self):
-        """Calculate the interpretable score based on SHAP values
-
-        Returns:
-            None, but updates the shap_df with the interpretable score
-        """
         # Calculate the SHAP-adjusted probability score
+        # y_prob_all = self.best_model.predict_proba(self.X)[:, 1] # no longer needed if we are not scaling the prediceted probabilities
         interpretable_score = np.sum(self.shap_df, axis=1)
         # add the shap_df
         self.shap_df["interpretable_score"] = interpretable_score
+
+    """def plot_time(self, outpath):
+        #plt.figure(figsize=(10,6))
+        # for cv in range(len(self.CV_repeat_times)):
+        #     plt.plot(self.steps, self.CV_repeat_times[cv], marker="o", label=f"CV repeat {cv+1}")
+        # plt.xlabel("Steps")
+        # plt.ylabel("Time (seconds)")
+        # plt.title("Time for each step\naveraged across folds for each repeat\n(#samples=30, fc=3)")
+        # plt.grid(True)
+        # plt.savefig(f"{outpath}sim_benchtime_numsamp30_fc3.png")
+        time_cumu = np.cumsum(self.CV_repeat_cumulative_times)
+        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
+        for cv in range(len(self.CV_repeat_times)):
+            axes[0].plot(self.steps, self.CV_repeat_times[cv], marker="o", label=f"CV repeat {cv+1}")
+        axes[1].plot(self.steps, time_cumu, marker="o")
+            
+        axes[0].set_xlabel("Steps")
+        axes[0].set_ylabel("Time (seconds)")
+        axes[0].set_title("Time for each step\naveraged across folds for each repeat\n(#samples=30, fc=3)")
+        axes[0].legend()
+        axes[0].grid(True)
+        axes[1].set_xlabel("Steps")
+        axes[1].set_ylabel("Cumulative time (seconds)")
+        axes[1].set_title("Cumulative time for each step\nacross folds and repeats")
+        for tick in axes[0].get_xticklabels():
+            tick.set_rotation(45)
+        for tick in axes[1].get_xticklabels():
+            tick.set_rotation(45)
+
+        axes[1].grid(True)
+        plt.tight_layout()
+        plt.savefig(f"{outpath}sim_benchtime_numsamp30_fc3_ext_allCells.pdf", format="pdf")"""
