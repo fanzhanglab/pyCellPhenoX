@@ -245,16 +245,18 @@ class CellPhenoX:
                 # TODO: could probably save the explainer for this modeltrain object
                 # Use SHAP to explain predictions using best estimator
                 # sv_start = time.time()
+                
                 explainer = shap.TreeExplainer(result.best_estimator_)
                 shap_values = explainer.shap_values(X_test_outer)
 
                 # Extract SHAP information per fold per sample
+                print(shap_values.shape)
                 for k, test_index in enumerate(test_outer_ix):
                     test_index = self.X.index[test_index]
                     # TODO: here, I am selecting the second (1) shap array for a binary classification problem.
                     # TODO: we need a way to generalize this so that we select the array that corresponds to the
                     # TODO: positive class (disease).
-                    self.shap_values_per_cv[test_index][CV_repeat] = shap_values[1][k]
+                    self.shap_values_per_cv[test_index][CV_repeat] = shap_values[k]
                 sv_end = time.time()
                 # sv.append(sv_end - sv_start)
                 # self.CV_repeat_cumulative_times[4] += (sv_end - sv_start)
@@ -382,9 +384,10 @@ class CellPhenoX:
         average_shap_values = []
         for i in range(0, len(self.X)):  # len(NAM)
             id = self.X.index[i]  # NAM.index[i]
-            # print(id)
+            #print(id)
+            #print(self.shap_values_per_cv)
             df_per_obs = pd.DataFrame.from_dict(
-                self.shap_values_per_cv[id]
+                self.shap_values_per_cv[id][0]
             )  # Get all SHAP values for sample number i
             # Get relevant statistics for every sample
             average_shap_values.append(df_per_obs.mean(axis=1).values)
