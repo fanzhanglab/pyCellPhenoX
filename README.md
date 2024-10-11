@@ -1,6 +1,6 @@
 
 <p>
-   <img width= "900" height="300" align="centre" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/logo/cellphenoX_logo_banner.png">
+   <img width= "800" height="250" align="centre" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/logo/cellphenoX_logo_banner.png">
 </p>
 
 ![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)
