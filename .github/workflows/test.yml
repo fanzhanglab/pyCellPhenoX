@@ -1,4 +1,4 @@
-name: Run Tests
+name: Python package
 
 on:
   push:
@@ -13,24 +13,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
-      - name: Check out repository
+      - name: Check out the code
         uses: actions/checkout@v3
 
-      # Set up Python version
-      - name: Set up Python 3.9
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.9"
+          python-version: '3.9'  # You can change this to your desired Python version
 
-      # Install dependencies using requirements.txt
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          poetry install
 
-      # Run tests
-      - name: Run tests with pytest
+      - name: Run tests
         run: |
-          export PYTHONPATH=$(pwd)
-          pytest test/
+          poetry run pytest  # Adjust this command based on your test framework
