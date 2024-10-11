@@ -94,7 +94,7 @@ def test_preprocessing_with_categorical_covariates():
 
     meta["cell_type"] = meta["cell_type"].astype("category")
 
-    X, y = preprocessing(
+    X, _ = preprocessing(
         latent_features,
         meta,
         sub_samp=False,

@@ -21,9 +21,9 @@ def nonnegativeMatrixFactorization(X, numberOfComponents=-1, min_k=2, max_k=12):
 
     Parameters:
         X (dataframe): the marker by cell matrix to be decomposed
-        numberOfComponents (int): number of components or ranks to learn (if -1, then we will select k)
-        min_k (int): alternatively, provide the minimum number of ranks to test
-        max_k (int): and the maximum number of ranks to test
+        numberOfComponents (int): number of components or ranks to learn (if -1, then we will select k). Defaults to -1
+        min_k (int): alternatively, provide the minimum number of ranks to test. Defaults to 2
+        max_k (int): and the maximum number of ranks to test. Defaults to 12
     Returns:
         tuple: W and H matrices
     """
@@ -39,4 +39,4 @@ def nonnegativeMatrixFactorization(X, numberOfComponents=-1, min_k=2, max_k=12):
     W = nmfModel.fit_transform(X)  # ranks by samples
     H = nmfModel.components_
 
-    return W
+    return W, H

@@ -14,29 +14,35 @@ import os
 import sys
 from datetime import date
 
-import dunamai
+# import dunamai
 
 sys.path.insert(0, os.path.abspath("../pyCellPhenoX"))
 
-import pyCellPhenoX
+# import pyCellPhenoX
 
 project = "CellPhenoX"
 copyright = "2024, Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
 author = "Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
-release = "0.2.0"
+release = "0.3.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 # -- Extensions ---------------------------------------------------------------
 extensions = [
-    "sphinx.ext.autodoc",  # Automatically document Python modules
-    "sphinx.ext.napoleon",  # Support for Google style docstrings
-    "sphinx_copybutton",  # Adds a "copy" button to code blocks
-    "m2r2",  # Support for Markdown files
-    "nbsphinx",  # Support for Jupyter Notebooks
+    "sphinx.ext.autodoc",       # Automatically document Python modules
+    "sphinx.ext.napoleon",      # Support for Google style docstrings
+    "sphinx_copybutton",        # Adds a "copy" button to code blocks
+    # "m2r2",                   # Support for Markdown files
+    "nbsphinx",                 # Support for Jupyter Notebooks
+    "myst_parser",  # Support for markdown files using 
 ]
 
+source_suffix = {
+    ".rst": "restructuredtext",
+    # ".txt": "markdown",
+    ".md": "markdown",
+}
 html_js_files = [
     "readthedocs.js",
 ]
@@ -56,12 +62,12 @@ html_static_path = []
 
 # -- Options for HTML output -------------------------------------------------
 # The theme to use for HTML and HTML Help pages.
-html_theme = "furo"
+html_theme = "furo" # used to be "furo"
 
 # Define colors for light and dark modes
 cellphenox_dark_blue = "#317EC2"
 cellphenox_light_blue = "#B9DBF4"
-cellphenox_pink = "#F3CDCC"  # Added missing '#' for hex code
+cellphenox_pink = "#F3CDCC"  
 cellphenox_red = "#C25757"
 
 # Furo theme option colors specified here

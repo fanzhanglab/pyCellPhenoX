@@ -29,7 +29,7 @@ def example_matrix():
 
 def test_nmf_with_fixed_components(example_matrix):
     """Test NMF with a fixed number of components."""
-    W = nonnegativeMatrixFactorization(example_matrix, numberOfComponents=2)
+    W, _ = nonnegativeMatrixFactorization(example_matrix, numberOfComponents=2)
     assert W is not None
     assert W.shape == (3, 2)  # Ensure it returns the right shape for W matrix
 
@@ -39,7 +39,7 @@ def test_nmf_with_automatic_k(mock_select_optimal_k, example_matrix):
     """Test NMF when selecting optimal k."""
     mock_select_optimal_k.return_value = 2
 
-    W = nonnegativeMatrixFactorization(
+    W, _ = nonnegativeMatrixFactorization(
         example_matrix,
         numberOfComponents=-1,
         min_k=2,
