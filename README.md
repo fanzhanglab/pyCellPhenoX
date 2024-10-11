@@ -41,7 +41,7 @@ git clone git@github.com:fanzhanglab/pyCellPhenoX.git
 ### Dependencies/ Requirements
 When using pyCellPhenoX please ensure you are using the following dependency versions or requirements
 ``` python 
-python = "^3.12"
+python = "^3.9"
 pandas = "^2.2.3"
 numpy = "^2.1.1"
 xgboost = "^2.0"
@@ -104,21 +104,7 @@ To create a virtual environment using **PIP** follow these steps:
    ```bash
    pip install -r requirements.txt
     ```
-#### Poetry
 
-1. **Create a new project:**
-``` bash
-poetry new {my_project_name}
-cd {my_project_name}
-```
-2. **Install dependencies:**
-``` bash
-poertry install
-```
-3. **Activate the environment:**
-``` bash
-poetry shell
-```
 
 ## Tutorials
 Please see the [Command-line Reference] for details. Additonally, please see [Walkthroughs] on the documentation page. 
