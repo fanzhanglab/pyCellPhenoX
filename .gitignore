@@ -8,4 +8,5 @@ htmlcov/
 env.yaml
 requirements.txt
 dist/
-.DS_Store
+*.DS_Store
+myvenv/
