@@ -38,6 +38,20 @@ conda install -c conda-forge pyCellPhenoX
 git clone git@github.com:fanzhanglab/pyCellPhenoX.git
 ```
 
+### Dependencies/ Requirements
+When using pyCellPhenoX please ensure you are using the following dependency versions or requirements
+``` python 
+python = "^3.9"
+pandas = "^2.2.3"
+numpy = "^2.1.1"
+xgboost = "^2.0"
+numba = ">=0.54"
+shap = "^0.46.0"
+scikit-learn = "^1.5.2"
+matplotlib = "^3.9.2"
+statsmodels = "^0.14.3"
+```
+
 ## Tutorials
 Please see the [Command-line Reference] for details. Additonally, please see [Walkthroughs] on the documentation page. 
 
