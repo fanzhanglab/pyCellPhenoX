@@ -1,10 +1,17 @@
 
-<img height="200" align="right" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/163014ba1b31243a1aac4c27e0611a34c1495efe/logo/https://github.com/fanzhanglab/pyCellPhenoX/blob/main-clone/logo/cellphenoX_logo_banner.png>
+<p>
+   <img height="270" align="centre" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/logo/cellphenoX_logo_banner.png">
+</p>
 
-[![PyPI](https://img.shields.io/pypi/v/pyXcell.svg)][pypi]
-[![Status](https://img.shields.io/pypi/status/pyXcell.svg)][status]
-[![Python Version](https://img.shields.io/pypi/pyversions/pyXcell)][python version]
-[![License](https://img.shields.io/pypi/l/pyXcell)][license] 
+![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)
+![Python Version](https://img.shields.io/pypi/pyversions/pyCellPhenoX)
+[![License](https://img.shields.io/pypi/l/pyCellPhenoX)][license] 
+![Read the documentation at https://pyXcell.readthedocs.io/](https://img.shields.io/readthedocs/pyXcell/latest.svg?label=Read%20the%20Docs)
+![Codecov](https://codecov.io/gh/fanzhanglab/pyCellPhenoX/branch/main/graph/badge.svg)
+
+![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)
+![Black](https://img.shields.io/badge/code%20style-black-000000.svg)
+
 
 We introduce pyCellPhenoX.
 
@@ -34,7 +41,7 @@ git clone git@github.com:fanzhanglab/pyCellPhenoX.git
 ### Dependencies/ Requirements
 When using pyCellPhenoX please ensure you are using the following dependency versions or requirements
 ``` python 
-python = "^3.12"
+python = "^3.9"
 pandas = "^2.2.3"
 numpy = "^2.1.1"
 xgboost = "^2.0"
@@ -97,21 +104,7 @@ To create a virtual environment using **PIP** follow these steps:
    ```bash
    pip install -r requirements.txt
     ```
-#### Poetry
 
-1. **Create a new project:**
-``` bash
-poetry new {my_project_name}
-cd {my_project_name}
-```
-2. **Install dependencies:**
-``` bash
-poertry install
-```
-3. **Activate the environment:**
-``` bash
-poetry shell
-```
 
 ## Tutorials
 Please see the [Command-line Reference] for details. Additonally, please see [Walkthroughs] on the documentation page. 

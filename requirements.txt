@@ -4,6 +4,9 @@ cycler==0.12.1
 dunamai==1.22.0
 fonttools==4.54.1
 iniconfig==2.0.0
+isort==5.13.2
+jedi==0.19.1
+Jinja2==3.1.4
 joblib==1.4.2
 kiwisolver==1.4.7
 llvmlite==0.43.0

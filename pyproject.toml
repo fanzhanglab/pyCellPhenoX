@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyCellPhenoX"
-version = "0.2.0"
+version = "0.3.0"
 description = "An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics"
 authors = [ 
     "Fan Zhang", 
@@ -20,7 +20,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.9"
 pandas = "^2.2.3"
 numpy = "^2.0"
 xgboost = "^2.1.1"
