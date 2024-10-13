@@ -3,6 +3,8 @@
    :caption: Table of Contents
 
    ../README.md
+   ../CONTRIBUTING.md
+   ../CODE_OF_CONDUCT.md
    walkthrough
    modules
 
@@ -12,4 +14,3 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-

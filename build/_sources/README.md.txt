@@ -1,3 +1,4 @@
+# pyCellPhenoX
 
 <p>
    <img height="270" align="centre" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/logo/cellphenoX_logo_banner.png">
@@ -38,6 +39,20 @@ conda install -c conda-forge pyCellPhenoX
 git clone git@github.com:fanzhanglab/pyCellPhenoX.git
 ```
 
+### Dependencies / Requirements
+When using pyCellPhenoX please ensure you are using the following dependency versions or requirements
+``` python 
+python = "^3.9"
+pandas = "^2.2.3"
+numpy = "^2.1.1"
+xgboost = "^2.0"
+numba = ">=0.54"
+shap = "^0.46.0"
+scikit-learn = "^1.5.2"
+matplotlib = "^3.9.2"
+statsmodels = "^0.14.3"
+```
+
 ## Tutorials
 Please see the [Command-line Reference] for details. Additonally, please see [Walkthroughs] on the documentation page. 
 
@@ -63,10 +78,10 @@ Each function has uniqure arguments, see our [documentation] for more informatio
 Distributed under the terms of the [MIT license][license],
 _pyCellPhenoX_ is free and open source software.
 
-## Code of Conduct
+### Code of Conduct
 For more information please see [Code of Conduct](CODE_OF_CONDUCT.md) or [Code of Conduct Documentation]
 
-## Contributing
+### Contributing
 For more information please see [Contributing](CONTRIBUTING.md) or [Contributing Documentation]
 
 ## Issues
@@ -99,8 +114,8 @@ or
 ```
 
 ## Contact
-Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for
-further questions or protential collaborative opportunities!
+Please contact [fanzhanglab@gmail.com](mailto:fanzhanglab@gmail.com) for
+further questions or potential collaborative opportunities!
 
 <!-- github-only -->
 
