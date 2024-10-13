@@ -35,7 +35,7 @@ extensions = [
     "sphinx_copybutton",        # Adds a "copy" button to code blocks
     # "m2r2",                   # Support for Markdown files
     "nbsphinx",                 # Support for Jupyter Notebooks
-    "myst_parser",  # Support for markdown files using 
+    "myst_parser",              # Support for markdown files using 
 ]
 
 source_suffix = {
