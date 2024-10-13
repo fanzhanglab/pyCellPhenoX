@@ -72,7 +72,7 @@ Additional major functions associated with pyCellPhenoX are:
 Each function has uniqure arguments, see our [documentation] for more information
 
 ## Usage
-- TODO
+For more information please see [Walkthrough](walkthroughs/workflow.ipynb) or [Workflow Documentation]
 
 ## License
 Distributed under the terms of the [MIT license][license],
@@ -129,3 +129,4 @@ further questions or potential collaborative opportunities!
 [documentation]: https://pyCellPhenoXreadthedocs.io/
 [Code of Conduct Documentation]: https://pyCellPhenoXreadthedocs.io/code_of_conduct
 [Contributing Documentation]: https://pyCellPhenoXreadthedocs.io/contributing
+[Workflow Documentation]: https://pyCellPhenoXreadthedocs.io/walkthroughs/workflows
