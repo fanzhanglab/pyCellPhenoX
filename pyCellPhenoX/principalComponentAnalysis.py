@@ -45,11 +45,9 @@ def principalComponentAnalysis(X, var):
     eigenvalues = pca.explained_variance_ratio_
     components = pca.components_
     print(f"shape of PCA components: {components.shape}")
-    # loadings = pca.components_ * np.sqrt(eigenvalues)
 
     # find the number of components that explain the most variance
     numberOfComponents = select_number_of_components(eigenvalues, var)
     print(f"optimal num components: {numberOfComponents}")
 
     return components[:, :numberOfComponents]
-    # return (loadings[:, :numberOfComponents], components[:, :numberOfComponents])

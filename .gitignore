@@ -8,5 +8,5 @@ htmlcov/
 env.yaml
 requirements.txt
 dist/
-.DS_Store
-walkthroughs/workflow-Copy1.ipynb
+*.DS_Store
+myvenv/
