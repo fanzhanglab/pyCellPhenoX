@@ -28,7 +28,7 @@ def preprocessing(
     """Prepare the data to be in the correct format for CellPhenoX
 
     Args:
-        latent_features (dataframe): Latent embeddings (e.g., NMF ranks, or principal components) of the NAM
+        latent_features (pd.DataFrame): Latent embeddings (e.g., NMF ranks, or principal components) of the NAM
         meta (dataframe): Dataframe containing meta data (e.g., covariates, target/outcome variable for classification model)
         sub_samp (bool, optional): Optionally, subsample the data. Defaults to False.
         subset_percentage (float, optional): If sub_samp = True, specify the desired proportion of rows. Defaults to 0.99.
@@ -37,7 +37,7 @@ def preprocessing(
         covariates (list, optional): List of column names in meta that are to be included as features/predictors in the classsification model. Defaults to [].
 
     Returns:
-        tuple: 
+        tuple (dataframe, series):  X, latent embeddings and covariates (your predictors); y, model outcome (your target variable)
     """
     if sub_samp:
         # optionally, sample the data using the balanced sample function
