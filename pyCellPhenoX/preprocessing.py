@@ -28,16 +28,16 @@ def preprocessing(
     """Prepare the data to be in the correct format for CellPhenoX
 
     Args:
-        latent_features (_type_): _description_
-        meta (_type_): _description_
-        sub_samp (bool, optional): _description_. Defaults to False.
-        subset_percentage (float, optional): _description_. Defaults to 0.99.
-        bal_col (list, optional): _description_. Defaults to ["subject_id", "cell_type", "disease"].
-        target (str, optional): _description_. Defaults to "disease".
-        covariates (list, optional): _description_. Defaults to [].
+        latent_features (dataframe): Latent embeddings (e.g., NMF ranks, or principal components) of the NAM
+        meta (dataframe): Dataframe containing meta data (e.g., covariates, target/outcome variable for classification model)
+        sub_samp (bool, optional): Optionally, subsample the data. Defaults to False.
+        subset_percentage (float, optional): If sub_samp = True, specify the desired proportion of rows. Defaults to 0.99.
+        bal_col (list, optional): List of column names in meta to balance the subsampling by. Defaults to ["subject_id", "cell_type", "disease"].
+        target (str): Name of the outcome column in meta. Defaults to "disease".
+        covariates (list, optional): List of column names in meta that are to be included as features/predictors in the classsification model. Defaults to [].
 
     Returns:
-        _type_: _description_
+        tuple: 
     """
     if sub_samp:
         # optionally, sample the data using the balanced sample function
@@ -49,6 +49,7 @@ def preprocessing(
         latent_features = latent_features.loc[meta.index]
 
     X = pd.DataFrame(latent_features)
+    X.columns = [f"LE_{col+1}" for col in X.columns]
     y = meta[target]
     X.set_index(meta.index, inplace=True)
     # code the categorical covariate columns and add them to X
