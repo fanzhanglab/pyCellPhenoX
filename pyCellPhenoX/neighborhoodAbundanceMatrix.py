@@ -51,8 +51,6 @@ def neighborhoodAbundanceMatrix(expression_mat, meta_data, sampleid):
     sc.pp.neighbors(mad_obj, use_rep="X")
     # compute UMAP coordinates for plotting
     sc.tl.umap(mad_obj)
-    # the following line would save the pre-processed data as a h5ad file
-    #d.write('cna.h5ad')
 
     cna.tl.association(mad_obj, mad_obj.obs.disease)
 

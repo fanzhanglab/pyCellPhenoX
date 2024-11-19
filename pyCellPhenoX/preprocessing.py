@@ -5,6 +5,7 @@
 ####################################################
 
 import pandas as pd
+import patsy
 from sklearn.preprocessing import LabelEncoder
 from pyCellPhenoX.utils.balanced_sample import balanced_sample
 
@@ -24,6 +25,7 @@ def preprocessing(
     bal_col=["subject_id", "cell_type", "disease"],
     target="disease",
     covariates=[],
+    interaction_covs=[]
 ):
     """Prepare the data to be in the correct format for CellPhenoX
 
@@ -35,6 +37,7 @@ def preprocessing(
         bal_col (list, optional): List of column names in meta to balance the subsampling by. Defaults to ["subject_id", "cell_type", "disease"].
         target (str): Name of the outcome column in meta. Defaults to "disease".
         covariates (list, optional): List of column names in meta that are to be included as features/predictors in the classsification model. Defaults to [].
+        interaction_covs (list, optional): Optionally, pass a list of the colum
 
     Returns:
         tuple (dataframe, series):  X, latent embeddings and covariates (your predictors); y, model outcome (your target variable)
@@ -49,10 +52,11 @@ def preprocessing(
         latent_features = latent_features.loc[meta.index]
 
     X = pd.DataFrame(latent_features)
-    X.columns = [f"LE_{col+1}" for col in X.columns]
+    original_les = X.columns
+    X.columns = [f"LE_{col+1}" for col in original_les]
     y = meta[target]
     X.set_index(meta.index, inplace=True)
-    # code the categorical covariate columns and add them to X
+    # encode the categorical covariate columns and add them to X
     categoricalColumnNames = (
         meta[covariates]
         .select_dtypes(include=["category", "object"])
@@ -65,4 +69,32 @@ def preprocessing(
     for covariate in covariates:
         X[covariate] = meta[covariate]
     X = X.rename(str, axis="columns")
+
+    if len(interaction_covs) > 0:
+        # Get the interaction terms dynamically for all covariates
+        interaction_terms = {}
+        
+        for cov in interaction_covs:
+            interaction_terms[cov] = [f"{pc}:{cov}" for pc in original_les]
+            print(f"{cov.capitalize()}: ", interaction_terms[cov])
+        
+        # Combine all principal components and their interaction terms
+        all_pcs = list(original_les)
+        for terms in interaction_terms.values():
+            all_pcs.extend(terms)
+        
+        print("All principal components and interactions: ", all_pcs)
+        
+        X_y = X.copy()
+        # Combine X and y since the dmatrices function from the patsy package requires one dataframe
+        X_y['y'] = y
+        formula = 'y ~ ' + ' + '.join(all_pcs) + ' + ' + ' + '.join(covariates)
+        _, X_interactions = patsy.dmatrices(formula, X_y)
+        X_interactions = pd.DataFrame(X_interactions)
+        X_interactions = X_interactions.drop(columns=X_interactions.columns[0], axis=1)
+        X_interactions.columns = all_pcs + covariates
+        X_interactions.set_index(X.index, inplace=True)
+
+        X = X_interactions
+
     return X, y
