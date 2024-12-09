@@ -47,6 +47,6 @@ def select_optimal_k(X, min_k, max_k):
 
         # print(f"\n{k} - reconstruction error: {nmfModel.reconstruction_err_}")
 
-    final_k = reconstruction_errors.index(min(reconstruction_errors)) + min_k
+    final_k = silhouette_scores.index(min(reconstruction_errors)) + min_k
 
     return final_k

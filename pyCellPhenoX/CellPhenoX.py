@@ -246,14 +246,14 @@ class CellPhenoX:
                 shap_values = explainer.shap_values(X_test_outer)
 
                 # Extract SHAP information per fold per sample
-                print(shap_values.shape)
+                #print(shap_values.shape)
                 for k, test_index in enumerate(test_outer_ix):
                     test_index = self.X.index[test_index]
                     # here, I am selecting the second (1) shap array for a binary classification problem.
                     # we need a way to generalize this so that we select the array that corresponds to the
                     # positive class (disease).
                     if num_classes == 2:
-                        self.shap_values_per_cv[test_index][CV_repeat] = shap_values[k]
+                        self.shap_values_per_cv[test_index][CV_repeat] = shap_values[0][k]
                     else:
                         predicted_class = y_pred[k]
                         self.shap_values_per_cv[test_index][CV_repeat] = shap_values[predicted_class][k]
@@ -273,7 +273,7 @@ class CellPhenoX:
             #val_prc_combined = val_prc_list
             #val_prc_combined_list.append(val_prc_combined)
 
-            precision, recall = precision_recall_curve(
+            precision, recall, _ = precision_recall_curve(
                             y_test_combined, y_prob_combined
                         )
             prc_auc = average_precision_score(y_test_combined, y_prob_combined)
@@ -357,11 +357,15 @@ class CellPhenoX:
         plt.tight_layout()
         plt.savefig(f"{outpath}modelperformance.pdf", format="pdf")
 
+        # print(f"val_auc_combined_list length: {len(val_auc_combined_list)}")
+        # print(f"first list of val_auc_combined_list length: {len(val_auc_combined_list[0])}")
+        # print(f"val_prc_combined_list length: {len(val_prc_combined_list)}")
+        # print(f"first list of val_prc_combined_list length: {len(val_prc_combined_list[0])}")
         val_auc_combined_repeat = np.concatenate(val_auc_combined_list)
         val_prc_combined_repeat = np.concatenate(val_prc_combined_list)
 
-        avg_val_auc = np.mean(val_auc_combined_repeat)
-        avg_val_prc = np.mean(val_prc_combined_repeat)
+        avg_val_auc = np.mean(val_auc_combined_list)
+        avg_val_prc = np.mean(val_prc_combined_list)
         print(f"Average AUROC: {avg_val_auc} | Average AUPRC: {avg_val_prc}")
 
         # select the final model
@@ -383,7 +387,6 @@ class CellPhenoX:
         return self.best_model
 
     def get_shap_values(self, outpath):
-        # Establish lists to keep average Shap values, their Stds, and their min and max
         average_shap_values = []
         for i in range(0, len(self.X)):  # len(NAM)
             id = self.X.index[i]  # NAM.index[i]

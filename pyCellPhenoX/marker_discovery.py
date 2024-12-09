@@ -4,7 +4,9 @@ from statsmodels.stats.multitest import multipletests
 import numpy as np
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 from sklearn.preprocessing import StandardScaler
-
+from plotnine import *
+# from rpy2.robjects import r, pandas2ri
+# from rpy2.robjects.packages import importr
 
 # marker discovery - find markers correlated with the discriminatory power of the Interpretable Score
 ##TODO: loosely translated from R to python, not fully tested and missing the final output (maybe some plots and the datataframe containing the coefficients and pvalues?)
@@ -98,3 +100,52 @@ def marker_discovery(shap_df, expression_mat):
     label_data = label_data.sort_values(by="Adjusted_P_Value")
     print("Significant Markers")
     print(label_data)
+
+
+# def plot_interpretablescore_boxplot(data, x, y):
+#     """Generate boxplot of interpretable score for a categorical variable (e.g., cell type)
+
+#     Args:
+#         data (dataframe): dataframe with interpretable score and other variables of interest to plot
+#         x (str): name of the x axis column in data
+#         y (str): name of the y axis column in data (should just be interpretable_score if you ran CellPhenoX)
+#     """
+#     # Activate pandas to R DataFrame conversion
+#     pandas2ri.activate()
+
+#     # Define R code
+#     r_code = """
+#     library(ggplot2)
+#     plot_score_boxplot <- function(data, x, y) {
+#     p <- ggplot(data, aes_string(x = x, y = y)) +
+#         geom_boxplot() +
+#         theme_classic()
+#     print(p)
+#     }
+#     """
+
+#     # Evaluate the R code in Python
+#     r(r_code)
+
+#     # Get the R function
+#     plot_score_boxplot = r['plot_score_boxplot']
+
+#     # Convert pandas DataFrame to R DataFrame
+#     r_data = pandas2ri.py2rpy(data)
+
+#     # Call the R function
+#     plot_score_boxplot(r_data, 'group', 'score')
+    
+def plot_interpretablescore_boxplot(data, x, y):
+    """Generate boxplot of interpretable score for a categorical variable (e.g., cell type)
+
+    Args:
+        data (pd.DataFrame): dataframe with interpretable score and other variables of interest to plot
+        x (str): name of x axis column in data
+        y (str): name of y axis column in data
+    """
+    # Use plotnine to generate the plot similar to ggplot
+    p = (ggplot(data, aes(x=x, y=y)) +  # Use variables x and y directly, no need for aes_string
+        geom_boxplot() +
+        theme_classic())
+    print(p)

@@ -8,6 +8,7 @@ import pandas as pd
 import patsy
 from sklearn.preprocessing import LabelEncoder
 from pyCellPhenoX.utils.balanced_sample import balanced_sample
+from pyCellPhenoX import neighborhoodAbundanceMatrix
 
 
 ####################################################
@@ -53,7 +54,7 @@ def preprocessing(
 
     X = pd.DataFrame(latent_features)
     original_les = X.columns
-    X.columns = [f"LE_{col+1}" for col in original_les]
+    X.columns = [f"LD_{col+1}" for col in original_les]
     y = meta[target]
     X.set_index(meta.index, inplace=True)
     # encode the categorical covariate columns and add them to X
