@@ -361,12 +361,12 @@ class CellPhenoX:
         # print(f"first list of val_auc_combined_list length: {len(val_auc_combined_list[0])}")
         # print(f"val_prc_combined_list length: {len(val_prc_combined_list)}")
         # print(f"first list of val_prc_combined_list length: {len(val_prc_combined_list[0])}")
-        val_auc_combined_repeat = np.concatenate(val_auc_combined_list)
-        val_prc_combined_repeat = np.concatenate(val_prc_combined_list)
+        # val_auc_combined_repeat = np.concatenate(val_auc_combined_list)
+        # val_prc_combined_repeat = np.concatenate(val_prc_combined_list)
 
-        avg_val_auc = np.mean(val_auc_combined_list)
-        avg_val_prc = np.mean(val_prc_combined_list)
-        print(f"Average AUROC: {avg_val_auc} | Average AUPRC: {avg_val_prc}")
+        # avg_val_auc = np.mean(val_auc_combined_list)
+        # avg_val_prc = np.mean(val_prc_combined_list)
+        # print(f"Average AUROC: {avg_val_auc} | Average AUPRC: {avg_val_prc}")
 
         # select the final model
         self.best_model, self.best_score = max(overal_model_list, key=lambda x: x[1])

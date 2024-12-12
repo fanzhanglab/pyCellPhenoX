@@ -101,40 +101,6 @@ def marker_discovery(shap_df, expression_mat):
     print("Significant Markers")
     print(label_data)
 
-
-# def plot_interpretablescore_boxplot(data, x, y):
-#     """Generate boxplot of interpretable score for a categorical variable (e.g., cell type)
-
-#     Args:
-#         data (dataframe): dataframe with interpretable score and other variables of interest to plot
-#         x (str): name of the x axis column in data
-#         y (str): name of the y axis column in data (should just be interpretable_score if you ran CellPhenoX)
-#     """
-#     # Activate pandas to R DataFrame conversion
-#     pandas2ri.activate()
-
-#     # Define R code
-#     r_code = """
-#     library(ggplot2)
-#     plot_score_boxplot <- function(data, x, y) {
-#     p <- ggplot(data, aes_string(x = x, y = y)) +
-#         geom_boxplot() +
-#         theme_classic()
-#     print(p)
-#     }
-#     """
-
-#     # Evaluate the R code in Python
-#     r(r_code)
-
-#     # Get the R function
-#     plot_score_boxplot = r['plot_score_boxplot']
-
-#     # Convert pandas DataFrame to R DataFrame
-#     r_data = pandas2ri.py2rpy(data)
-
-#     # Call the R function
-#     plot_score_boxplot(r_data, 'group', 'score')
     
 def plot_interpretablescore_boxplot(data, x, y):
     """Generate boxplot of interpretable score for a categorical variable (e.g., cell type)
@@ -145,7 +111,38 @@ def plot_interpretablescore_boxplot(data, x, y):
         y (str): name of y axis column in data
     """
     # Use plotnine to generate the plot similar to ggplot
-    p = (ggplot(data, aes(x=x, y=y)) +  # Use variables x and y directly, no need for aes_string
-        geom_boxplot() +
-        theme_classic())
-    print(p)
+    b = (ggplot(data, aes(x=x, y=y, color=y)) + 
+        geom_boxplot(size=2) +
+        scale_color_brewer(type="qual", palette="Set3") +
+        labs(title="", x=x.replace("_", " "), y="CellPhenoX Interpretable Score") +
+        theme_classic(base_size=25) #+
+        #axis_y_text(theme_elemnt=element_text(size=40))
+        )
+    print(b)
+
+def plot_interpretablescore_umap(data, x, y, cell_type, score):
+    """Generate UMAP of interpretable score and corresponding cell type
+
+    Args:
+        data (pd.DataFrame): dataframe with interpretable score and other variables of interest to plot
+        x (str): name of x axis column in data
+        y (str): name of y axis column in data
+        cell_type (str): name of column in data containing the cell type labels
+    """
+    # Use plotnine to generate the plot similar to ggplot
+    c = (
+        ggplot(data, aes(x=x,y=y, color=cell_type)) +
+        geom_point(size=0.5) +
+        scale_color_brewer(type="qual", palette="Set3") +
+        labs(title="", x=x, y=y, color="Cell Type") +
+        theme_classic(base_size=25)
+    )
+
+    s = (
+        ggplot(data, aes(x=x,y=y, color=score)) +
+        geom_point(size=0.5) +
+        scale_color_continuous(cmap_name="bwr") +
+        labs(title="", x=x, y=y, color="CellPhenoX\nInterpretable Score") +
+        theme_classic(base_size=25)
+    ) 
+    print(c, s)

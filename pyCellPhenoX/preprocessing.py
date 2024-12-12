@@ -97,5 +97,6 @@ def preprocessing(
         X_interactions.set_index(X.index, inplace=True)
 
         X = X_interactions
+        X.set_index(meta.index, inplace=True)
 
     return X, y
