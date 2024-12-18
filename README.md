@@ -107,7 +107,7 @@ To create a virtual environment using **PIP** follow these steps:
 
 
 ## Tutorials
-Please see the [Command-line Reference] for details. Additonally, please see [Walkthroughs] on the documentation page. 
+Please see the [Command-line Reference] for details. Additonally, please see [Vignettes] on the documentation page. 
 
 ## API
 pyCellPhenoX has four major functions which are apart of the object:
@@ -140,29 +140,7 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 
 ## Citation
 If you have used `pyCellPhenoX` in your project, please use the citation below. 
-``` 
-@software{Young2024,
-  author = {Young, Jade and Inamo, Jun and Zhang, Fan},
-  title = {CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics},
-  date = {2024},
-  url = {https://github.com/fanzhanglab/pyCellPhenoX},
-  version = {},
-}
-```
-or 
-``` 
-@ARTICLE{Young2024,
-  title    = "{CellPhenoX}: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics",
-  author   = "Young, Jade and Inamo, Jun and Zhang, Fan",
-  journal  = "",
-  volume   =  ,
-  number   =  ,
-  pages    = "",
-  month    =  ,
-  year     =  ,
-  language = "en",
-}
-```
+Young, J., Inamo, J., Carterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, 2024.
 
 ## Contact
 Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for
@@ -176,7 +154,7 @@ further questions or protential collaborative opportunities!
 [command-line reference]: https://pyCellPhenoX.readthedocs.io/en/latest/usage.html
 [pipi]: https://pypi.org/project/pip/
 [pypi]: https://pypi.org/project/pyCellPhenoX/
-[walkthroughs]: https://pyCellPhenoXreadthedocs.io/walkthroughs/single_cell_usage
+[vignettes]: https://pyCellPhenoXreadthedocs.io/walkthroughs/single_cell_usage
 [documentation]: https://pyCellPhenoXreadthedocs.io/
 [Code of Conduct Documentation]: https://pyCellPhenoXreadthedocs.io/code_of_conduct
 [Contributing Documentation]: https://pyCellPhenoXreadthedocs.io/contributing
