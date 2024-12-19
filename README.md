@@ -87,7 +87,6 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 ## Citation
 If you have used `pyCellPhenoX` in your project, please use the citation below: 
 </br>
-</br>
 ``` bash
  Young, J., Inamo, J., Carterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, 2024.
 ```
