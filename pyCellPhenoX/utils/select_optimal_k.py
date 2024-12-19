@@ -45,6 +45,8 @@ def select_optimal_k(X, min_k, max_k):
         silhouette = silhouette_score(X, cluster_labels)
         silhouette_scores.append(silhouette)
 
-    final_k = reconstruction_errors.index(min(reconstruction_errors)) + min_k
+        # print(f"\n{k} - reconstruction error: {nmfModel.reconstruction_err_}")
+
+    final_k = silhouette_scores.index(min(reconstruction_errors)) + min_k
 
     return final_k
