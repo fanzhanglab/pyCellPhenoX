@@ -31,21 +31,21 @@ jobs:
           python-version: 3.12
           auto-update-conda: true
           environment-file: env.yml
-          activate-environment: zhang_lab
+          activate-environment: cellphenoX
 
       # Print Conda environment info (for debugging)
       - name: Print Conda Environment Info
         run: conda info --envs
 
-      # Install pytest and coverage if not in environment.yml
-      - name: Install pytest and coverage
+      # Install pytest if not in environment.yml
+      - name: Install pytest
         run: |
-          conda activate zhang_lab
+          conda activate cellphenoX
           conda install pytest -y
 
-      # Run tests with coverage
-      - name: Run tests with coverage
+      # Run tests 
+      - name: Run tests
         run: |
-          conda activate zhang_lab
+          conda activate cellphenoX
           export PYTHONPATH=$(pwd)
           pytest test/
