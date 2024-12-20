@@ -10,42 +10,27 @@ on:
 
 jobs:
   test:
-    defaults:
-      run:
-        shell: bash -el {0}
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
 
     steps:
       # Checkout the repository
       - name: Check out repository
         uses: actions/checkout@v3
 
-      # Set up Conda
-      - name: Set up Conda
-        uses: conda-incubator/setup-miniconda@v2
+      # Set up Python version
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.12
-          auto-update-conda: true
-          environment-file: env.yml
-          activate-environment: cellphenoX
+          python-version: "3.12"
 
-      # Print Conda environment info (for debugging)
-      - name: Print Conda Environment Info
-        run: conda info --envs
-
-      # Install pytest if not in environment.yml
-      - name: Install pytest
+      # Install dependencies using requirements.txt
+      - name: Install dependencies
         run: |
-          conda activate cellphenoX
-          conda install pytest -y
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      # Run tests 
-      - name: Run tests
+      # Run tests
+      - name: Run tests with pytest
         run: |
-          conda activate cellphenoX
           export PYTHONPATH=$(pwd)
           pytest test/
