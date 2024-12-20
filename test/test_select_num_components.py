@@ -59,8 +59,13 @@ def test_select_number_of_components():
     result = select_number_of_components(eigenvalues, var)
     assert result == expected, f"Expected {expected}, but got {result}"
 
-    print("All test cases passed!")
+def test_select_number_of_components_extended():
+    # Edge case: Empty eigenvalues array
+    eigenvalues = np.array([])
+    var = 0.8
+    try:
+        result = select_number_of_components(eigenvalues, var)
+        assert False, "Function should raise an exception for empty eigenvalues array"
+    except ValueError as e:
+        print(f"Correctly raised ValueError for empty eigenvalues array: {e}")
 
-
-if __name__ == "__main__":
-    test_select_number_of_components()

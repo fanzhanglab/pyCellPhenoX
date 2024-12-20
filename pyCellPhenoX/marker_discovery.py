@@ -1,3 +1,9 @@
+####################################################
+###
+###                     IMPORTS
+###
+####################################################
+
 import pandas as pd
 import statsmodels.api as sm
 from statsmodels.stats.multitest import multipletests
@@ -7,6 +13,12 @@ from sklearn.preprocessing import StandardScaler
 from plotnine import *
 # from rpy2.robjects import r, pandas2ri
 # from rpy2.robjects.packages import importr
+
+####################################################
+###
+###                     FUNCTION
+###
+####################################################
 
 # marker discovery - find markers correlated with the discriminatory power of the Interpretable Score
 ##TODO: loosely translated from R to python, not fully tested and missing the final output (maybe some plots and the datataframe containing the coefficients and pvalues?)
@@ -101,48 +113,3 @@ def marker_discovery(shap_df, expression_mat):
     print("Significant Markers")
     print(label_data)
 
-    
-def plot_interpretablescore_boxplot(data, x, y):
-    """Generate boxplot of interpretable score for a categorical variable (e.g., cell type)
-
-    Args:
-        data (pd.DataFrame): dataframe with interpretable score and other variables of interest to plot
-        x (str): name of x axis column in data
-        y (str): name of y axis column in data
-    """
-    # Use plotnine to generate the plot similar to ggplot
-    b = (ggplot(data, aes(x=x, y=y, color=y)) + 
-        geom_boxplot(size=2) +
-        scale_color_brewer(type="qual", palette="Set3") +
-        labs(title="", x=x.replace("_", " "), y="CellPhenoX Interpretable Score") +
-        theme_classic(base_size=25) #+
-        #axis_y_text(theme_elemnt=element_text(size=40))
-        )
-    print(b)
-
-def plot_interpretablescore_umap(data, x, y, cell_type, score):
-    """Generate UMAP of interpretable score and corresponding cell type
-
-    Args:
-        data (pd.DataFrame): dataframe with interpretable score and other variables of interest to plot
-        x (str): name of x axis column in data
-        y (str): name of y axis column in data
-        cell_type (str): name of column in data containing the cell type labels
-    """
-    # Use plotnine to generate the plot similar to ggplot
-    c = (
-        ggplot(data, aes(x=x,y=y, color=cell_type)) +
-        geom_point(size=0.5) +
-        scale_color_brewer(type="qual", palette="Set3") +
-        labs(title="", x=x, y=y, color="Cell Type") +
-        theme_classic(base_size=25)
-    )
-
-    s = (
-        ggplot(data, aes(x=x,y=y, color=score)) +
-        geom_point(size=0.5) +
-        scale_color_continuous(cmap_name="bwr") +
-        labs(title="", x=x, y=y, color="CellPhenoX\nInterpretable Score") +
-        theme_classic(base_size=25)
-    ) 
-    print(c, s)

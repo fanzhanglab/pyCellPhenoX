@@ -53,8 +53,8 @@ def preprocessing(
         latent_features = latent_features.loc[meta.index]
 
     X = pd.DataFrame(latent_features)
-    original_les = X.columns
-    X.columns = [f"LD_{col+1}" for col in original_les]
+    original_les = X.columns 
+    X.columns = [f"LD_{i+1}" for i in range(len(original_les))]
     y = meta[target]
     X.set_index(meta.index, inplace=True)
     # encode the categorical covariate columns and add them to X
