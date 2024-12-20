@@ -8,8 +8,6 @@ import pandas as pd
 import patsy
 from sklearn.preprocessing import LabelEncoder
 from pyCellPhenoX.utils.balanced_sample import balanced_sample
-from pyCellPhenoX import neighborhoodAbundanceMatrix
-
 
 ####################################################
 ###

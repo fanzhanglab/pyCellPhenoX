@@ -5,11 +5,6 @@
 ####################################################
 
 import pandas as pd
-import statsmodels.api as sm
-from statsmodels.stats.multitest import multipletests
-import numpy as np
-from statsmodels.stats.outliers_influence import variance_inflation_factor
-from sklearn.preprocessing import StandardScaler
 from plotnine import *
 
 ####################################################
