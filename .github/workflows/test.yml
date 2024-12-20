@@ -10,29 +10,42 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -el {0}
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
 
     steps:
       # Checkout the repository
       - name: Check out repository
         uses: actions/checkout@v3
 
-      # Set up Miniconda (or Conda) for environment management
+      # Set up Conda
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v2
         with:
-          conda-version: 'latest'  # You can specify a version, but 'latest' is fine
-          auto-activate-base: false  # Avoid auto-activation of base environment
+          python-version: 3.12
+          auto-update-conda: true
+          environment-file: env.yml
+          activate-environment: zhang_lab
 
-      # Create conda environment from environment.yml
-      - name: Create conda environment from env.yml
-        run: |
-          conda env create -f env.yml
-          conda activate zhang_lab
+      # Print Conda environment info (for debugging)
+      - name: Print Conda Environment Info
+        run: conda info --envs
 
-      # Run tests
-      - name: Run tests with pytest
+      # Install pytest and coverage if not in environment.yml
+      - name: Install pytest and coverage
         run: |
           conda activate zhang_lab
-          export PYTHONPATH=$(pwd)  # Set the Python path
-          pytest test/  # Run your tests
+          conda install pytest -y
+
+      # Run tests with coverage
+      - name: Run tests with coverage
+        run: |
+          conda activate zhang_lab
+          export PYTHONPATH=$(pwd)
+          pytest test/
