@@ -17,20 +17,22 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      # Set up Python version
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v4
+      # Set up Miniconda (or Conda) for environment management
+      - name: Set up Conda
+        uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: "3.12"
+          conda-version: 'latest'  # You can specify a version, but 'latest' is fine
+          auto-activate-base: false  # Avoid auto-activation of base environment
 
-      # Install dependencies using requirements.txt
-      - name: Install dependencies
+      # Create conda environment from environment.yml
+      - name: Create conda environment from env.yml
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          conda env create -f env.yml
+          conda activate zhang_lab
 
       # Run tests
       - name: Run tests with pytest
         run: |
-          export PYTHONPATH=$(pwd)
-          pytest test/
+          conda activate zhang_lab
+          export PYTHONPATH=$(pwd)  # Set the Python path
+          pytest test/  # Run your tests
