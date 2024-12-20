@@ -93,6 +93,3 @@ def test_pca_invalid_variance(mock_select_number_of_components):
     with pytest.raises(ValueError, match="Variance threshold must be between 0 and 1"):
         principalComponentAnalysis(X, invalid_var)
 
-
-if __name__ == "__main__":
-    pytest.main()

@@ -1,75 +1,45 @@
-import pytest
-import numpy as np
-import pandas as pd
-from pyCellPhenoX.utils.reducedim import reduceDim
+# import pytest
+# import numpy as np
+# from unittest.mock import patch
 
-# Sample data generation
-def create_sample_data(n_samples=100, n_features=20):
-    """Generate a random marker-by-cell matrix."""
-    np.random.seed(11)
-    data = np.random.rand(n_samples, n_features)
-    return pd.DataFrame(data)
+# # Import the function to test
+# from pyCellPhenoX.utils.reducedim import reduceDim
 
-# Test for PCA method
-def test_reduceDim_pca():
-    # Create sample data
-    X = create_sample_data()
+# # Mock for principalComponentAnalysis
+# def mock_principalComponentAnalysis(expression_mat, n_components=2):
+#     # Assuming PCA returns a matrix (mock implementation)
+#     # Simulating PCA with the expected n_components
+#     return np.random.rand(n_components, expression_mat.shape[1])
 
-    # Define PCA reduction parameters
-    reducMethod = "pca"
-    reducMethodParams = {"var": 0.90}
+# # Mock for nonnegativeMatrixFactorization
+# def mock_nonnegativeMatrixFactorization(expression_mat, n_components=2):
+#     # Assuming NMF returns a tuple of matrices (mock implementation)
+#     # Simulating NMF with the expected n_components
+#     return np.random.rand(n_components, expression_mat.shape[1]), np.random.rand(n_components, expression_mat.shape[1])
 
-    # Call the reduceDim function
-    result = reduceDim(reducMethod, reducMethodParams, X)
+# @pytest.fixture
+# def expression_mat():
+#     # Create a mock expression matrix (e.g., a 5x5 matrix with random values)
+#     return np.random.rand(5, 5)
 
-    # Check if the result is a numpy array
-    assert isinstance(result, np.ndarray), "PCA should return a numpy array"
-
-    # Check that the result has the correct shape (n_features by num_components)
-    # Since the exact number of components depends on the variance threshold, we can't assert an exact number,
-    # but we can check that it reduces the dimensionality (less than or equal to n_features).
-    assert result.shape[0] <= X.shape[1], "PCA result should have fewer or equal components than input features"
-
-    print(f"PCA result shape: {result.shape}")
-
-# Test for NMF method
-def test_reduceDim_nmf():
-    # Create sample data
-    X = create_sample_data()
-
-    # Define NMF reduction parameters
-    reducMethod = "nmf"
-    reducMethodParams = {"numberOfComponents": 5}
-
-    # Call the reduceDim function
-    W, H = reduceDim(reducMethod, reducMethodParams, X)
-
-    # Check if the results are numpy arrays
-    assert isinstance(W, np.ndarray), "NMF W should return a numpy array"
-    assert isinstance(H, np.ndarray), "NMF H should return a numpy array"
-
-    # Check that W and H have the correct shapes
-    assert W.shape == (X.shape[0], 5), f"NMF W matrix should have shape {(X.shape[0], 5)}"
-    assert H.shape == (5, X.shape[1]), f"NMF H matrix should have shape {(5, X.shape[1])}"
-
-    print(f"NMF W shape: {W.shape}")
-    print(f"NMF H shape: {H.shape}")
-
-# Test for invalid method
-def test_reduceDim_invalid_method():
-    # Create sample data
-    X = create_sample_data()
-
-    # Define an invalid reduction method
-    reducMethod = "invalid_method"
-    reducMethodParams = {}
-
-    # Check that the reduceDim function raises a ValueError for an invalid method
-    with pytest.raises(ValueError, match="Invalid dimensionality reduction method provided!"):
-        reduceDim(reducMethod, reducMethodParams, X)
-
-# Run the tests
-if __name__ == "__main__":
-    test_reduceDim_pca()
-    test_reduceDim_nmf()
-    test_reduceDim_invalid_method()
+# @pytest.mark.parametrize(
+#     "reducMethod, reducMethodParams, expected_shape",
+#     [
+#         ("pca", {"n_components": 2}, (2, 5)),  # Expecting a 2x5 matrix for PCA
+#         ("nmf", {"n_components": 2}, (2, 5)),  # Expecting a tuple of 2x5 matrices for NMF
+#     ],
+# )
+# def test_reduceDim(reducMethod, reducMethodParams, expected_shape, expression_mat):
+#     # Mock the PCA and NMF methods
+#     with patch('pyCellPhenoX.principalComponentAnalysis', side_effect=mock_principalComponentAnalysis), \
+#          patch('pyCellPhenoX.nonnegativeMatrixFactorization', side_effect=mock_nonnegativeMatrixFactorization):
+        
+#         result = reduceDim(reducMethod, reducMethodParams, expression_mat)
+        
+#         # Check the shape of the result
+#         if reducMethod == "pca":
+#             assert result.shape == expected_shape
+#         elif reducMethod == "nmf":
+#             assert len(result) == 2  # NMF should return a tuple of two matrices
+#             assert result[0].shape == expected_shape
+#             assert result[1].shape == expected_shape

@@ -1,3 +1,9 @@
+####################################################
+###
+###                     IMPORTS
+###
+####################################################
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -26,6 +32,11 @@ import time
 
 np.random.seed(1)
 
+####################################################
+###
+###                     CLASS
+###
+####################################################
 
 class CellPhenoX:
     def __init__(self, X, y, CV_repeats, outer_num_splits, inner_num_splits):
