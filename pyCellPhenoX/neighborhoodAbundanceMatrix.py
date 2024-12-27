@@ -9,7 +9,6 @@ import scanpy as sc
 from multianndata import MultiAnnData as mad
 import cna
 from sklearn.preprocessing import LabelEncoder
-from pyCellPhenoX.utils.balanced_sample import balanced_sample
 from pyCellPhenoX.utils.check_indices import check_indices
 
 ####################################################

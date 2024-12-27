@@ -26,10 +26,6 @@ from sklearn.model_selection import (
 )
 from sklearn.preprocessing import LabelEncoder
 
-from datetime import date
-import time
-
-
 np.random.seed(1)
 
 ####################################################
@@ -51,7 +47,7 @@ class CellPhenoX:
         """
         # self.steps = ["hyperparameter tuning", "model training", "model prediction", "performance eval", "SHAP value calculation"]
         # self.CV_repeat_cumulative_times = [0,0,0,0,0]
-        self.CV_repeat_times = []
+        # self.CV_repeat_times = []
         self.X = X
         self.y = y
         # self.fc = fc
@@ -128,10 +124,9 @@ class CellPhenoX:
         """
 
         fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(18, 5))
-        accuracy_list, auc_list = [], []
+        accuracy_list = []
         y_test_combined_list, y_prob_combined_list = [], []
-        val_auc_combined_list, val_accuracy_combined_list, val_prc_combined_list = (
-            [],
+        val_auc_combined_list, val_prc_combined_list = (
             [],
             [],
         )

@@ -10,9 +10,6 @@ from statsmodels.stats.multitest import multipletests
 import numpy as np
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 from sklearn.preprocessing import StandardScaler
-from plotnine import *
-# from rpy2.robjects import r, pandas2ri
-# from rpy2.robjects.packages import importr
 
 ####################################################
 ###
@@ -86,7 +83,7 @@ def marker_discovery(shap_df, expression_mat):
     model = sm.OLS(y, X_scaled).fit()
 
     # Get the model summary
-    model_summary = model.summary()
+    # model_summary = model.summary()
 
     # Extract coefficients and p-values
     coefficients = model.params
