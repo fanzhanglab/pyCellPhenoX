@@ -24,7 +24,7 @@ def preprocessing(
     bal_col=["subject_id", "cell_type", "disease"],
     target="disease",
     covariates=[],
-    interaction_covs=[]
+    interaction_covs=[],
 ):
     """Prepare the data to be in the correct format for CellPhenoX
 
@@ -51,7 +51,7 @@ def preprocessing(
         latent_features = latent_features.loc[meta.index]
 
     X = pd.DataFrame(latent_features)
-    original_les = X.columns 
+    original_les = X.columns
     X.columns = [f"LD_{i+1}" for i in range(len(original_les))]
     y = meta[target]
     X.set_index(meta.index, inplace=True)
@@ -72,22 +72,22 @@ def preprocessing(
     if len(interaction_covs) > 0:
         # Get the interaction terms dynamically for all covariates
         interaction_terms = {}
-        
+
         for cov in interaction_covs:
             interaction_terms[cov] = [f"{pc}:{cov}" for pc in original_les]
             print(f"{cov.capitalize()}: ", interaction_terms[cov])
-        
+
         # Combine all principal components and their interaction terms
         all_pcs = list(original_les)
         for terms in interaction_terms.values():
             all_pcs.extend(terms)
-        
+
         print("All principal components and interactions: ", all_pcs)
-        
+
         X_y = X.copy()
         # Combine X and y since the dmatrices function from the patsy package requires one dataframe
-        X_y['y'] = y
-        formula = 'y ~ ' + ' + '.join(all_pcs) + ' + ' + ' + '.join(covariates)
+        X_y["y"] = y
+        formula = "y ~ " + " + ".join(all_pcs) + " + " + " + ".join(covariates)
         _, X_interactions = patsy.dmatrices(formula, X_y)
         X_interactions = pd.DataFrame(X_interactions)
         X_interactions = X_interactions.drop(columns=X_interactions.columns[0], axis=1)

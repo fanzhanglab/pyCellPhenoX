@@ -39,10 +39,10 @@ def select_optimal_k(X, min_k, max_k):
         nmfModel = NMF(n_components=k, init="random", random_state=11, max_iter=500)
         transformed = nmfModel.fit_transform(X)
         reconstruction_errors.append(nmfModel.reconstruction_err_)
-        
+
         kmeans = KMeans(n_clusters=k, n_init="auto", max_iter=500)
         cluster_labels = kmeans.fit_predict(transformed)
-        
+
         # Calculate silhouette score
         silhouette = silhouette_score(X, cluster_labels)
         silhouette_scores.append(silhouette)

@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "pyCellPhenoX"
-version = "0.3.0"
+version = "1.0.0"
 description = "An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics"
-authors = [ 
-    "Fan Zhang", 
+authors = [      
     "Jade Young",
     "Jun Inamo",
+    "Zac Caterer",
     "Revanth Krishna",
-    "Zac Caterer"
+    "Fan Zhang"
  ]
 maintainers = ["Revanth Krishna <revanth.krishna@cuanschutz.edu>"]
 license = "MIT license"

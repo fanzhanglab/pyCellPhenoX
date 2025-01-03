@@ -17,14 +17,15 @@ from pyCellPhenoX.utils.check_indices import check_indices
 ###
 ####################################################
 
+
 def neighborhoodAbundanceMatrix(expression_mat, meta_data, sampleid):
     """Run CNA to generate neighborhood abundance matrix.
 
     Args:
-        expression_mat (pd.DataFrame): The molecular expression matrix with cells as rows and markers as columns. 
+        expression_mat (pd.DataFrame): The molecular expression matrix with cells as rows and markers as columns.
         meta_data (pd.DataFrame): The corresponding meta data information with cells as rows and factors as columns.
-        sampleid (str): Name of the column in meta_data with the sample IDs. 
-    
+        sampleid (str): Name of the column in meta_data with the sample IDs.
+
     Returns:
         nam (pd.DataFrame): Neighborhood Abundance Matrix.
     """
@@ -33,21 +34,19 @@ def neighborhoodAbundanceMatrix(expression_mat, meta_data, sampleid):
     expression_mat, meta_data = check_indices(expression_mat, meta_data)
     print("back in the NAM function")
     print(f"exp type: {type(expression_mat)}, meta type: {type(meta_data)}")
-    # label encode the non-numerical meta data columns 
+    # label encode the non-numerical meta data columns
     label_encoder = LabelEncoder()
-    categoricalColumnNames = (
-        meta_data
-        .select_dtypes(include=["category", "object"])
-        .columns.values.tolist()
-    )
+    categoricalColumnNames = meta_data.select_dtypes(
+        include=["category", "object"]
+    ).columns.values.tolist()
     for column_name in categoricalColumnNames:
         label_encoder = LabelEncoder()
         encoded_column = label_encoder.fit_transform(meta_data[column_name])
         meta_data[column_name] = encoded_column
-    #meta_data['disease'] = label_encoder.fit_transform(meta_data['disease'])
-    #meta_data['fibroblast_clusters'] = label_encoder.fit_transform(meta_data['fibroblast_clusters'])
-    #meta_data['cluster'] = label_encoder.fit_transform(meta_data['cluster'])
-    
+    # meta_data['disease'] = label_encoder.fit_transform(meta_data['disease'])
+    # meta_data['fibroblast_clusters'] = label_encoder.fit_transform(meta_data['fibroblast_clusters'])
+    # meta_data['cluster'] = label_encoder.fit_transform(meta_data['cluster'])
+
     # create MultiAnnData object
     mad_obj = mad(X=expression_mat, obs=meta_data, sampleid=sampleid)
     # compute the UMAP cell-cell similarity graph
@@ -66,7 +65,6 @@ def neighborhoodAbundanceMatrix(expression_mat, meta_data, sampleid):
 
     cna.tl.association(mad_obj, mad_obj.obs.disease)
 
-    nam = mad_obj.uns['NAM.T']
+    nam = mad_obj.uns["NAM.T"]
 
     return nam
-
