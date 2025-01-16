@@ -24,7 +24,7 @@ import pyCellPhenoX
 project = "CellPhenoX"
 copyright = "2024, Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
 author = "Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
-release = "1.0.5"
+release = "1.0.6"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -89,3 +89,4 @@ html_theme_options = {
 
 # Path to the logo file
 html_logo = "../logo/pycpx.svg"
+root_doc = "README"
