@@ -89,4 +89,3 @@ html_theme_options = {
 
 # Path to the logo file
 html_logo = "../logo/pycpx.svg"
-root_doc = "README"
