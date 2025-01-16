@@ -5,9 +5,9 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Contributing to pyCellPhenoX" href="CONTRIBUTING.html" /><link rel="prev" title="Indices and tables" href="index.html" />
 
-    <!-- Generated with Sphinx 8.1.0 and Furo 2024.08.06 -->
-        <title>pyCellPhenoX - CellPhenoX 0.3.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
+        <title>Installation - CellPhenoX 1.0.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
@@ -179,7 +179,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">CellPhenoX 0.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">CellPhenoX 1.0.3 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -206,7 +206,7 @@
     <img class="sidebar-logo" src="_static/pycpx.svg" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">CellPhenoX 0.3.0 documentation</span>
+  <span class="sidebar-brand-text">CellPhenoX 1.0.3 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -216,15 +216,18 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">pyCellPhenoX</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tutorials">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#code-of-conduct">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#contributing">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#issues">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#citation">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#contact">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing to pyCellPhenoX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct - pyCellPhenoX</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="walkthrough.html">Walkthroughs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Walkthroughs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="walkthroughs/workflow.html">Importing Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walkthroughs/workflow.html#Step-1:-Import-Data">Step 1: Import Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walkthroughs/workflow.html#Step-2:-Preprocess-Data">Step 2: Preprocess Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walkthroughs/workflow.html#Step-3:-Run-CellPhenoX">Step 3: Run CellPhenoX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walkthroughs/workflow.html#Step-4:-Marker-Discovery">Step 4: Marker Discovery</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="walkthrough.html">Walkthroughs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Walkthroughs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">pyCellPhenoX</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of pyCellPhenoX</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -275,41 +278,38 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="pycellphenox">
-<h1>pyCellPhenoX<a class="headerlink" href="#pycellphenox" title="Link to this heading">¶</a></h1>
-<p>
-   <img height="270" align="centre" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/logo/cellphenoX_logo_banner.png">
+          <p>
+   <img height="270" align="center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/logo/cellphenoX_logo_banner.png">
 </p>
 <p><img alt="PyPI" src="https://img.shields.io/pypi/v/pyCellPhenoX.svg" />
 <img alt="Python Version" src="https://img.shields.io/pypi/pyversions/pyCellPhenoX" />
 <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/pypi/l/pyCellPhenoX" /></a>
 <img alt="Read the documentation at https://pyXcell.readthedocs.io/" src="https://img.shields.io/readthedocs/pyXcell/latest.svg?label=Read%20the%20Docs" />
-<img alt="Codecov" src="https://codecov.io/gh/fanzhanglab/pyCellPhenoX/branch/main/graph/badge.svg" /></p>
-<p><img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&amp;logoColor=white" />
+<img alt="pre-commit" src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&amp;logoColor=white" />
 <img alt="Black" src="https://img.shields.io/badge/code%20style-black-000000.svg" /></p>
-<p>We introduce pyCellPhenoX.</p>
-<img width="100%" align="center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/163014ba1b31243a1aac4c27e0611a34c1495efe/media/CellPhenoX.png?raw=true">
+<p>Here, we introduce CellPhenoX, an eXplainable machine learning method to identify cell-specific phenotypes that influence clinical outcomes for single-cell data. CellPhenoX integrates robust classification models, explainable AI techniques, and a statistical covariate framework to generate interpretable, cell-specific scores that uncover cell populations associated with a clinical phenotype of interest.</p>
+<img width="100%" align="center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/media/CellPhenoX_fig1.png?raw=true">
 <blockquote>
-<div><p>Figure 1. Insert figure description here</p>
+<div><p>Figure 1. CellPhenoX leverages cell neighborhood co-abundance embeddings, Xi , across samples and clinical variable Y as inputs. By applying an adapted SHAP framework for classification models, CellPhenoX generates Interpretable Scores that quantify the contribution of each feature Xi, along with covariates  and interaction term Xi, to the prediction of a clinically relevant phenotype Y. The results are visualized at single-cell level, showcasing Interpretable Scores at low-dimensional space, correlated cell type annotations, and associated marker genes.</p>
 </div></blockquote>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
 <p>You can install <em>pyCellPhenoX</em> from PyPI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyCellPhenoX
 </pre></div>
 </div>
-<p><strong>conda</strong> (<a class="reference external" href="https://anaconda.org/conda-forge/pyCellPhenoX">link</a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install pyCellPhenoX from conda-forge</span>
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pyCellPhenoX
-</pre></div>
-</div>
+<!-- **conda** ([link](https://anaconda.org/conda-forge/pyCellPhenoX)):
+``` bash 
+# install pyCellPhenoX from conda-forge
+conda install -c conda-forge pyCellPhenoX
+``` -->
 <p><strong>github</strong> (<a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX">link</a>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install pyCellPhenoX directly from github</span>
 git<span class="w"> </span>clone<span class="w"> </span>git@github.com:fanzhanglab/pyCellPhenoX.git
 </pre></div>
 </div>
 <section id="dependencies-requirements">
-<h3>Dependencies / Requirements<a class="headerlink" href="#dependencies-requirements" title="Link to this heading">¶</a></h3>
+<h2>Dependencies/ Requirements<a class="headerlink" href="#dependencies-requirements" title="Link to this heading">¶</a></h2>
 <p>When using pyCellPhenoX please ensure you are using the following dependency versions or requirements</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">=</span> <span class="s2">&quot;^3.9&quot;</span>
 <span class="n">pandas</span> <span class="o">=</span> <span class="s2">&quot;^2.2.3&quot;</span>
@@ -325,11 +325,11 @@ git<span class="w"> </span>clone<span class="w"> </span>git@github.com:fanzhangl
 </section>
 </section>
 <section id="tutorials">
-<h2>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading">¶</a></h2>
-<p>Please see the <a class="reference external" href="https://pyCellPhenoX.readthedocs.io/en/latest/usage.html">Command-line Reference</a> for details. Additonally, please see <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/walkthroughs/single_cell_usage">Walkthroughs</a> on the documentation page.</p>
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading">¶</a></h1>
+<p>Please see the <a class="reference external" href="https://pyCellPhenoX.readthedocs.io/en/latest/usage.html">Command-line Reference</a> for details. Additonally, please see <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/walkthroughs/single_cell_usage">Vignettes</a> on the documentation page.</p>
 </section>
 <section id="api">
-<h2>API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h2>
+<h1>API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h1>
 <p>pyCellPhenoX has four major functions which are apart of the object:</p>
 <ol class="arabic simple">
 <li><p>split_data() - Split the data into training, testing, and validation sets</p></li>
@@ -346,60 +346,34 @@ git<span class="w"> </span>clone<span class="w"> </span>git@github.com:fanzhangl
 </ol>
 <p>Each function has uniqure arguments, see our <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/">documentation</a> for more information</p>
 </section>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
-<p>For more information please see <a class="reference internal" href="walkthroughs/workflow.html"><span class="std std-doc">Walkthrough</span></a> or <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/walkthroughs/workflows">Workflow Documentation</a></p>
-</section>
 <section id="license">
-<h2>License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h2>
+<h1>License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h1>
 <p>Distributed under the terms of the <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE">MIT license</a>,
 <em>pyCellPhenoX</em> is free and open source software.</p>
+</section>
 <section id="code-of-conduct">
-<h3>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">¶</a></h3>
+<h1>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">¶</a></h1>
 <p>For more information please see <a class="reference internal" href="CODE_OF_CONDUCT.html"><span class="std std-doc">Code of Conduct</span></a> or <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/code_of_conduct">Code of Conduct Documentation</a></p>
 </section>
 <section id="contributing">
-<h3>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">¶</a></h3>
+<h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">¶</a></h1>
 <p>For more information please see <a class="reference internal" href="CONTRIBUTING.html"><span class="std std-doc">Contributing</span></a> or <a class="reference external" href="https://pyCellPhenoXreadthedocs.io/contributing">Contributing Documentation</a></p>
 </section>
-</section>
 <section id="issues">
-<h2>Issues<a class="headerlink" href="#issues" title="Link to this heading">¶</a></h2>
+<h1>Issues<a class="headerlink" href="#issues" title="Link to this heading">¶</a></h1>
 <p>If you encounter any problems, please <a class="reference external" href="https://github.com/fanzhanglab/pyCellPhenoX/issues/new">file an issue</a> along with a detailed description.</p>
 </section>
 <section id="citation">
-<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">¶</a></h2>
-<p>If you have used <code class="docutils literal notranslate"><span class="pre">pyCellPhenoX</span></code> in your project, please use the citation below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">Young2024</span><span class="p">,</span>
-  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Young</span><span class="p">,</span> <span class="n">Jade</span> <span class="ow">and</span> <span class="n">Inamo</span><span class="p">,</span> <span class="n">Jun</span> <span class="ow">and</span> <span class="n">Zhang</span><span class="p">,</span> <span class="n">Fan</span><span class="p">},</span>
-  <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">CellPhenoX</span><span class="p">:</span> <span class="n">An</span> <span class="n">eXplainable</span> <span class="n">Cell</span><span class="o">-</span><span class="n">specific</span> <span class="n">machine</span> <span class="n">learning</span> <span class="n">method</span> <span class="n">to</span> <span class="n">predict</span> <span class="n">clinical</span> <span class="n">Phenotypes</span> <span class="n">using</span> <span class="n">single</span><span class="o">-</span><span class="n">cell</span> <span class="n">multi</span><span class="o">-</span><span class="n">omics</span><span class="p">},</span>
-  <span class="n">date</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2024</span><span class="p">},</span>
-  <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">fanzhanglab</span><span class="o">/</span><span class="n">pyCellPhenoX</span><span class="p">},</span>
-  <span class="n">version</span> <span class="o">=</span> <span class="p">{},</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@ARTICLE</span><span class="p">{</span><span class="n">Young2024</span><span class="p">,</span>
-  <span class="n">title</span>    <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{CellPhenoX}</span><span class="s2">: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics&quot;</span><span class="p">,</span>
-  <span class="n">author</span>   <span class="o">=</span> <span class="s2">&quot;Young, Jade and Inamo, Jun and Zhang, Fan&quot;</span><span class="p">,</span>
-  <span class="n">journal</span>  <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="n">volume</span>   <span class="o">=</span>  <span class="p">,</span>
-  <span class="n">number</span>   <span class="o">=</span>  <span class="p">,</span>
-  <span class="n">pages</span>    <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="n">month</span>    <span class="o">=</span>  <span class="p">,</span>
-  <span class="n">year</span>     <span class="o">=</span>  <span class="p">,</span>
-  <span class="n">language</span> <span class="o">=</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<h1>Citation<a class="headerlink" href="#citation" title="Link to this heading">¶</a></h1>
+<p>If you have used <code class="docutils literal notranslate"><span class="pre">pyCellPhenoX</span></code> in your project, please use the citation below:
+</br></p>
+<p>Young, J., Inamo, J., Caterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, 2024.</p>
 </section>
 <section id="contact">
-<h2>Contact<a class="headerlink" href="#contact" title="Link to this heading">¶</a></h2>
-<p>Please contact <a class="reference external" href="mailto:fanzhanglab&#37;&#52;&#48;gmail&#46;com">fanzhanglab<span>&#64;</span>gmail<span>&#46;</span>com</a> for
-further questions or potential collaborative opportunities!</p>
+<h1>Contact<a class="headerlink" href="#contact" title="Link to this heading">¶</a></h1>
+<p>Please contact <a class="reference internal" href="#fanzhanglab&#64;gmail.com"><span class="xref myst">fanzhanglab&#64;gmail.com</span></a> for
+further questions or protential collaborative opportunities!</p>
 <!-- github-only -->
-</section>
 </section>
 
         </article>
@@ -457,24 +431,18 @@ further questions or potential collaborative opportunities!</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">pyCellPhenoX</a><ul>
-<li><a class="reference internal" href="#installation">Installation</a><ul>
-<li><a class="reference internal" href="#dependencies-requirements">Dependencies / Requirements</a></li>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#dependencies-requirements">Dependencies/ Requirements</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#tutorials">Tutorials</a></li>
 <li><a class="reference internal" href="#api">API</a></li>
-<li><a class="reference internal" href="#usage">Usage</a></li>
-<li><a class="reference internal" href="#license">License</a><ul>
+<li><a class="reference internal" href="#license">License</a></li>
 <li><a class="reference internal" href="#code-of-conduct">Code of Conduct</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#issues">Issues</a></li>
 <li><a class="reference internal" href="#citation">Citation</a></li>
 <li><a class="reference internal" href="#contact">Contact</a></li>
-</ul>
-</li>
 </ul>
 
           </div>
@@ -484,8 +452,8 @@ further questions or potential collaborative opportunities!</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=e259d695"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
+</div><script src="_static/documentation_options.js?v=baaebd52"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>

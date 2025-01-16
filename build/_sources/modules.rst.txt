@@ -4,5 +4,7 @@ pyCellPhenoX
 .. toctree::
    :maxdepth: 4
 
-   pyCellPhenoX
+   pyCellPhenoX.operations
+   pyCellPhenoX.methods
+   pyCellPhenoX.utils
 

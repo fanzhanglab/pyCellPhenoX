@@ -1,12 +1,18 @@
 pyCellPhenoX utilities
 ======================
 
-Functions enabling smooth interaction with CellProfiler and DeepProfiler output formats.
-
 pyCellPhenoX.utils.balanced_sample module
 ------------------------------------------
 
 .. automodule:: pyCellPhenoX.utils.balanced_sample
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pyCellPhenoX.utils.check_indices module
+------------------------------------------
+
+.. automodule:: pyCellPhenoX.utils.check_indices
    :members:
    :undoc-members:
    :show-inheritance:
@@ -35,11 +41,3 @@ pyCellPhenoX.utils.select_optimal_k module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
-
-.. automodule:: pyCellPhenoX
-   :members:
-   :undoc-members:
-   :show-inheritance:
-   :no-index:

@@ -13,17 +13,18 @@
 import os
 import sys
 from datetime import date
+import pyCellPhenoX
 
 # import dunamai
 
-sys.path.insert(0, os.path.abspath("../pyCellPhenoX"))
+# sys.path.insert(0, os.path.abspath("../pyCellPhenoX"))
 
 # import pyCellPhenoX
 
 project = "CellPhenoX"
 copyright = "2024, Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
 author = "Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
-release = "0.3.0"
+release = "1.0.3"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -33,7 +34,7 @@ extensions = [
     "sphinx.ext.autodoc",       # Automatically document Python modules
     "sphinx.ext.napoleon",      # Support for Google style docstrings
     "sphinx_copybutton",        # Adds a "copy" button to code blocks
-    # "m2r2",                   # Support for Markdown files
+    # "m2r2",                     # Support for Markdown files
     "nbsphinx",                 # Support for Jupyter Notebooks
     "myst_parser",              # Support for markdown files using 
 ]

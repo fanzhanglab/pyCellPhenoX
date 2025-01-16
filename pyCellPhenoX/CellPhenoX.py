@@ -1,8 +1,4 @@
-####################################################
-###
-###                     IMPORTS
-###
-####################################################
+# In[1]: Imports
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -28,12 +24,7 @@ from sklearn.preprocessing import LabelEncoder
 
 np.random.seed(1)
 
-####################################################
-###
-###                     CLASS
-###
-####################################################
-
+# In[2]: CellPhenoX Class
 
 class CellPhenoX:
     def __init__(self, X, y, CV_repeats, outer_num_splits, inner_num_splits):
