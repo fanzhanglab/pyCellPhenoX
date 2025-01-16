@@ -33,6 +33,7 @@ statsmodels = "^0.14.3"
 [tool.poetry.group.docs.dependencies]
 sphinx = "^7.0"
 sphinx-copybutton = "^0.5.1"
+nbsphinx = "^0.9.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
