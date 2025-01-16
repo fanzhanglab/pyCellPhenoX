@@ -26,12 +26,11 @@ You can install _pyCellPhenoX_ from PyPI:
 pip install pyCellPhenoX
 ```
 
-**conda** ([link](https://anaconda.org/conda-forge/pyCellPhenoX)):
+<!-- **conda** ([link](https://anaconda.org/conda-forge/pyCellPhenoX)):
 ``` bash 
 # install pyCellPhenoX from conda-forge
 conda install -c conda-forge pyCellPhenoX
-```
-
+``` -->
 **github** ([link](https://github.com/fanzhanglab/pyCellPhenoX)):
 ``` bash
 # install pyCellPhenoX directly from github
@@ -53,59 +52,6 @@ scikit-learn = "^1.5.2"
 matplotlib = "^3.9.2"
 statsmodels = "^0.14.3"
 ```
-To check if you have the right depenencies please run the following:
-#### Check Python Version
-``` bash
-python --version
-```
-
-#### Check individual package versions
-``` bash 
-pip show {package} | grep Version
-```
-> Replace {package} with the name of the package you want to check (e.g., pandas, numpy, etc.). This will display the installed version of the package.
-
-### Virtual Environment
-
-If any of the versions are not compatible with your working environment, please set up a virtual environment using one of the following methods: **conda/mamba**, **pip**, or **poetry**.
-
-#### Conda and Mamba
-
-To create a virtual environment using **conda** or **mamba**, follow these steps:
-
-1. **Create the environment:**
-   ```bash
-   conda create --name {name_the_environment} 
-    ```
-2. **Activate the environment:**
-   ```bash
-   conda activate {name_the_environment} 
-    ```
-3. **Install the requirements.txt:**
-   ```bash
-   conda install -f requirements.txt
-    ```
-
-#### PIP
-To create a virtual environment using **PIP** follow these steps:
-
-1. **Create the environment:**
-   ```bash
-   python -m venv {name_the_environment} 
-    ```
-2. **Activate the environment:**
-- on Windows
-   ```bash
-   {name_the_environment}\Scripts\activate
-    ```
-- on macOS
-   ```bash
-   source {name_the_environment}\bin\activate
-    ```
-3. **Install the requirements.txt:**
-   ```bash
-   pip install -r requirements.txt
-    ```
 
 
 ## API
@@ -138,9 +84,8 @@ For more information please see [Contributing](CONTRIBUTING.md) or [Contributing
 If you encounter any problems, please [file an issue] along with a detailed description. 
 
 ## Citation
-If you have used `pyCellPhenoX` in your project, please use the citation below.
-
-Young, J., Inamo, J., Caterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, *In submission*, 2024.
+If you have used `pyCellPhenoX` in your project, please use the citation below. 
+Young, J., Inamo, J., Carterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, 2024.
 
 ## Contact
 Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for

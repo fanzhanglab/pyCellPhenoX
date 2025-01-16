@@ -1,17 +1,12 @@
-.. mdinclude:: ../README.md
-   
 .. toctree::
    :maxdepth: 2
    :caption: Table of Contents
 
-   installation
+   ../README.md
+   ../CONTRIBUTING.md
+   ../CODE_OF_CONDUCT.md
    walkthrough
    modules
-   citation
-   code_of_conduct
-   contributing
-   issues   
-   license
 
 
 Indices and tables
@@ -19,5 +14,3 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
-

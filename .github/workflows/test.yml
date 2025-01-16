@@ -1,9 +1,9 @@
-name: Python package
+name: Run Tests
 
 on:
   push:
     branches:
-      - main
+      - '*'
   pull_request:
     branches:
       - main
@@ -13,23 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out the code
+      # Checkout the repository
+      - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      # Set up Python version
+      - name: Set up Python 3.12
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # You can change this to your desired Python version
+          python-version: "3.12"
 
-      - name: Install Poetry
-        run: |
-          curl -sSL https://install.python-poetry.org | python3 -
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-
+      # Install dependencies using requirements.txt
       - name: Install dependencies
         run: |
-          poetry install
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      - name: Run tests
+      # Run tests
+      - name: Run tests with pytest
         run: |
-          poetry run pytest  # Adjust this command based on your test framework
+          export PYTHONPATH=$(pwd)
+          pytest test/
