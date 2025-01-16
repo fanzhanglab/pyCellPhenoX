@@ -100,7 +100,7 @@ further questions or protential collaborative opportunities!
 [command-line reference]: https://pyCellPhenoX.readthedocs.io/en/latest/usage.html
 [pipi]: https://pypi.org/project/pip/
 [pypi]: https://pypi.org/project/pyCellPhenoX/
-[vignettes]: https://pyCellPhenoXreadthedocs.io/walkthroughs/single_cell_usage
+[vignettes]: https://pycellphenox.readthedocs.io/en/latest/vignettes/apply_cellphenoX_inflamed_uc_fibroblast.html
 [documentation]: https://pyCellPhenoXreadthedocs.io/
 [Code of Conduct Documentation]: https://pyCellPhenoXreadthedocs.io/code_of_conduct
 [Contributing Documentation]: https://pyCellPhenoXreadthedocs.io/contributing
