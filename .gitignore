@@ -10,4 +10,4 @@ requirements.txt
 dist/
 *.DS_Store
 myvenv/
-docs/
+build/

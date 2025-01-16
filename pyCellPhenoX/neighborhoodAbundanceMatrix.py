@@ -6,7 +6,7 @@
 
 import pandas as pd
 import scanpy as sc
-# from multianndata import MultiAnnData as mad
+from multianndata import MultiAnnData as mad
 import cna
 from sklearn.preprocessing import LabelEncoder
 from pyCellPhenoX.utils.check_indices import check_indices
