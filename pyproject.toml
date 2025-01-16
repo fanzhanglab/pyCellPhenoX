@@ -29,16 +29,15 @@ shap = "^0.46.0"
 scikit-learn = "^1.5.2"
 matplotlib = "^3.9.2"
 statsmodels = "^0.14.3"
+
+[tool.poetry.group.docs.dependencies]
 sphinx = "^7.0"
 sphinx-copybutton = "^0.5.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
 requests = "^2.32.3"
-
-[tool.poetry.extras]
-docs = ["sphinx", "sphinx-copybutton"]
-dev = ["pytest", "black"]
+black = "^23.9.1"
 
 [build-system]
 requires = ["poetry-core"]
