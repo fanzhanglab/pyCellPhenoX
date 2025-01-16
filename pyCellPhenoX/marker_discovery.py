@@ -5,6 +5,7 @@ import numpy as np
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 from sklearn.preprocessing import StandardScaler
 from plotnine import *
+import met_brewer
 # from rpy2.robjects import r, pandas2ri
 # from rpy2.robjects.packages import importr
 
@@ -110,10 +111,17 @@ def plot_interpretablescore_boxplot(data, x, y):
         x (str): name of x axis column in data
         y (str): name of y axis column in data
     """
-    # Use plotnine to generate the plot similar to ggplot
-    b = (ggplot(data, aes(x=x, y=y, color=y)) + 
-        geom_boxplot(size=2) +
-        scale_color_brewer(type="qual", palette="Set3") +
+
+    cell_type_colors = {
+            "Inflammatory Fibroblasts": "#FBB4AEFF",
+            "Myofibroblasts": "#B3CDE3FF",
+            "WNT2B": "#CCEBC5FF",
+            "WNT5B":"#DECBE4FF"
+    }
+    b = (ggplot(data, aes(x=x, y=y, color=x)) + 
+        geom_boxplot(size=1) +
+        #scale_color_brewer(type="qual", palette="Set3") +
+        scale_color_manual(values=cell_type_colors) +
         labs(title="", x=x.replace("_", " "), y="CellPhenoX Interpretable Score") +
         theme_classic(base_size=25) #+
         #axis_y_text(theme_elemnt=element_text(size=40))
@@ -129,11 +137,18 @@ def plot_interpretablescore_umap(data, x, y, cell_type, score):
         y (str): name of y axis column in data
         cell_type (str): name of column in data containing the cell type labels
     """
-    # Use plotnine to generate the plot similar to ggplot
+
+    cell_type_colors = {
+        "Inflammatoruy Fibroblasts": "#FBB4AEFF",
+        "Myofibroblasts": "#B3CDE3FF",
+        "WNT2B": "#CCEBC5FF",
+        "WNT5B":"#DECBE4FF"
+    }
     c = (
         ggplot(data, aes(x=x,y=y, color=cell_type)) +
         geom_point(size=0.5) +
-        scale_color_brewer(type="qual", palette="Set3") +
+        #scale_color_brewer(type="qual", palette="Set3") +
+        scale_color_manual(values=cell_type_colors) +
         labs(title="", x=x, y=y, color="Cell Type") +
         theme_classic(base_size=25)
     )
@@ -141,7 +156,8 @@ def plot_interpretablescore_umap(data, x, y, cell_type, score):
     s = (
         ggplot(data, aes(x=x,y=y, color=score)) +
         geom_point(size=0.5) +
-        scale_color_continuous(cmap_name="bwr") +
+        #scale_color_continuous(cmap_name="bwr") +
+        scale_color_manual(values=met_brew(name="Egypt", n=123, brew_type="continuous")) +
         labs(title="", x=x, y=y, color="CellPhenoX\nInterpretable Score") +
         theme_classic(base_size=25)
     ) 
