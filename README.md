@@ -6,7 +6,7 @@
 ![PyPI](https://img.shields.io/pypi/v/pyCellPhenoX.svg)
 ![Python Version](https://img.shields.io/pypi/pyversions/pyCellPhenoX)
 [![License](https://img.shields.io/pypi/l/pyCellPhenoX)][license] 
-![Read the documentation at https://pyXcell.readthedocs.io/](https://img.shields.io/readthedocs/pyXcell/latest.svg?label=Read%20the%20Docs)
+![Read the documentation at https://pyX.readthedocs.pyCellPhenoX.io/](https://img.shields.io/readthedocs/pyCellPhenoX/latest.svg?label=Read%20the%20Docs)
 ![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)
 ![Black](https://img.shields.io/badge/code%20style-black-000000.svg)
 
