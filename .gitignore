@@ -6,7 +6,6 @@ pycpx3.10/
 htmlcov/
 .coverage
 env.yaml
-requirements.txt
 dist/
 *.DS_Store
 myvenv/
