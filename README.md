@@ -15,7 +15,7 @@
 
 Here, we introduce CellPhenoX, an eXplainable machine learning method to identify cell-specific phenotypes that influence clinical outcomes for single-cell data. CellPhenoX integrates robust classification models, explainable AI techniques, and a statistical covariate framework to generate interpretable, cell-specific scores that uncover cell populations associated with a clinical phenotype of interest.
 
-<img width="100%" align="center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/163014ba1b31243a1aac4c27e0611a34c1495efe/media/CellPhenoX.png?raw=true">
+<img width="100%" align="center" src="https://github.com/fanzhanglab/pyCellPhenoX/blob/main/media/Figure_1_CellPhenoX.png">
 
 > Figure 1. CellPhenoX leverages cell neighborhood co-abundance embeddings, Xi , across samples and clinical variable Y as inputs. By applying an adapted SHAP framework for classification models, CellPhenoX generates Interpretable Scores that quantify the contribution of each feature Xi, along with covariates  and interaction term Xi, to the prediction of a clinically relevant phenotype Y. The results are visualized at single-cell level, showcasing Interpretable Scores at low-dimensional space, correlated cell type annotations, and associated marker genes.
 
@@ -37,6 +37,8 @@ conda install -c conda-forge pyCellPhenoX
 # install pyCellPhenoX directly from github
 git clone git@github.com:fanzhanglab/pyCellPhenoX.git
 ```
+## Tutorials
+Please see the [Command-line Reference] for details. Please see [Vignettes] on the documentation page. 
 
 ### Dependencies/ Requirements
 When using pyCellPhenoX please ensure you are using the following dependency versions or requirements
@@ -106,9 +108,6 @@ To create a virtual environment using **PIP** follow these steps:
     ```
 
 
-## Tutorials
-Please see the [Command-line Reference] for details. Additonally, please see [Vignettes] on the documentation page. 
-
 ## API
 pyCellPhenoX has four major functions which are apart of the object:
 1. split_data() - Split the data into training, testing, and validation sets 
@@ -139,8 +138,9 @@ For more information please see [Contributing](CONTRIBUTING.md) or [Contributing
 If you encounter any problems, please [file an issue] along with a detailed description. 
 
 ## Citation
-If you have used `pyCellPhenoX` in your project, please use the citation below. 
-Young, J., Inamo, J., Carterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, 2024.
+If you have used `pyCellPhenoX` in your project, please use the citation below.
+
+Young, J., Inamo, J., Caterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, *In submission*, 2024.
 
 ## Contact
 Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for
