@@ -6,6 +6,7 @@
 
 import pandas as pd
 from plotnine import *
+import met_brewer
 
 ####################################################
 ###
@@ -34,7 +35,7 @@ def plot_interpretablescore_umap(data, x, y, cell_type, score):
     s = (
         ggplot(data, aes(x=x,y=y, color=score)) +
         geom_point(size=0.5) +
-        scale_color_continuous(cmap_name="bwr") +
+        scale_color_manual(values=met_brew(name="Egypt", n=123, brew_type="continuous")) +
         labs(title="", x=x, y=y, color="CellPhenoX\nInterpretable Score") +
         theme_classic(base_size=25)
     ) 
