@@ -2338,6 +2338,26 @@ code-style = ["pre-commit (==2.12.1)"]
 rtd = ["ipython", "myst-nb", "sphinx", "sphinx-book-theme", "sphinx-examples"]
 
 [[package]]
+name = "sphinx-mdinclude"
+version = "0.6.2"
+description = "Markdown extension for Sphinx"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "sphinx_mdinclude-0.6.2-py3-none-any.whl", hash = "sha256:648e78edb067c0e4bffc22943278d49d54a0714494743592032fa3ad82a86984"},
+    {file = "sphinx_mdinclude-0.6.2.tar.gz", hash = "sha256:447462e82cb8be61404a2204227f920769eb923d2f57608e3325f3bb88286b4c"},
+]
+
+[package.dependencies]
+docutils = ">=0.19,<1.0"
+mistune = ">=3.0,<4.0"
+pygments = ">=2.8"
+sphinx = ">=6"
+
+[package.extras]
+dev = ["attribution (==1.7.1)", "black (==24.4.2)", "coverage (==7.5.1)", "docutils (==0.20.1)", "docutils (==0.21.2)", "flake8 (==7.0.0)", "flit (==3.9.0)", "mistune (==3.0.2)", "mypy (==1.10.0)", "sphinx (==7.1.2)", "sphinx (==7.3.7)", "ufmt (==2.5.1)", "usort (==1.0.8.post1)"]
+
+[[package]]
 name = "sphinxcontrib-applehelp"
 version = "2.0.0"
 description = "sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books"
@@ -2709,4 +2729,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "4820081cedfce239fc2f9eb9fb3b0a42df66aa4127c41502baf06510b2328c25"
+content-hash = "2f97fad95b71b069699cc09d434b0c91d0fc1557e05fa790f649634390282e29"

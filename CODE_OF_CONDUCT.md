@@ -1,4 +1,4 @@
-# Code of Conduct - pyCellPhenoX
+# Code of Conduct
 
 ## Our Pledge
 

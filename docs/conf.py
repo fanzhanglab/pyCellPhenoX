@@ -85,6 +85,7 @@ html_theme_options = {
         "color-api-pre-name": cellphenox_dark_blue,  # Use dark blue for API names
         "color-api-name": cellphenox_dark_blue,  # Use dark blue for API pre-names
     },
+    "sidebar_hide_name": False,  
 }
 
 # Path to the logo file
