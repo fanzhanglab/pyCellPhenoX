@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyCellPhenoX"
-version = "1.0.5"
+version = "1.0.6"
 description = "An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics"
 authors = [      
     "Jade Young",

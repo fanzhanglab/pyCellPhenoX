@@ -21,8 +21,8 @@ import pyCellPhenoX
 
 # import pyCellPhenoX
 
-project = "CellPhenoX"
-copyright = "2024, Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
+project = "pyCellPhenoX"
+copyright = "2025, Zhang Lab @ CU Medicine"
 author = "Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
 release = "1.0.6"
 

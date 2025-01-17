@@ -26,6 +26,7 @@ np.random.seed(1)
 
 # In[2]: CellPhenoX Class
 
+
 class CellPhenoX:
     def __init__(self, X, y, CV_repeats, outer_num_splits, inner_num_splits):
         """_summary_
