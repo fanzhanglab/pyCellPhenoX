@@ -8,6 +8,7 @@
 ![Read the documentation at https://pycellphenox.readthedocs.io/](https://img.shields.io/readthedocs/pycellphenox/latest.svg?label=Read%20the%20Docs)
 ![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)
 ![Black](https://img.shields.io/badge/code%20style-black-000000.svg)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Ffanzhanglab%2FpyCellPhenoX&label=%23Visits&labelColor=%23000000&countColor=%2337d67a&style=plastic)
 
 ## Getting Started...
 
