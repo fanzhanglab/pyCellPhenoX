@@ -87,7 +87,7 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 If you have used `pyCellPhenoX` in your project, please use the citation below: 
 </br>
 
- Young, J., Inamo, J., Caterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, in submission, 2024.
+ Young, J., Inamo, J., Caterer, Z., Krishna, R., Zhang, F. CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics, in submission, 2025.
 
 ## Contact
 Please contact [fanzhanglab@gmail.com](fanzhanglab@gmail.com) for
