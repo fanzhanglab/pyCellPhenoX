@@ -24,7 +24,7 @@ import pyCellPhenoX
 project = "pyCellPhenoX"
 copyright = "2025, Zhang Lab @ CU Medicine"
 author = "Fan Zhang, Jade Young, Jun Inamo, Revanth Krishna, Zachary Caterer"
-release = "1.0.6"
+release = "1.0.7"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
