@@ -6,7 +6,7 @@
 
 import pandas as pd
 from plotnine import *
-import met_brewer
+from met_brewer import met_brew
 
 ####################################################
 ###
