@@ -98,7 +98,7 @@ further questions or protential collaborative opportunities!
 [license]: https://github.com/fanzhanglab/pyCellPhenoX/blob/main/LICENSE
 [contributor guide]: https://github.com/fanzhanglab/pyCellPhenoX/blob/main/CONTRIBUTING.md
 [file an issue]: https://github.com/fanzhanglab/pyCellPhenoX/issues/new
-[command-line reference]: https://pyCellPhenoX.readthedocs.io/en/latest/usage.html
+[command-line reference]: https://pycellphenox.readthedocs.io/en/latest/modules.html
 [pipi]: https://pypi.org/project/pip/
 [pypi]: https://pypi.org/project/pyCellPhenoX/
 [vignettes]: https://pycellphenox.readthedocs.io/en/latest/vignettes/apply_cellphenoX_inflamed_uc_fibroblast.html
