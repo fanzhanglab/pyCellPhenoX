@@ -19,7 +19,7 @@ authors:
 
 title: "CellPhenoX: An eXplainable Cell-specific machine learning method to predict clinical Phenotypes using single-cell multi-omics"
 # This version is updated using `cz bump` command
-version: "1.0.0"
+version: "1.3"
 license: MIT License
 repository-code: "https://github.com/fanzhanglab/pyCellPhenoX"
-doi: # insert DOI here
+doi: https://doi.org/10.1101/2025.01.24.634132
