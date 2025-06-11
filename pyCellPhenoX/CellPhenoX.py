@@ -66,6 +66,8 @@ class CellPhenoX:
                 "n_estimators": [100, 200, 800],
             }
         ]
+        self.roc_curves = [] # list of dictionaries with ROC curve datra for each CV repeat
+        self.prc_curves = [] # list of dictionaries with the PRC curve data for each CV repeat
         self.label_encoder = LabelEncoder()
         self.best_model = None
         self.best_score = float("-inf")
@@ -294,17 +296,19 @@ class CellPhenoX:
                 roc_auc = auc(fpr, tpr)
                 # Plot the ROC and precision recall curve for the current fold size
                 axes[0].plot(fpr, tpr, lw=2, label=f"CV Repeat {i+1} (ROC = {roc_auc:.2f})")
+                self.roc_curves.append({'fpr': fpr, 'tpr': tpr, 'roc_auc': roc_auc})
             else:
                 # MULTICLASS else statement Here?
                 for k in range(num_classes):
                     fpr, tpr, _ = roc_curve(y_test_combined == k, y_prob_combined[:, k]) # one vs rest..
                     roc_auc = auc(fpr, tpr)
                     axes[0].plot(fpr, tpr, lw=2, label=f"CV Repeat {i+1} - Class {k} (ROC = {roc_auc:.2f})")
-            
+                    self.roc_curves.append({'fpr': fpr, 'tpr': tpr, 'roc_auc': roc_auc}) 
             # Precision Recall curve
             axes[1].plot(
                             recall, precision, lw=2, label=f"CV Repeat{i+1} (PRC = {prc_auc:.2f})"
                         )
+            self.prc_curves.append({'recall': recall, 'precision': precision, 'prc_auc': prc_auc})
             # save the best model for this repeat
             model_pr_pairs = list(zip(model_list, val_prc_combined_list)) #val_prc_combined
 
@@ -418,5 +422,11 @@ class CellPhenoX:
         interpretable_score = np.sum(self.shap_df, axis=1)
         # add the shap_df
         self.shap_df["interpretable_score"] = interpretable_score
+
+    def get_roc_curves(self):
+        return self.roc_curves
+    
+    def get_prc_curves(self):
+        return self.prc_curves
 
     
