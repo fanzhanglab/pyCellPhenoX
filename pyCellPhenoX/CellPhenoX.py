@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import shap
+import fasttreeshap
+import time
 from xgboost import *
 
 from sklearn.model_selection import train_test_split
@@ -48,6 +50,7 @@ class CellPhenoX:
         # self.steps = ["hyperparameter tuning", "model training", "model prediction", "performance eval", "SHAP value calculation"]
         # self.CV_repeat_cumulative_times = [0,0,0,0,0]
         # self.CV_repeat_times = []
+        self.model_training_time = None
         self.X = X
         self.y = y
         # self.fc = fc
@@ -113,17 +116,29 @@ class CellPhenoX:
             y_test_outer,
             y_val_inner,
         ]
+    
+    def shap_values_explainer(self, model, X, fast=True, n_jobs=-1):
+        if fast:
+            explainer = fasttreeshap.TreeExplainer(model, algorithm="auto", n_jobs=n_jobs) # n_jobs=-1 for parallel processing
+            shap_values = explainer(X).values
+        else:
+            explainer = shap.TreeExplainer(model)
+            shap_values = explainer.shap_values(X)
+        
+        return shap_values
 
-    def model_training_shap_val(self, outpath):
+    def model_training_shap_val(self, fast, outpath):
         """Train the model using nested cross validation strategy and generate shap values for each fold/CV repeat
 
         Parameters:
+        fast (bool): whether to use the fasttreeshap package or the shap package
         outpath (str): the path for the output folder
 
         Returns:
 
 
         """
+        start_time = time.time()
 
         fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(18, 5))
         accuracy_list = []
@@ -249,9 +264,16 @@ class CellPhenoX:
                     val_prc,
                 )
                 
-                
-                explainer = shap.TreeExplainer(result.best_estimator_)
-                shap_values = explainer.shap_values(X_test_outer)
+                # Calculate SHAP values
+                # Using TreeExplainer from shap package
+                #explainer = shap.TreeExplainer(result.best_estimator_)
+                #shap_values = explainer.shap_values(X_test_outer)
+                # Using fasttreeshap 
+                # explainer = fasttreeshap.TreeExplainer(result.best_estimator_, algorithm="auto", n_jobs=-1) # n_jobs=-1 for parallel processing
+                # shap_values = explainer(X_test_outer).values
+                shap_values = self.shap_values_explainer(result.best_estimator_, X_test_outer, fast=fast, n_jobs=-1)
+                # print("shap values type:", type(shap_values))
+                # print("shap values shape:", np.array(shap_values).shape)
 
                 # Extract SHAP information per fold per sample
                 #print(shap_values.shape)
@@ -261,7 +283,10 @@ class CellPhenoX:
                     # we need a way to generalize this so that we select the array that corresponds to the
                     # positive class (disease).
                     if num_classes == 2:
-                        self.shap_values_per_cv[test_index][CV_repeat] = shap_values[0][k]
+                        if fast: # fasttreeshap returns a 3D array
+                            self.shap_values_per_cv[test_index][CV_repeat] = shap_values[k, : , 0]
+                        else: # the shap package returns a list of two arrays
+                            self.shap_values_per_cv[test_index][CV_repeat] = shap_values[0][k]
                     else:
                         predicted_class = y_pred[k]
                         self.shap_values_per_cv[test_index][CV_repeat] = shap_values[predicted_class][k]
@@ -386,6 +411,14 @@ class CellPhenoX:
         self.get_shap_values(outpath)
         # and calculate the interpretable score
         self.get_interpretable_score()
+
+        end_time = time.time()
+        self.model_training_time = end_time - start_time
+        model_training_time_min = self.model_training_time / 60
+        print(f"Total training time for {self.CV_repeats} CV repeat(s): {model_training_time_min:.2f} minutes")
+
+    def get_model_training_time(self):
+        return self.model_training_time
 
     def get_shap_values_per_cv(self):
         return self.shap_values_per_cv
