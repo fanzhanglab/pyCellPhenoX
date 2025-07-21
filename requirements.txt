@@ -14,7 +14,7 @@ llvmlite==0.43.0
 matplotlib==3.9.2
 multianndata
 numba==0.60.0
-numpy==1.2
+numpy==1.26
 packaging==24.1
 pandas==2.2.3
 patsy==0.5.6
