@@ -41,13 +41,14 @@ When using pyCellPhenoX please ensure you are using the following dependency ver
 ``` python 
 python = "^3.9"
 pandas = "^2.2.3"
-numpy = "^2.1.1"
-xgboost = "^2.0"
+numpy = "^1.26"
+xgboost = "^2.1.1"
 numba = ">=0.54"
-shap = "^0.46.0"
 scikit-learn = "^1.5.2"
 matplotlib = "^3.9.2"
 statsmodels = "^0.14.3"
+fasttreeshap = "0.1.6"
+shap = "^0.45"
 ```
 
 
