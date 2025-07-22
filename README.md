@@ -49,6 +49,7 @@ matplotlib = "^3.9.2"
 statsmodels = "^0.14.3"
 fasttreeshap = "0.1.6"
 shap = "^0.45"
+met-brewer = "^1.0.2"
 ```
 
 
